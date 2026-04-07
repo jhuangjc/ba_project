@@ -1,16 +1,10 @@
 import argparse
-
+from app.commands.file_commands import open_file
 # constants
 
 #hilfasfunktionen
 
-def open_file(args):
-    try:
-        with open(args.file, "r") as file:
-            content = file.read()
-            print(content)
-    except FileNotFoundError:
-        print(f"Datei nicht gefunden: {args.file}")
+
 
 def main():
     parser = argparse.ArgumentParser()
