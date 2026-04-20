@@ -1,8 +1,13 @@
 from app.utils.file_utils import read_file
-
+from pathlib import Path
 def open_file(args):
-    try:
-        content = read_file(args.file)
-        print(content)
-    except FileNotFoundError:
-        print(f"Datei nicht gefunden: {args.file}")
+
+    file_path = Path(args.file)
+    if not file_path.exists():
+        raise ValueError(f"Datei nicht gefunden: {args.file}")
+    if not file_path.is_file():
+        raise ValueError(f"Keine gültige Datei: {args.file}")
+    content = read_file(file_path)
+    return content
+
+
