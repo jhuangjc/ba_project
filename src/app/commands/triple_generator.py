@@ -44,6 +44,7 @@ def gen_triples(args):
     entity_response.raise_for_status()
     entity_data = entity_response.json()
     entity_content = entity_data["choices"][0]["message"]["content"]
+    print(entity_content)
     entity_result = validate_response_entity(entity_content)
     # Extract the entity list for the next prompt.
     entities = entity_result["entities"]
@@ -64,4 +65,9 @@ def gen_triples(args):
     relation_response.raise_for_status()
     relation_data = relation_response.json()
     relation_content = relation_data["choices"][0]["message"]["content"]
-    return validate_response_relation(relation_content)
+    print(relation_content)
+    relation_result = validate_response_relation(relation_content)
+    return {
+        "entities": entities,
+        "triples": relation_result["triples"],
+    }

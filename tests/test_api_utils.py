@@ -53,3 +53,5 @@ def test_build_relation_extraction_prompt_includes_entities_and_text():
     assert "Alice met Bob." in prompt
     assert "Alice" in prompt
     assert "triples" in prompt
+
+#todo: test that check the pram types of the prompt building functions, e.g. that passing non-string to build_entity_extraction_prompt raises an error, etc.
