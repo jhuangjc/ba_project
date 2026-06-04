@@ -1,4 +1,4 @@
-from app.utils.file_utils import read_file
+from app.utils.io import read_file
 from pathlib import Path
 def open_file(args):
 

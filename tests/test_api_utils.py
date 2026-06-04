@@ -1,7 +1,7 @@
 import pytest
 
-from app.utils.api_utils import validate_response_entity, validate_response_relation
-from app.utils.prompt_utils import build_entity_extraction_prompt, build_relation_extraction_prompt
+from app.utils.api import validate_response_entity, validate_response_relation
+from app.utils.prompts import build_entity_extraction_prompt, build_relation_extraction_prompt
 
 
 # These tests check that valid JSON is accepted.
@@ -53,5 +53,8 @@ def test_build_relation_extraction_prompt_includes_entities_and_text():
     assert "Alice met Bob." in prompt
     assert "Alice" in prompt
     assert "triples" in prompt
+    assert "subject" in prompt
+    assert "predicate" in prompt
+    assert "object" in prompt
 
 #todo: test that check the pram types of the prompt building functions, e.g. that passing non-string to build_entity_extraction_prompt raises an error, etc.

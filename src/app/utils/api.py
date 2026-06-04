@@ -1,16 +1,17 @@
 import json
-
-
+import os
+#hilfsfunktion um Fehler mit einer Nachricht zu werfen
 def _raise_value_error(message):
     print(message)
     raise ValueError(message)
 
-
+#hilfsfunktion die die urspruegliche Fehlermeldung beibehaelt
 def _raise_value_error_from(message, exc):
     print(message)
     raise ValueError(message) from exc
 
-# Check that the API returned something we can work with.
+
+# validiert dass die Antwort des Modells ein nicht-leerer String ist.
 def validate_response_content(content):
     if not isinstance(content, str):
         _raise_value_error("Die Antwort ist kein String.")
@@ -86,3 +87,17 @@ def validate_response_relation(content):
             if not isinstance(triple[field], str) or len(triple[field].strip()) == 0:
                 _raise_value_error(f"Das Feld '{field}' muss ein String sein.")
     return data
+
+#hifsfunktion fuer das setzen von Api keys
+def set_api_key(api_key_env_var):
+    api_key = os.getenv(api_key_env_var)
+    if not api_key:
+        raise ValueError(f"Umgebungsvariable '{api_key_env_var}' ist nicht gesetzt.")
+    return api_key
+
+#hilfsfunktion um den Header für die API Anfragen zu bauen
+def build_api_headers(api_key):
+    return {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json",
+    }

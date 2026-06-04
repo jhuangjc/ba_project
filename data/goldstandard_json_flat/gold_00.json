@@ -1,0 +1,304 @@
+{
+  "doc_id": 48,
+  "aliases": [
+    {
+      "id": 0,
+      "name": "Plan F: Goodbyeee",
+      "aliases": [
+        "Goodbyeee",
+        "Plan F : Goodbyeee",
+        "Plan F: Goodbyeee"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "British",
+      "aliases": [
+        "British"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Blackadder Goes Forth",
+      "aliases": [
+        "Blackadder",
+        "Blackadder Goes Forth",
+        "Blackadders"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "BBC1",
+      "aliases": [
+        "BBC1"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "United Kingdom",
+      "aliases": [
+        "United Kingdom"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "2 November 1989",
+      "aliases": [
+        "2 November 1989"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Armistice Day",
+      "aliases": [
+        "Armistice Day"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Western Front",
+      "aliases": [
+        "Western Front"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "First World War",
+      "aliases": [
+        "First World War"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Blackadder",
+      "aliases": [
+        "Blackadder"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Melchett",
+      "aliases": [
+        "Melchett"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Haig",
+      "aliases": [
+        "Haig"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Richard Curtis",
+      "aliases": [
+        "Richard Curtis"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Ben Elton",
+      "aliases": [
+        "Ben Elton"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "head_id": 0,
+      "tail_id": 5,
+      "relation_label": "publication date"
+    },
+    {
+      "head_id": 0,
+      "tail_id": 12,
+      "relation_label": "screenwriter"
+    },
+    {
+      "head_id": 0,
+      "tail_id": 13,
+      "relation_label": "screenwriter"
+    },
+    {
+      "head_id": 0,
+      "tail_id": 2,
+      "relation_label": "series"
+    },
+    {
+      "head_id": 10,
+      "tail_id": 2,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 2,
+      "tail_id": 4,
+      "relation_label": "country of origin"
+    },
+    {
+      "head_id": 2,
+      "tail_id": 10,
+      "relation_label": "characters"
+    },
+    {
+      "head_id": 2,
+      "tail_id": 12,
+      "relation_label": "creator"
+    },
+    {
+      "head_id": 2,
+      "tail_id": 12,
+      "relation_label": "screenwriter"
+    },
+    {
+      "head_id": 2,
+      "tail_id": 13,
+      "relation_label": "screenwriter"
+    },
+    {
+      "head_id": 2,
+      "tail_id": 9,
+      "relation_label": "characters"
+    },
+    {
+      "head_id": 9,
+      "tail_id": 12,
+      "relation_label": "creator"
+    },
+    {
+      "head_id": 9,
+      "tail_id": 2,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 3,
+      "tail_id": 4,
+      "relation_label": "country"
+    },
+    {
+      "head_id": 11,
+      "tail_id": 2,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 0,
+      "tail_id": 9,
+      "relation_label": "series"
+    },
+    {
+      "head_id": 2,
+      "tail_id": 3,
+      "relation_label": "original network"
+    },
+    {
+      "head_id": 9,
+      "tail_id": 4,
+      "relation_label": "country of origin"
+    },
+    {
+      "head_id": 0,
+      "tail_id": 4,
+      "relation_label": "country of origin"
+    },
+    {
+      "head_id": 11,
+      "tail_id": 8,
+      "relation_label": "conflict"
+    },
+    {
+      "head_id": 2,
+      "tail_id": 4,
+      "relation_label": "country"
+    },
+    {
+      "head_id": 0,
+      "tail_id": 3,
+      "relation_label": "original network"
+    },
+    {
+      "head_id": 6,
+      "tail_id": 8,
+      "relation_label": "conflict"
+    },
+    {
+      "head_id": 3,
+      "tail_id": 1,
+      "relation_label": "country"
+    },
+    {
+      "head_id": 10,
+      "tail_id": 8,
+      "relation_label": "conflict"
+    },
+    {
+      "head_id": 2,
+      "tail_id": 1,
+      "relation_label": "country of origin"
+    },
+    {
+      "head_id": 7,
+      "tail_id": 8,
+      "relation_label": "part of"
+    },
+    {
+      "head_id": 11,
+      "tail_id": 4,
+      "relation_label": "country of citizenship"
+    },
+    {
+      "head_id": 2,
+      "tail_id": 0,
+      "relation_label": "has part"
+    },
+    {
+      "head_id": 9,
+      "tail_id": 0,
+      "relation_label": "has part"
+    },
+    {
+      "head_id": 8,
+      "tail_id": 11,
+      "relation_label": "participant"
+    },
+    {
+      "head_id": 8,
+      "tail_id": 6,
+      "relation_label": "participant"
+    },
+    {
+      "head_id": 8,
+      "tail_id": 10,
+      "relation_label": "participant"
+    },
+    {
+      "head_id": 8,
+      "tail_id": 7,
+      "relation_label": "has part"
+    },
+    {
+      "head_id": 3,
+      "tail_id": 4,
+      "relation_label": "located in the administrative territorial entity"
+    },
+    {
+      "head_id": 11,
+      "tail_id": 8,
+      "relation_label": "participant of"
+    },
+    {
+      "head_id": 6,
+      "tail_id": 8,
+      "relation_label": "participant of"
+    },
+    {
+      "head_id": 3,
+      "tail_id": 1,
+      "relation_label": "located in the administrative territorial entity"
+    },
+    {
+      "head_id": 10,
+      "tail_id": 8,
+      "relation_label": "participant of"
+    }
+  ]
+}

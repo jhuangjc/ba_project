@@ -1,12 +1,9 @@
-import os
-from pathlib import Path
-
+import json
 import httpx
 
-from app.utils.api import validate_response_entity, validate_response_relation
-from app.utils.io import read_file
 from app.utils.prompts import build_entity_extraction_prompt, build_relation_extraction_prompt
 from app.utils.api import set_api_key
+from app.utils.api import build_api_headers
 
 #tools for entety extraction
 entity_ext_tool = [
@@ -77,26 +74,15 @@ relation_ext_tool = [
 ]
 
 # diese 
-def gen_triples(args):
-    # Read the API key from the environment.
+def gen_triples(input_text):
+    # setzt den API key aus der Umgebungvariable
     api_key = set_api_key("DEEPSEEK_API_KEY")
 
-    # Check that the input file exists before reading it.
-    file_path = Path(args.file)
-    if not file_path.exists():
-        raise ValueError(f"Datei nicht gefunden: {args.file}")
-    if not file_path.is_file():
-        raise ValueError(f"Keine gültige Datei: {args.file}")
+    # bau den Header für die API Anfragen
+    headers = build_api_headers(api_key)
 
-    # Load the file content that will be sent to the model.
-    text = read_file(file_path)
-    headers = {
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json",
-    }
-
-    # First ask the model to extract entities.
-    entity_prompt = build_entity_extraction_prompt(text)
+    # Entity Extraction
+    entity_prompt = build_entity_extraction_prompt(input_text)
     entity_response = httpx.post(
         "https://api.deepseek.com/beta/v1/chat/completions",
         headers=headers,
@@ -107,36 +93,41 @@ def gen_triples(args):
             ],
             "tools": entity_ext_tool,
             "tool_choice": "required",
+ 
         },
         timeout=30.0,
     )
+    # Check ob die Anfrage erfolgreich war und extrahiere die Antwort
     entity_response.raise_for_status()
     entity_data = entity_response.json()
-    entity_content = entity_data["choices"][0]["message"]["content"]
+    entity_content = entity_data["choices"][0]["message"]["tool_calls"][0]["arguments"]
+    entities = json.loads(entity_content)["entities"]
+    #das print statement ist nur zum debuggen
     print(entity_content)
-    entity_result = validate_response_entity(entity_content)
-    # Extract the entity list for the next prompt.
-    entities = entity_result["entities"]
 
-    # Then ask the model to extract relations using the entity list.
-    relation_prompt = build_relation_extraction_prompt(text, entities)
+    # Bau den extraction promt mit dem imputtext und den entities.
+    relation_prompt = build_relation_extraction_prompt(input_text, entities)
     relation_response = httpx.post(
-        "https://api.deepseek.com/v1/chat/completions",
+        "https://api.deepseek.com/beta/v1/chat/completions",
         headers=headers,
         json={
             "model": "deepseek-chat",
             "messages": [
                 {"role": "user", "content": relation_prompt}
             ],
+            "tools": relation_ext_tool,
+            "tool_choice": "required",
         },
         timeout=30.0,
     )
+    # Check ob die Anfrage erfolgreich war und extrahiere die Antwort
     relation_response.raise_for_status()
     relation_data = relation_response.json()
-    relation_content = relation_data["choices"][0]["message"]["content"]
+    relation_content = relation_data["choices"][0]["message"]["tool_calls"][0]["arguments"]
+    relations= json.loads(relation_content)["triples"]
+    #das print statement ist nur zum debuggen
     print(relation_content)
-    relation_result = validate_response_relation(relation_content)
     return {
         "entities": entities,
-        "triples": relation_result["triples"],
+        "triples": relations,
     }
