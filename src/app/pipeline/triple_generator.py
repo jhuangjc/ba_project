@@ -100,7 +100,7 @@ def gen_triples(input_text):
     # Check ob die Anfrage erfolgreich war und extrahiere die Antwort
     entity_response.raise_for_status()
     entity_data = entity_response.json()
-    entity_content = entity_data["choices"][0]["message"]["tool_calls"][0]["arguments"]
+    entity_content = entity_data["choices"][0]["message"]["tool_calls"][0]["function"]["arguments"]
     entities = json.loads(entity_content)["entities"]
     #das print statement ist nur zum debuggen
     print(entity_content)
@@ -123,7 +123,7 @@ def gen_triples(input_text):
     # Check ob die Anfrage erfolgreich war und extrahiere die Antwort
     relation_response.raise_for_status()
     relation_data = relation_response.json()
-    relation_content = relation_data["choices"][0]["message"]["tool_calls"][0]["arguments"]
+    relation_content = relation_data["choices"][0]["message"]["tool_calls"][0]["function"]["arguments"]
     relations= json.loads(relation_content)["triples"]
     #das print statement ist nur zum debuggen
     print(relation_content)
