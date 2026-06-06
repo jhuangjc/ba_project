@@ -1,12 +1,10 @@
-import json
-from app.utils.io import PROJECT_ROOT, read_file, load_input_files
+from app.utils.io import load_input_file, load_registry
 from app.pipeline.triple_generator import gen_triples
 
-REGISTRY_PATH = PROJECT_ROOT / "data/registry/registry.json"
 
 def run(args):
     ex_id = args.expId
-    registry_data = json.loads(read_file(REGISTRY_PATH))
+    registry_data = load_registry()
     experiments = registry_data["experiments"]
     exp = None
     for e in experiments:
@@ -17,7 +15,7 @@ def run(args):
         raise ValueError(f"{ex_id} nicht in der Registry")
 
     # lade den input text
-    input_text = load_input_files(exp)
+    input_text = load_input_file(exp)
 
     # generiere die Tripel
     triples_result = gen_triples(input_text)

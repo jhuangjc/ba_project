@@ -8,7 +8,7 @@ def set_api_key(api_key_env_var):
     return api_key
 
 #hilfsfunktion um den Header für die API Anfragen zu bauen
-def build_api_headers(api_key):
+def build_api_header(api_key):
     return {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",

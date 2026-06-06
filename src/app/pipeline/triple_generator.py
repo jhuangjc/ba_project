@@ -3,7 +3,7 @@ import httpx
 
 from app.utils.prompts import build_entity_extraction_prompt, build_relation_extraction_prompt
 from app.utils.api import set_api_key
-from app.utils.api import build_api_headers
+from app.utils.api import build_api_header
 
 #tools for entety extraction
 entity_ext_tool = [
@@ -79,7 +79,7 @@ def gen_triples(input_text):
     api_key = set_api_key("DEEPSEEK_API_KEY")
 
     # bau den Header für die API Anfragen
-    headers = build_api_headers(api_key)
+    headers = build_api_header(api_key)
 
     # Entity Extraction
     entity_prompt = build_entity_extraction_prompt(input_text)
