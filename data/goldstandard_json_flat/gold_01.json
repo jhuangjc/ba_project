@@ -1,0 +1,475 @@
+{
+  "doc_id": 140,
+  "aliases": [
+    {
+      "id": 0,
+      "name": "Hindu",
+      "aliases": [
+        "Hindu"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Mahabharata",
+      "aliases": [
+        "Mahabharata"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Uttarā",
+      "aliases": [
+        "Uttaraa",
+        "Uttarā",
+        "उत्तरा"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Virata",
+      "aliases": [
+        "Virata"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Pandavas",
+      "aliases": [
+        "Pandavas"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Uttar",
+      "aliases": [
+        "Uttar"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Arjuna",
+      "aliases": [
+        "Arjuna"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Matsya Kingdom",
+      "aliases": [
+        "Matsya Kingdom"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Abhimanyu",
+      "aliases": [
+        "Abhimanyu"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Kurukshetra war",
+      "aliases": [
+        "Kurukshetra war"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Krishna",
+      "aliases": [
+        "Krishna"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Mahabharata war",
+      "aliases": [
+        "Mahabharata war"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Ashathama",
+      "aliases": [
+        "Ashathama",
+        "Ashwathama",
+        "Ashwatthama"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Dronacharya",
+      "aliases": [
+        "Dronacharya"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Duryodhana",
+      "aliases": [
+        "Duryodhana"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Kaurava",
+      "aliases": [
+        "Kaurava"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Brahmastra",
+      "aliases": [
+        "Brahmastra"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Vyasa",
+      "aliases": [
+        "Vyasa"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Parikshit",
+      "aliases": [
+        "Parikshit"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Kuru",
+      "aliases": [
+        "Kuru"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Hastinapur",
+      "aliases": [
+        "Hastinapur"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Janamejaya",
+      "aliases": [
+        "Janamejaya"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "head_id": 21,
+      "tail_id": 18,
+      "relation_label": "father"
+    },
+    {
+      "head_id": 3,
+      "tail_id": 2,
+      "relation_label": "child"
+    },
+    {
+      "head_id": 8,
+      "tail_id": 18,
+      "relation_label": "child"
+    },
+    {
+      "head_id": 13,
+      "tail_id": 12,
+      "relation_label": "child"
+    },
+    {
+      "head_id": 2,
+      "tail_id": 3,
+      "relation_label": "father"
+    },
+    {
+      "head_id": 2,
+      "tail_id": 8,
+      "relation_label": "spouse"
+    },
+    {
+      "head_id": 2,
+      "tail_id": 18,
+      "relation_label": "child"
+    },
+    {
+      "head_id": 12,
+      "tail_id": 13,
+      "relation_label": "father"
+    },
+    {
+      "head_id": 6,
+      "tail_id": 8,
+      "relation_label": "child"
+    },
+    {
+      "head_id": 18,
+      "tail_id": 21,
+      "relation_label": "child"
+    },
+    {
+      "head_id": 18,
+      "tail_id": 8,
+      "relation_label": "father"
+    },
+    {
+      "head_id": 18,
+      "tail_id": 2,
+      "relation_label": "mother"
+    },
+    {
+      "head_id": 21,
+      "tail_id": 1,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 1,
+      "tail_id": 3,
+      "relation_label": "characters"
+    },
+    {
+      "head_id": 1,
+      "tail_id": 8,
+      "relation_label": "characters"
+    },
+    {
+      "head_id": 1,
+      "tail_id": 10,
+      "relation_label": "characters"
+    },
+    {
+      "head_id": 1,
+      "tail_id": 6,
+      "relation_label": "characters"
+    },
+    {
+      "head_id": 3,
+      "tail_id": 1,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 8,
+      "tail_id": 1,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 8,
+      "tail_id": 2,
+      "relation_label": "spouse"
+    },
+    {
+      "head_id": 13,
+      "tail_id": 1,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 17,
+      "tail_id": 1,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 10,
+      "tail_id": 1,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 2,
+      "tail_id": 1,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 14,
+      "tail_id": 1,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 12,
+      "tail_id": 1,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 16,
+      "tail_id": 1,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 19,
+      "tail_id": 1,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 6,
+      "tail_id": 1,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 15,
+      "tail_id": 1,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 4,
+      "tail_id": 1,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 18,
+      "tail_id": 1,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 20,
+      "tail_id": 1,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 1,
+      "tail_id": 17,
+      "relation_label": "characters"
+    },
+    {
+      "head_id": 2,
+      "tail_id": 5,
+      "relation_label": "sibling"
+    },
+    {
+      "head_id": 11,
+      "tail_id": 6,
+      "relation_label": "participant"
+    },
+    {
+      "head_id": 12,
+      "tail_id": 11,
+      "relation_label": "conflict"
+    },
+    {
+      "head_id": 17,
+      "tail_id": 11,
+      "relation_label": "conflict"
+    },
+    {
+      "head_id": 3,
+      "tail_id": 5,
+      "relation_label": "child"
+    },
+    {
+      "head_id": 10,
+      "tail_id": 11,
+      "relation_label": "conflict"
+    },
+    {
+      "head_id": 1,
+      "tail_id": 12,
+      "relation_label": "characters"
+    },
+    {
+      "head_id": 1,
+      "tail_id": 18,
+      "relation_label": "characters"
+    },
+    {
+      "head_id": 5,
+      "tail_id": 1,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 1,
+      "tail_id": 13,
+      "relation_label": "characters"
+    },
+    {
+      "head_id": 6,
+      "tail_id": 11,
+      "relation_label": "conflict"
+    },
+    {
+      "head_id": 1,
+      "tail_id": 2,
+      "relation_label": "characters"
+    },
+    {
+      "head_id": 5,
+      "tail_id": 2,
+      "relation_label": "sibling"
+    },
+    {
+      "head_id": 1,
+      "tail_id": 14,
+      "relation_label": "characters"
+    },
+    {
+      "head_id": 8,
+      "tail_id": 11,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 1,
+      "tail_id": 5,
+      "relation_label": "characters"
+    },
+    {
+      "head_id": 14,
+      "tail_id": 11,
+      "relation_label": "conflict"
+    },
+    {
+      "head_id": 6,
+      "tail_id": 11,
+      "relation_label": "present in work"
+    },
+    {
+      "head_id": 5,
+      "tail_id": 3,
+      "relation_label": "father"
+    },
+    {
+      "head_id": 6,
+      "tail_id": 11,
+      "relation_label": "participant of"
+    },
+    {
+      "head_id": 11,
+      "tail_id": 12,
+      "relation_label": "participant"
+    },
+    {
+      "head_id": 11,
+      "tail_id": 17,
+      "relation_label": "participant"
+    },
+    {
+      "head_id": 11,
+      "tail_id": 10,
+      "relation_label": "participant"
+    },
+    {
+      "head_id": 11,
+      "tail_id": 14,
+      "relation_label": "participant"
+    },
+    {
+      "head_id": 12,
+      "tail_id": 11,
+      "relation_label": "participant of"
+    },
+    {
+      "head_id": 17,
+      "tail_id": 11,
+      "relation_label": "participant of"
+    },
+    {
+      "head_id": 10,
+      "tail_id": 11,
+      "relation_label": "participant of"
+    },
+    {
+      "head_id": 14,
+      "tail_id": 11,
+      "relation_label": "participant of"
+    }
+  ]
+}

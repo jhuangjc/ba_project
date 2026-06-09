@@ -3,6 +3,9 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# GitHub / Copilot customization (not needed in tracked repo)
+.github/
+
 # C extensions
 *.so
 
@@ -211,3 +214,6 @@ __marimo__/
 
 # preactice files
 practice_files/
+
+# Docs
+docs/

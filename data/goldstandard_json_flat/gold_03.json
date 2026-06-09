@@ -1,0 +1,348 @@
+{
+  "doc_id": 263,
+  "aliases": [
+    {
+      "id": 0,
+      "name": "Export Control Act",
+      "aliases": [
+        "Act",
+        "Export Control Act"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "1940",
+      "aliases": [
+        "1940"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "United States",
+      "aliases": [
+        "United States"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Franklin D. Roosevelt",
+      "aliases": [
+        "Franklin D. Roosevelt",
+        "Roosevelt"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "World War II",
+      "aliases": [
+        "World War II"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Imperial Japan",
+      "aliases": [
+        "Imperial Japan",
+        "Japan"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Indo",
+      "aliases": [
+        "Indo"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Chinese",
+      "aliases": [
+        "Chinese"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "1942",
+      "aliases": [
+        "1942"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "America",
+      "aliases": [
+        "America"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "1948",
+      "aliases": [
+        "1948"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "1949",
+      "aliases": [
+        "1949"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "American",
+      "aliases": [
+        "American"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Korean War",
+      "aliases": [
+        "Korean War"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "1958",
+      "aliases": [
+        "1958"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Soviet",
+      "aliases": [
+        "Soviet"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Cold War",
+      "aliases": [
+        "Cold War"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Mutual Defense Assistance Control Act",
+      "aliases": [
+        "Mutual Defense Assistance Control Act"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "1951",
+      "aliases": [
+        "1951"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "head_id": 0,
+      "tail_id": 9,
+      "relation_label": "country"
+    },
+    {
+      "head_id": 0,
+      "tail_id": 2,
+      "relation_label": "country"
+    },
+    {
+      "head_id": 9,
+      "tail_id": 3,
+      "relation_label": "head of government"
+    },
+    {
+      "head_id": 3,
+      "tail_id": 9,
+      "relation_label": "country of citizenship"
+    },
+    {
+      "head_id": 3,
+      "tail_id": 4,
+      "relation_label": "conflict"
+    },
+    {
+      "head_id": 3,
+      "tail_id": 13,
+      "relation_label": "conflict"
+    },
+    {
+      "head_id": 3,
+      "tail_id": 2,
+      "relation_label": "country of citizenship"
+    },
+    {
+      "head_id": 13,
+      "tail_id": 9,
+      "relation_label": "participant"
+    },
+    {
+      "head_id": 13,
+      "tail_id": 2,
+      "relation_label": "participant"
+    },
+    {
+      "head_id": 16,
+      "tail_id": 15,
+      "relation_label": "has part"
+    },
+    {
+      "head_id": 16,
+      "tail_id": 2,
+      "relation_label": "has part"
+    },
+    {
+      "head_id": 17,
+      "tail_id": 2,
+      "relation_label": "country"
+    },
+    {
+      "head_id": 2,
+      "tail_id": 3,
+      "relation_label": "head of government"
+    },
+    {
+      "head_id": 16,
+      "tail_id": 9,
+      "relation_label": "has part"
+    },
+    {
+      "head_id": 17,
+      "tail_id": 9,
+      "relation_label": "country"
+    },
+    {
+      "head_id": 3,
+      "tail_id": 12,
+      "relation_label": "country of citizenship"
+    },
+    {
+      "head_id": 17,
+      "tail_id": 18,
+      "relation_label": "publication date"
+    },
+    {
+      "head_id": 16,
+      "tail_id": 12,
+      "relation_label": "has part"
+    },
+    {
+      "head_id": 12,
+      "tail_id": 3,
+      "relation_label": "head of government"
+    },
+    {
+      "head_id": 0,
+      "tail_id": 1,
+      "relation_label": "publication date"
+    },
+    {
+      "head_id": 0,
+      "tail_id": 2,
+      "relation_label": "applies to jurisdiction"
+    },
+    {
+      "head_id": 13,
+      "tail_id": 7,
+      "relation_label": "participant"
+    },
+    {
+      "head_id": 13,
+      "tail_id": 12,
+      "relation_label": "participant"
+    },
+    {
+      "head_id": 0,
+      "tail_id": 1,
+      "relation_label": "inception"
+    },
+    {
+      "head_id": 13,
+      "tail_id": 15,
+      "relation_label": "participant"
+    },
+    {
+      "head_id": 3,
+      "tail_id": 9,
+      "relation_label": "applies to jurisdiction"
+    },
+    {
+      "head_id": 4,
+      "tail_id": 3,
+      "relation_label": "participant"
+    },
+    {
+      "head_id": 13,
+      "tail_id": 3,
+      "relation_label": "participant"
+    },
+    {
+      "head_id": 9,
+      "tail_id": 13,
+      "relation_label": "participant of"
+    },
+    {
+      "head_id": 2,
+      "tail_id": 13,
+      "relation_label": "participant of"
+    },
+    {
+      "head_id": 15,
+      "tail_id": 16,
+      "relation_label": "part of"
+    },
+    {
+      "head_id": 2,
+      "tail_id": 16,
+      "relation_label": "part of"
+    },
+    {
+      "head_id": 3,
+      "tail_id": 2,
+      "relation_label": "applies to jurisdiction"
+    },
+    {
+      "head_id": 9,
+      "tail_id": 16,
+      "relation_label": "part of"
+    },
+    {
+      "head_id": 12,
+      "tail_id": 16,
+      "relation_label": "part of"
+    },
+    {
+      "head_id": 3,
+      "tail_id": 12,
+      "relation_label": "applies to jurisdiction"
+    },
+    {
+      "head_id": 7,
+      "tail_id": 13,
+      "relation_label": "participant of"
+    },
+    {
+      "head_id": 12,
+      "tail_id": 13,
+      "relation_label": "participant of"
+    },
+    {
+      "head_id": 15,
+      "tail_id": 13,
+      "relation_label": "participant of"
+    },
+    {
+      "head_id": 3,
+      "tail_id": 4,
+      "relation_label": "participant of"
+    },
+    {
+      "head_id": 3,
+      "tail_id": 13,
+      "relation_label": "participant of"
+    }
+  ]
+}
