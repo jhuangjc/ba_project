@@ -1,6 +1,5 @@
 import json
 import httpx
-from app.pipeline.retrieval import prepare_bm25, get_top_k_elements, vectorise_data
 from app.utils.api import set_api_key, build_api_header
 from app.utils.prompts import build_deduplication_prompt
 #tools für deduplication
@@ -14,13 +13,13 @@ dedup_tool = [
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "candidates": {
+                    "duplicates": {
                         "type": "array",
                         "items": {"type": "string"},
                         "description": "List of candidates that are considered duplicates of the query item",
                     }
                 },
-                "required": ["candidates"],
+                "required": ["duplicates"],
                 "additionalProperties": False,
             }
         }
@@ -52,5 +51,5 @@ def send_llm_candidates(query_item, candidate_list_items):
     dedup_response.raise_for_status()
     response_data = dedup_response.json()
     dedup_content = response_data["choices"][0]["message"]["tool_calls"][0]["function"]["arguments"]
-    dedup_mappings = json.loads(dedup_content)["candidates"]
+    dedup_mappings = json.loads(dedup_content)["duplicates"]
     return dedup_mappings

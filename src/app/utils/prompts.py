@@ -23,7 +23,7 @@ def build_deduplication_prompt(query_item, candidate_items):
     candidate_block = json.dumps(candidate_items, ensure_ascii=False, indent=2)
     return (
         "Given a query item and a list of candidate items, identify which candidates are duplicates of the query item. "
-        "Return only valid JSON with a 'candidates' list containing the duplicate items. "
+        "Return only valid JSON with a 'duplicates' list containing the duplicate items. "
         "Do not include markdown, code fences, or any explanation.\n\n"
         f"Query Item:\n{query_item}\n\n"
         f"Candidate Items:\n{candidate_block}"

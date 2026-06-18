@@ -30,7 +30,10 @@ def get_top_k_elements(embedding, bm_object,query_item,query_item_embedding,k=4)
     # bm 25 vorbereiten
     # berechne den sililarity score der query item zu allesn items in der item list
     bm25_scores = bm_object.get_scores(query_item.split())
-    normalized_bm25_scores = bm25_scores / max(bm25_scores)
+    if max(bm25_scores) > 0:
+        normalized_bm25_scores = bm25_scores / max(bm25_scores)
+    else:
+        normalized_bm25_scores = bm25_scores
     # berechen den similarity score der query zu items in der embedding liste
     similarity_scores =cos_sim([query_item_embedding], embedding).flatten()
     # rechne beide score zusammen um dann die top k element zu bekommen

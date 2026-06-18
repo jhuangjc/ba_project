@@ -91,6 +91,9 @@ def refine_loop(vectorised_items,bm25_items,work_list_items,item_reference):
         #send die candidaten and die llm
         result=send_llm_candidates(query_item, top_k_items)
         # TODOneed to remove the duplicate form the work list items so that the while loops works
+        for duplicate in result:
+            if duplicate in work_list_items:
+                work_list_items.remove(duplicate)
         llm_mappings[query_item] = result
     return llm_mappings
 
