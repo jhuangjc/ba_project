@@ -1,6 +1,6 @@
 from app.utils.io import load_input_file, load_registry
 from app.pipeline.triple_generator import gen_triples
-
+from app.pipeline.refiner import refine_data
 
 def run(args):
     ex_id = args.expId
@@ -19,7 +19,16 @@ def run(args):
 
     # generiere die Tripel
     triples_result = gen_triples(input_text)
+    # metriken abnehemen
 
+    # verfeinere die Daten
+    refined_result = refine_data(triples_result)
+    #sende die verfeinerten Date an die LLM
+
+    #wende die mappings an
+
+    # metriken abnehemen
+     
     return {
         "experiment_id": ex_id,
         "input_type": exp["input_type"],
