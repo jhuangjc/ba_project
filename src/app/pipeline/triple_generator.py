@@ -73,7 +73,7 @@ relation_ext_tool = [
     }
 ]
 
-# diese 
+# diese funtion gitb imputtext rein und gibt die extrahierten entities und triples zurueck
 def gen_triples(input_text):
     # setzt den API key aus der Umgebungvariable
     api_key = set_api_key("DEEPSEEK_API_KEY")

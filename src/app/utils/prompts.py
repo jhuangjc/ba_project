@@ -18,3 +18,13 @@ def build_relation_extraction_prompt(text, entities):
         f"Entities:\n{entity_block}\n\n"
         f"Text:\n{text}"
     )
+# ladet den prompt für die deduplication, der die query item und die candidate items als input bekommt
+def build_deduplication_prompt(query_item, candidate_items):
+    candidate_block = json.dumps(candidate_items, ensure_ascii=False, indent=2)
+    return (
+        "Given a query item and a list of candidate items, identify which candidates are duplicates of the query item. "
+        "Return only valid JSON with a 'candidates' list containing the duplicate items. "
+        "Do not include markdown, code fences, or any explanation.\n\n"
+        f"Query Item:\n{query_item}\n\n"
+        f"Candidate Items:\n{candidate_block}"
+    )

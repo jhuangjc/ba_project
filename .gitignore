@@ -217,3 +217,5 @@ practice_files/
 
 # Docs
 docs/
+scripts/
+data/run_stats_3runs.py
