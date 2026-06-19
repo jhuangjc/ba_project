@@ -34,6 +34,9 @@ def run(args):
         "input_type": exp["input_type"],
         "source_group": exp["source_group"],
         "gold_id": exp["gold_id"],
-        "entities": triples_result["entities"],
-        "triples": triples_result["triples"],
+        "entities": refined_result["entities"],
+        "triples": refined_result["triples"],
+        "relations": refined_result["relations"],
+        "entity_mapping": entity_mapping,
+        "relation_mapping": relation_mapping,
     }
