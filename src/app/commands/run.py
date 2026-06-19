@@ -23,11 +23,8 @@ def run(args):
 
     # verfeinere die Daten
     refined_result, entity_mapping, relation_mapping = refine_data(triples_result)
-    #sende die verfeinerten Date an die LLM
 
-    #wende die mappings an
 
-    # metriken abnehemen
      
     return {
         "experiment_id": ex_id,
