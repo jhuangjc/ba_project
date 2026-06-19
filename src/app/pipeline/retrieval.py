@@ -1,6 +1,6 @@
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity as cos_sim
-from ranking_bm25 import BM25Okapi
+from rank_bm25 import BM25Okapi
 
 # lade das Modell
 model = SentenceTransformer("all-MiniLM-L6-v2")

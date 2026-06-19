@@ -22,7 +22,7 @@ def run(args):
     # metriken abnehemen
 
     # verfeinere die Daten
-    refined_result = refine_data(triples_result)
+    refined_result, entity_mapping, relation_mapping = refine_data(triples_result)
     #sende die verfeinerten Date an die LLM
 
     #wende die mappings an
