@@ -1,0 +1,137 @@
+import pytest
+from app.pipeline.refiner import (
+    data_to_lowercase,
+    convert_dicts_to_tuples,
+    convert_tuples_to_dicts,
+    rm_exact_duplicates,
+    dedup_list,
+    gen_reverse_mapping,
+    apply_mapping,
+    refine_data,
+)
+#beispiel testdaten
+@pytest.fixture
+def sample_data():
+    return {
+        "entities": ["Alice", "Bob", "alice", "Robert","bob","Robert Smith"],
+        "triples": [
+            {"subject": "Alice", "predicate": "knows", "object": "Bob"},
+            {"subject": "Alice", "predicate": "knows", "object": "Bob"},
+            {"subject": "Bob", "predicate": "knows", "object": "Alice"},
+            {"subject": "Robert", "predicate": "knows", "object": "Alice"},
+            {"subject": "bob", "predicate": "knows", "object": "Alice"},
+            {"subject": "Robert Smith", "predicate": "knows", "object": "Alice"},
+        ],
+        "relations": ["knows", "knows"],
+    }
+##############testblock data_to_lowercase########################
+def test_data_to_lowercase(sample_data):
+    result = data_to_lowercase(sample_data)
+    assert all( (entity.islower() for entity in result["entities"]) )
+    assert all( ( triple["subject"].islower() and triple["predicate"].islower() and triple["object"].islower() for triple in result["triples"] ))
+
+#################testblock dedup_list#########################
+def test_dedup_list():
+    input_list = ["Alice", "Bob", "Alice", "Charlie", "Bob"]
+    expected_output = ["Alice", "Bob", "Charlie"]
+    assert dedup_list(input_list) == expected_output
+def test_dedup_list_no_duplicates():
+    input_list = ["Alice", "Bob", "Charlie"]
+    expected_output = ["Alice", "Bob", "Charlie"]
+    assert dedup_list(input_list) == expected_output
+def test_dedup_list_empty_list():
+    input_list = []
+    expected_output = []
+    assert dedup_list(input_list) == expected_output
+   ####################testblock convert_dicts_to_tuples und convert_tuples_to_dicts#########################
+#testet ob die konvertierung von dicts zu tuples und zurück die original daten ergibt
+def test_convert_dicts_to_tuples(sample_data): 
+    dict_triples = sample_data["triples"]
+    expected_tuples = [
+        ("Alice", "knows", "Bob"),
+        ("Alice", "knows", "Bob"),
+        ("Bob", "knows", "Alice"),
+        ("Robert", "knows", "Alice"),
+        ("bob", "knows", "Alice"),
+        ("Robert Smith", "knows", "Alice"),
+    ]
+    assert convert_dicts_to_tuples(dict_triples) == expected_tuples
+
+def test_convert_tuples_to_dicts(sample_data):
+    tuples_triples = [
+        ("Alice", "knows", "Bob"),
+        ("Alice", "knows", "Bob"),
+        ("Bob", "knows", "Alice"),
+        ("Robert", "knows", "Alice"),
+        ("bob", "knows", "Alice"),
+        ("Robert Smith", "knows", "Alice"),
+    ]
+    expected_dicts = sample_data["triples"]
+    assert convert_tuples_to_dicts(tuples_triples) == expected_dicts
+
+def test_round_triple_conversion(sample_data):
+
+    dict_triples = sample_data["triples"]
+    tuples_triples = convert_dicts_to_tuples(dict_triples)
+    result_dict_triples = convert_tuples_to_dicts(tuples_triples)
+    assert dict_triples == result_dict_triples
+#####################testblock rm_exact_duplicates#########################
+def test_rm_exact_duplicates(sample_data):
+    relations = sample_data["relations"]
+    result = rm_exact_duplicates(sample_data, relations)
+    assert len(result["entities"]) == 6
+    assert len(result["triples"]) == 5
+    assert len(result["relations"]) == 1
+######################testblack gen_reverse_mapping#########################
+# beispiel mapping
+@pytest.fixture
+def sample_mapping():
+    return {
+        "Alice": ["alice"],
+        "Bob": ["bob"],
+        "Robert": ["robert"],
+    }
+#prüft ob die reverse mapping invertiert das original ergebnis ergibt
+def test_gen_reverse_mapping(sample_mapping):
+    mapping = sample_mapping
+    reverse_mapping = gen_reverse_mapping(mapping)
+    for key, value in mapping.items():
+        for v in value:
+            assert reverse_mapping[v] == key
+######################testblock apply_mapping#########################
+@pytest.fixture
+def test_mapping():
+    return {
+        "Alice": ["alice"],
+        "Bob": ["bob", "Robert Smith","bob","Robert","robert"],
+    }
+def test_apply_mapping(sample_data, test_mapping):
+    entity_mapping = test_mapping
+    relation_mapping = {"knows": ["knows"]}
+    result = apply_mapping(sample_data, entity_mapping, relation_mapping)
+    #prüft ob die duplikate in entities ersetzt wurden
+    assert "alice" not in result["entities"]
+    assert "bob" not in result["entities"]
+    assert "Robert Smith" not in result["entities"]
+
+    #prüft ob die duplikate in relationen ersetzt wurden
+    assert "knows" in result["relations"]
+    #prüft ob die duplikate in triples ersetzt wurden
+    for triple in result["triples"]:
+        assert triple["subject"] != "alice"
+        assert triple["subject"] != "bob"
+        assert triple["subject"] != "Robert Smith"
+        assert triple["object"] != "alice"
+        assert triple["object"] != "bob"
+        assert triple["object"] != "Robert Smith"
+
+########################testblock refine_data#########################
+def test_refine_data_errors(sample_data):
+    with pytest.raises(ValueError):
+        refine_data("not a dict")
+
+    with pytest.raises(ValueError):
+        refine_data(["list", "of", "things"])
+
+    with pytest.raises(ValueError):
+        refine_data(None)

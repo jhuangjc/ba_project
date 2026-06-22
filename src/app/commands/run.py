@@ -1,6 +1,6 @@
 from app.utils.io import load_input_file, load_registry
 from app.pipeline.triple_generator import gen_triples
-
+from app.pipeline.refiner import refine_data
 
 def run(args):
     ex_id = args.expId
@@ -19,12 +19,21 @@ def run(args):
 
     # generiere die Tripel
     triples_result = gen_triples(input_text)
+    # metriken abnehemen
 
+    # verfeinere die Daten
+    refined_result, entity_mapping, relation_mapping = refine_data(triples_result)
+
+
+     
     return {
         "experiment_id": ex_id,
         "input_type": exp["input_type"],
         "source_group": exp["source_group"],
         "gold_id": exp["gold_id"],
-        "entities": triples_result["entities"],
-        "triples": triples_result["triples"],
+        "entities": refined_result["entities"],
+        "triples": refined_result["triples"],
+        "relations": refined_result["relations"],
+        "entity_mapping": entity_mapping,
+        "relation_mapping": relation_mapping,
     }
