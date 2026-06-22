@@ -109,6 +109,9 @@ def process_retrieval(data):
 
     entities = data["entities"]
     relations = data["relations"]
+    #wenn keine entities oder relationen vorhanden sind, raise error,
+    if len(entities) == 0 and len(relations) == 0:
+        raise ValueError("No entities or relations to refine.")
     #embeddings 
     vectorised_entities, vectorised_relations = vectorise_data(data)
     #bm objects
