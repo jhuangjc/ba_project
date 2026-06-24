@@ -17,3 +17,8 @@ def load_input_file(exp):
 # ladet die Registry 
 def load_registry():
     return json.loads(read_file(REGISTRY_PATH))
+
+#hilfsfunktion um die goldstandard triples mit dem pfad aus der registry zu laden
+def load_goldstandard(exp):
+    gold_path = PROJECT_ROOT / exp["gold_path"]
+    return json.loads(read_file(gold_path))
