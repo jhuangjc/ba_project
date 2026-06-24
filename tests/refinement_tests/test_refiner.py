@@ -77,8 +77,7 @@ def test_round_triple_conversion(sample_data):
     assert dict_triples == result_dict_triples
 #####################testblock rm_exact_duplicates#########################
 def test_rm_exact_duplicates(sample_data):
-    relations = sample_data["relations"]
-    result = rm_exact_duplicates(sample_data, relations)
+    result = rm_exact_duplicates(sample_data)
     assert len(result["entities"]) == 6
     assert len(result["triples"]) == 5
     assert len(result["relations"]) == 1

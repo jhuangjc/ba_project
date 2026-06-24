@@ -4,7 +4,12 @@ import httpx
 from app.utils.prompts import build_entity_extraction_prompt, build_relation_extraction_prompt
 from app.utils.api import set_api_key
 from app.utils.api import build_api_header
-
+################################################util functions######################
+def extract_relations(triples):
+    relations = []
+    for triple in triples:
+        relations.append(triple["predicate"])
+    return relations
 #tools for entety extraction
 entity_ext_tool = [
     {
@@ -124,10 +129,13 @@ def gen_triples(input_text):
     relation_response.raise_for_status()
     relation_data = relation_response.json()
     relation_content = relation_data["choices"][0]["message"]["tool_calls"][0]["function"]["arguments"]
-    relations= json.loads(relation_content)["triples"]
+    triples= json.loads(relation_content)["triples"]
+    #generate the relations list from the triples
+    relations = extract_relations(triples)
     #das print statement ist nur zum debuggen
     print(relation_content)
     return {
         "entities": entities,
-        "triples": relations,
+        "triples": triples,
+        "relations": relations,
     }

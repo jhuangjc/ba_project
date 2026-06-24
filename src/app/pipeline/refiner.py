@@ -20,9 +20,10 @@ def data_to_lowercase(data):
     return data
 
 #hilfsfunktion um exakte duplikate in entities, triples und relationen zu entfernen und addded die relationen in das dict
-def rm_exact_duplicates(data, relations):
+def rm_exact_duplicates(data):
     entities = data["entities"]
     triples = data["triples"]
+    relations = data["relations"]
     # step 3: exakte Duplikate in entities entfernen
     data["entities"] =dedup_list(entities) 
     # step 4: exakte Duplikate in triples entfernen
@@ -35,13 +36,7 @@ def rm_exact_duplicates(data, relations):
     data["relations"] = relations
     return data
 
-#hilfsfunktion um reltionen aus den tirple dicts zu extrahieren
-def extract_relations(data):
-    triples = data["triples"]
-    relations = []
-    for triple in triples:
-        relations.append(triple["predicate"])
-    return relations
+
 
 ################convertion utils#####################
 #hilfsfunktion um liste von dicts zu liste von triples zu konvertieren
@@ -67,11 +62,9 @@ def refine_data(data):
     if not isinstance(data, dict):
         raise ValueError("Input data must be a dictionary.")
     data_lowercase = data_to_lowercase(data)
-    # extrahiere die ralationen in eine Liste von Tupeln
-    relations = extract_relations(data_lowercase)
 
     # entfernt exekte Duplikate
-    dedup_data = rm_exact_duplicates(data_lowercase, relations)
+    dedup_data = rm_exact_duplicates(data_lowercase)
     
     entity_mapping, relation_mapping = process_retrieval(dedup_data)
     dedup_data= apply_mapping(dedup_data, entity_mapping, relation_mapping)

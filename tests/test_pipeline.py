@@ -9,11 +9,13 @@ def fake_send_llm_candidates(query_item, candidates):
 def test_refine_data(monkeypatch):
     monkeypatch.setattr("app.pipeline.refiner.send_llm_candidates", fake_send_llm_candidates)
     #testdaten
-    data ={"entities": ["Alice Smith", "Alice S.", "Sergey","Sergay","Bob Marley","Bobby M."],
-       "triples": [{"subject": "Alice Smith", "predicate": "knows", "object": "Sergey"},
+    data ={
+        "entities": ["Alice Smith", "Alice S.", "Sergey","Sergay","Bob Marley","Bobby M."],
+        "triples": [{"subject": "Alice Smith", "predicate": "knows", "object": "Sergey"},
                    {"subject": "Alice S.", "predicate": "knows", "object": "Sergay"},
                    {"subject": "Bob Marley", "predicate": "knows", "object": "Sergey"},
-                   {"subject": "Bobby M.", "predicate": "knows", "object": "Sergay"}]}
+                   {"subject": "Bobby M.", "predicate": "knows", "object": "Sergay"}],
+        "relations": ["knows"]}
     # execution
     result,entity_mapping,relation_mapping = refine_data(data)
     #asserts
@@ -27,11 +29,13 @@ def test_refine_count(monkeypatch):
     monkeypatch.setattr("app.pipeline.refiner.send_llm_candidates", fake_send_llm_candidates)
     
     #testdaten
-    data ={"entities": ["Alice Smith", "Alice S.", "Sergey","Sergay","Bob Marley","Bobby M."],
-       "triples": [{"subject": "Alice Smith", "predicate": "knows", "object": "Sergey"},
+    data ={
+        "entities": ["Alice Smith", "Alice S.", "Sergey","Sergay","Bob Marley","Bobby M."],
+        "triples": [{"subject": "Alice Smith", "predicate": "knows", "object": "Sergey"},
                    {"subject": "Alice S.", "predicate": "knows", "object": "Sergay"},
                    {"subject": "Bob Marley", "predicate": "knows", "object": "Sergey"},
-                   {"subject": "Bobby M.", "predicate": "knows", "object": "Sergay"}]}
+                   {"subject": "Bobby M.", "predicate": "knows", "object": "Sergay"}],
+        "relations": ["knows"]}
     # execution
     before_count = len(data["entities"])
     result,entity_mapping,relation_mapping = refine_data(data)
