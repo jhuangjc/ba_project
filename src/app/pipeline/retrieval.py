@@ -35,7 +35,8 @@ def get_top_k_elements(embedding, bm_object,query_item,query_item_embedding,k=4)
     else:
         normalized_bm25_scores = bm25_scores
     # berechen den similarity score der query zu items in der embedding liste
-    similarity_scores =cos_sim([query_item_embedding], embedding).flatten()
+    #reshape embedding damit es fuer cossim die richtige form hat
+    similarity_scores =cos_sim(query_item_embedding.reshape(1, -1), embedding).flatten()
     # rechne beide score zusammen um dann die top k element zu bekommen
     combined_scores = similarity_scores + normalized_bm25_scores
     # holt die indizes der top k elemente
