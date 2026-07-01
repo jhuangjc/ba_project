@@ -82,9 +82,10 @@ def refine_loop(vectorised_items,bm25_items,work_list_items,item_reference):
     while len(work_list_items) > 0:
         #setup fuer das query item
         query_item = work_list_items.pop(0)
-        query_item_embedding = model.encode(query_item)
+        query_name = query_item["name"]
+        query_item_embedding = model.encode(query_name)
         #hol die tip k indizes
-        top_k_item_indices = get_top_k_elements(vectorised_items, bm25_items, query_item, query_item_embedding, k=17)
+        top_k_item_indices = get_top_k_elements(vectorised_items, bm25_items, query_name, query_item_embedding, k=17)
         top_k_items = [] 
         #hol die namen der items
         for item in top_k_item_indices:
@@ -94,9 +95,13 @@ def refine_loop(vectorised_items,bm25_items,work_list_items,item_reference):
         #send die candidaten and die llm
         result=send_llm_candidates(query_item, top_k_items)
         # TODOneed to remove the duplicate form the work list items so that the while loops works
-        for duplicate in result:
-            if duplicate in work_list_items:
-                work_list_items.remove(duplicate)
+        for item in result:
+   #         if item in work_list_items:
+                #work_list_items.remove(item)
+            for i, work_item in enumerate(work_list_items):
+                if compare_dicts(item, work_item):
+                    work_list_items.pop(i)
+                    break
         llm_mappings[query_item] = result
     return llm_mappings
 
@@ -104,14 +109,19 @@ def refine_loop(vectorised_items,bm25_items,work_list_items,item_reference):
 def process_retrieval(data):
 
     entities = data["entities"]
+
+    entity_names = []
+    for entity in entities:
+        entity_names.append(entity["name"])
+
     relations = data["relations"]
     #wenn keine entities oder relationen vorhanden sind, raise error,
-    if len(entities) == 0 and len(relations) == 0:
+    if len(entities) == 0 or len(relations) == 0:
         raise ValueError("No entities or relations to refine.")
     #embeddings 
-    vectorised_entities, vectorised_relations = vectorise_data(data)
+    vectorised_entities, vectorised_relations = vectorise_data(entity_names, relations)
     #bm objects
-    bm25_entities = prepare_bm25(entities)
+    bm25_entities = prepare_bm25(entity_names)
     bm25_relations = prepare_bm25(relations)
     #deep copies fuer main loop
     work_list_entities = copy.copy(entities)
@@ -123,7 +133,11 @@ def process_retrieval(data):
     return [entity_mappings, relation_mappings]
 
 ###########andere utils#####################
-
+#hilfsfunktion um 2 dicts zu vegleichten
+def compare_dicts(dict1, dict2):
+    if dict1["name"] == dict2["name"] and dict1["type"] == dict2["type"]:
+        return True
+    return False
 #hilfsfunktion um einer liste von exakten duplikaten zu entfernen.
 def dedup_entities(entities):
     new_entities = []
@@ -147,7 +161,7 @@ def gen_reverse_mapping(mapping):
         for e in value:
             reverse_mapping[e]= key
     return reverse_mapping
-
+#todo rewrite the funciton so that dicts work
 #hilfsfunktion um die mappings auf die Graphen anzuwenden
 def apply_mapping(data,entity_mapping,relation_mapping):
     

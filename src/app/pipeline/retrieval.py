@@ -6,11 +6,8 @@ from rank_bm25 import BM25Okapi
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
 # input: dict mit den keys "entities", "triples" und "relations"
-def vectorise_data(data):
-    entities = data["entities"]
-    relations = data["relations"]
-
-    entity_embeddings = model.encode(entities)
+def vectorise_data(entity_names, relations):
+    entity_embeddings = model.encode(entity_names)
     relation_embeddings = model.encode(relations)
     return entity_embeddings, relation_embeddings
 # auslagerung bm 25 prepwork
