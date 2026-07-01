@@ -3,7 +3,7 @@ import json
 # ladet den prompt für die entity extraction
 def build_entity_extraction_prompt(text):
     return (
-        "Extract the entities from the following text and return only valid JSON with an 'entities' list. "
+        "Extract the entities from the following text and return only valid JSON with an 'entities' object list. Each entity object must contain exactly these keys: 'name' and 'type'. "
         "Do not include markdown, code fences, or any explanation.\n\n"
         f"Text:\n{text}"
     )
@@ -12,8 +12,7 @@ def build_entity_extraction_prompt(text):
 def build_relation_extraction_prompt(text, entities):
     entity_block = json.dumps(entities, ensure_ascii=False, indent=2)
     return (
-        "Extract the relations between the given entities and return only valid JSON with a 'triples' list. "
-        "Each triple must be a JSON object with exactly these keys: 'subject', 'predicate', and 'object'. "
+        "Extract the relations between the given Objects and return only valid JSON with a 'triples' list.Each object contains the entity name and the entity type. "
         "Return a list of such objects, not arrays or tuples. Do not include markdown, code fences, or any explanation.\n\n"
         f"Entities:\n{entity_block}\n\n"
         f"Text:\n{text}"

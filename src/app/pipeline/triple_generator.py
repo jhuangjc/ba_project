@@ -23,8 +23,20 @@ entity_ext_tool = [
                 "properties": {
                     "entities": {
                         "type": "array",
-                        "items": {"type": "string"},
-                        "description": "List of entities extracted from the text",
+                        #jede entity soll aus name und type bestehen
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                        "type": "string"
+                                    },
+                                    "type": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["name", "type"],
+                                "additionalProperties": False
+                            }
                     }
                 },
                 "required": ["entities"],
@@ -106,12 +118,13 @@ def gen_triples(input_text):
     entity_response.raise_for_status()
     entity_data = entity_response.json()
     entity_content = entity_data["choices"][0]["message"]["tool_calls"][0]["function"]["arguments"]
-    entities = json.loads(entity_content)["entities"]
+    entities_object = json.loads(entity_content)["entities"]
+
     #das print statement ist nur zum debuggen
     print(entity_content)
 
     # Bau den extraction promt mit dem imputtext und den entities.
-    relation_prompt = build_relation_extraction_prompt(input_text, entities)
+    relation_prompt = build_relation_extraction_prompt(input_text, entities_object)
     relation_response = httpx.post(
         "https://api.deepseek.com/beta/v1/chat/completions",
         headers=headers,
@@ -135,7 +148,7 @@ def gen_triples(input_text):
     #das print statement ist nur zum debuggen
     print(relation_content)
     return {
-        "entities": entities,
+        "entities": entities_object,
         "triples": triples,
         "relations": relations,
     }

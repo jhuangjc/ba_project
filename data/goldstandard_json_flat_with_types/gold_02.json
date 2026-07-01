@@ -1,0 +1,328 @@
+{
+  "doc_id": 0,
+  "entities": [
+    {
+      "id": 0,
+      "name": "Zest Airways, Inc.",
+      "type": "ORG",
+      "aliases": [
+        "AirAsia Zest",
+        "Asian Spirit and Zest Air",
+        "Zest Airways, Inc."
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Ninoy Aquino International Airport",
+      "type": "LOC",
+      "aliases": [
+        "Ninoy Aquino International Airport"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Pasay City",
+      "type": "LOC",
+      "aliases": [
+        "Pasay City"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Metro Manila",
+      "type": "LOC",
+      "aliases": [
+        "Metro Manila"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Philippines",
+      "type": "LOC",
+      "aliases": [
+        "Philippines",
+        "Republic of the Philippines"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Manila",
+      "type": "LOC",
+      "aliases": [
+        "Manila"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Cebu",
+      "type": "LOC",
+      "aliases": [
+        "Cebu"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "24",
+      "type": "NUM",
+      "aliases": [
+        "24"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "2013",
+      "type": "TIME",
+      "aliases": [
+        "2013",
+        "August 16, 2013"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Philippines AirAsia",
+      "type": "ORG",
+      "aliases": [
+        "Philippines AirAsia"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Asian Spirit",
+      "type": "ORG",
+      "aliases": [
+        "Asian Spirit"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Civil Aviation Authority of the Philippines",
+      "type": "ORG",
+      "aliases": [
+        "CAAP",
+        "Civil Aviation Authority of the Philippines"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Zest Air",
+      "type": "ORG",
+      "aliases": [
+        "Zest Air"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "a year",
+      "type": "NUM",
+      "aliases": [
+        "a year"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "AirAsia",
+      "type": "ORG",
+      "aliases": [
+        "AirAsia"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "AirAsia Philippines",
+      "type": "ORG",
+      "aliases": [
+        "AirAsia Philippines"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "January 2016",
+      "type": "TIME",
+      "aliases": [
+        "January 2016"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "head_id": 0,
+      "tail_id": 2,
+      "relation_label": "headquarters location"
+    },
+    {
+      "head_id": 0,
+      "tail_id": 4,
+      "relation_label": "country"
+    },
+    {
+      "head_id": 12,
+      "tail_id": 4,
+      "relation_label": "country"
+    },
+    {
+      "head_id": 2,
+      "tail_id": 4,
+      "relation_label": "country"
+    },
+    {
+      "head_id": 2,
+      "tail_id": 3,
+      "relation_label": "located in the administrative territorial entity"
+    },
+    {
+      "head_id": 4,
+      "tail_id": 3,
+      "relation_label": "contains administrative territorial entity"
+    },
+    {
+      "head_id": 5,
+      "tail_id": 4,
+      "relation_label": "country"
+    },
+    {
+      "head_id": 3,
+      "tail_id": 2,
+      "relation_label": "contains administrative territorial entity"
+    },
+    {
+      "head_id": 3,
+      "tail_id": 4,
+      "relation_label": "located in the administrative territorial entity"
+    },
+    {
+      "head_id": 3,
+      "tail_id": 4,
+      "relation_label": "country"
+    },
+    {
+      "head_id": 1,
+      "tail_id": 2,
+      "relation_label": "located in the administrative territorial entity"
+    },
+    {
+      "head_id": 1,
+      "tail_id": 4,
+      "relation_label": "country"
+    },
+    {
+      "head_id": 10,
+      "tail_id": 4,
+      "relation_label": "country"
+    },
+    {
+      "head_id": 12,
+      "tail_id": 16,
+      "relation_label": "dissolved, abolished or demolished"
+    },
+    {
+      "head_id": 9,
+      "tail_id": 4,
+      "relation_label": "country"
+    },
+    {
+      "head_id": 4,
+      "tail_id": 5,
+      "relation_label": "contains administrative territorial entity"
+    },
+    {
+      "head_id": 6,
+      "tail_id": 4,
+      "relation_label": "country"
+    },
+    {
+      "head_id": 15,
+      "tail_id": 4,
+      "relation_label": "country"
+    },
+    {
+      "head_id": 3,
+      "tail_id": 5,
+      "relation_label": "contains administrative territorial entity"
+    },
+    {
+      "head_id": 11,
+      "tail_id": 4,
+      "relation_label": "country"
+    },
+    {
+      "head_id": 12,
+      "tail_id": 2,
+      "relation_label": "located in the administrative territorial entity"
+    },
+    {
+      "head_id": 5,
+      "tail_id": 3,
+      "relation_label": "located in the administrative territorial entity"
+    },
+    {
+      "head_id": 14,
+      "tail_id": 15,
+      "relation_label": "subsidiary"
+    },
+    {
+      "head_id": 15,
+      "tail_id": 14,
+      "relation_label": "parent organization"
+    },
+    {
+      "head_id": 0,
+      "tail_id": 4,
+      "relation_label": "located in the administrative territorial entity"
+    },
+    {
+      "head_id": 12,
+      "tail_id": 4,
+      "relation_label": "located in the administrative territorial entity"
+    },
+    {
+      "head_id": 2,
+      "tail_id": 4,
+      "relation_label": "located in the administrative territorial entity"
+    },
+    {
+      "head_id": 5,
+      "tail_id": 4,
+      "relation_label": "located in the administrative territorial entity"
+    },
+    {
+      "head_id": 1,
+      "tail_id": 4,
+      "relation_label": "located in the administrative territorial entity"
+    },
+    {
+      "head_id": 10,
+      "tail_id": 4,
+      "relation_label": "located in the administrative territorial entity"
+    },
+    {
+      "head_id": 9,
+      "tail_id": 4,
+      "relation_label": "located in the administrative territorial entity"
+    },
+    {
+      "head_id": 6,
+      "tail_id": 4,
+      "relation_label": "located in the administrative territorial entity"
+    },
+    {
+      "head_id": 15,
+      "tail_id": 4,
+      "relation_label": "located in the administrative territorial entity"
+    },
+    {
+      "head_id": 11,
+      "tail_id": 4,
+      "relation_label": "located in the administrative territorial entity"
+    },
+    {
+      "head_id": 1,
+      "tail_id": 3,
+      "relation_label": "located in the administrative territorial entity"
+    },
+    {
+      "head_id": 12,
+      "tail_id": 3,
+      "relation_label": "located in the administrative territorial entity"
+    }
+  ]
+}

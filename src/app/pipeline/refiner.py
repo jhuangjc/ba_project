@@ -6,16 +6,19 @@ from app.pipeline.llm_dedup import send_llm_candidates
 ##############Preprcessing#######################
 # hilfsfunktion um alle entities und triples in lowercase umzuwandeln
 def data_to_lowercase(data):
-    # step 1: alle entities  klein schreiben
+    # alle entities  klein schreiben
     entity_list = data["entities"]
-    for index, entity in enumerate(entity_list):
-        entity_list[index]=entity.lower()
-    # step 2: triple klein schreiben
+    for entity in entity_list:
+        entity["name"]=entity["name"].lower()
+    # triple klein schreiben
     triple_list = data["triples"]
     for triple in triple_list:
         triple["subject"]=triple["subject"].lower()
         triple["predicate"]=triple["predicate"].lower()
         triple["object"]=triple["object"].lower()
+    # relation klein schreiben 
+    for index, relation in enumerate(data["relations"]):
+        data["relations"][index]=relation.lower()
 
     return data
 
@@ -25,7 +28,7 @@ def rm_exact_duplicates(data):
     triples = data["triples"]
     relations = data["relations"]
     # step 3: exakte Duplikate in entities entfernen
-    data["entities"] =dedup_list(entities) 
+    data["entities"] =dedup_entities(entities) 
     # step 4: exakte Duplikate in triples entfernen
     #hier mit cbv und cbf aufpassen
     triples_tuples = convert_dicts_to_tuples(triples)
@@ -122,6 +125,18 @@ def process_retrieval(data):
 ###########andere utils#####################
 
 #hilfsfunktion um einer liste von exakten duplikaten zu entfernen.
+def dedup_entities(entities):
+    new_entities = []
+    seen = set()
+
+    for  entity in entities:
+                if (entity["name"], entity["type"]) not in seen:
+                    seen.add((entity["name"], entity["type"]))
+                    new_entities.append(entity)
+    return new_entities 
+
+
+
 def dedup_list(items):
     return list(dict.fromkeys(items))
 
@@ -163,7 +178,7 @@ def apply_mapping(data,entity_mapping,relation_mapping):
     triples_tuples = dedup_list(triples_tuples)
     data["triples"] = convert_tuples_to_dicts(triples_tuples)
     #entities
-    data["entities"] = dedup_list(data["entities"])
+    data["entities"] = dedup_entities(data["entities"])
     #relationen
     data["relations"] = dedup_list(data["relations"])
 

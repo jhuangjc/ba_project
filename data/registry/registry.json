@@ -6,7 +6,7 @@
       "input_type": "clean",
       "source_group": "goodbyeee",
       "gold_id": "gold_00",
-      "gold_path": "data/goldstandard_json_flat/gold_00.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_00.json"
     },
     {
       "experiment_id": "clean_01",
@@ -14,7 +14,7 @@
       "input_type": "clean",
       "source_group": "uttaraa_mahabharata",
       "gold_id": "gold_01",
-      "gold_path": "data/goldstandard_json_flat/gold_01.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_01.json"
     },
     {
       "experiment_id": "clean_02",
@@ -22,7 +22,7 @@
       "input_type": "clean",
       "source_group": "airasia_zest",
       "gold_id": "gold_02",
-      "gold_path": "data/goldstandard_json_flat/gold_02.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_02.json"
     },
     {
       "experiment_id": "clean_03",
@@ -30,7 +30,7 @@
       "input_type": "clean",
       "source_group": "export_control_act",
       "gold_id": "gold_03",
-      "gold_path": "data/goldstandard_json_flat/gold_03.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_03.json"
     },
     {
       "experiment_id": "coherence_injection",
@@ -38,7 +38,7 @@
       "input_type": "coherence",
       "source_group": "goodbyeee",
       "gold_id": "gold_00",
-      "gold_path": "data/goldstandard_json_flat/gold_00.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_00.json"
     },
     {
       "experiment_id": "coherence_block_shuffle",
@@ -46,7 +46,7 @@
       "input_type": "coherence",
       "source_group": "goodbyeee",
       "gold_id": "gold_00",
-      "gold_path": "data/goldstandard_json_flat/gold_00.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_00.json"
     },
     {
       "experiment_id": "coherence_combination",
@@ -54,7 +54,7 @@
       "input_type": "coherence",
       "source_group": "goodbyeee",
       "gold_id": "gold_00",
-      "gold_path": "data/goldstandard_json_flat/gold_00.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_00.json"
     },
     {
       "experiment_id": "coherence_random_shuffle",
@@ -62,7 +62,7 @@
       "input_type": "coherence",
       "source_group": "goodbyeee",
       "gold_id": "gold_00",
-      "gold_path": "data/goldstandard_json_flat/gold_00.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_00.json"
     },
     {
       "experiment_id": "proforms_deleted",
@@ -70,7 +70,7 @@
       "input_type": "pro-forms",
       "source_group": "uttaraa_mahabharata",
       "gold_id": "gold_01",
-      "gold_path": "data/goldstandard_json_flat/gold_01.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_01.json"
     },
     {
       "experiment_id": "proforms_input",
@@ -78,7 +78,7 @@
       "input_type": "pro-forms",
       "source_group": "uttaraa_mahabharata",
       "gold_id": "gold_01",
-      "gold_path": "data/goldstandard_json_flat/gold_01.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_01.json"
     },
     {
       "experiment_id": "repetition_dup_high_density_inp",
@@ -86,7 +86,7 @@
       "input_type": "repetition",
       "source_group": "airasia_zest",
       "gold_id": "gold_02",
-      "gold_path": "data/goldstandard_json_flat/gold_02.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_02.json"
     },
     {
       "experiment_id": "repetition_full_dup_input",
@@ -94,7 +94,7 @@
       "input_type": "repetition",
       "source_group": "airasia_zest",
       "gold_id": "gold_02",
-      "gold_path": "data/goldstandard_json_flat/gold_02.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_02.json"
     },
     {
       "experiment_id": "repetition_proform_dup_input",
@@ -102,7 +102,7 @@
       "input_type": "repetition",
       "source_group": "airasia_zest",
       "gold_id": "gold_02",
-      "gold_path": "data/goldstandard_json_flat/gold_02.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_02.json"
     },
     {
       "experiment_id": "text_noise_high_keyboard",
@@ -110,7 +110,7 @@
       "input_type": "text-noise",
       "source_group": "export_control_act",
       "gold_id": "gold_03",
-      "gold_path": "data/goldstandard_json_flat/gold_03.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_03.json"
     },
     {
       "experiment_id": "text_noise_high_ocr",
@@ -118,7 +118,7 @@
       "input_type": "text-noise",
       "source_group": "export_control_act",
       "gold_id": "gold_03",
-      "gold_path": "data/goldstandard_json_flat/gold_03.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_03.json"
     },
     {
       "experiment_id": "text_noise_high_substitution",
@@ -126,7 +126,7 @@
       "input_type": "text-noise",
       "source_group": "export_control_act",
       "gold_id": "gold_03",
-      "gold_path": "data/goldstandard_json_flat/gold_03.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_03.json"
     },
     {
       "experiment_id": "text_noise_low_keyboard",
@@ -134,7 +134,7 @@
       "input_type": "text-noise",
       "source_group": "export_control_act",
       "gold_id": "gold_03",
-      "gold_path": "data/goldstandard_json_flat/gold_03.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_03.json"
     },
     {
       "experiment_id": "text_noise_low_ocr",
@@ -142,7 +142,7 @@
       "input_type": "text-noise",
       "source_group": "export_control_act",
       "gold_id": "gold_03",
-      "gold_path": "data/goldstandard_json_flat/gold_03.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_03.json"
     },
     {
       "experiment_id": "text_noise_low_substitution",
@@ -150,7 +150,7 @@
       "input_type": "text-noise",
       "source_group": "export_control_act",
       "gold_id": "gold_03",
-      "gold_path": "data/goldstandard_json_flat/gold_03.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_03.json"
     },
     {
       "experiment_id": "text_noise_medium_keyboard",
@@ -158,7 +158,7 @@
       "input_type": "text-noise",
       "source_group": "export_control_act",
       "gold_id": "gold_03",
-      "gold_path": "data/goldstandard_json_flat/gold_03.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_03.json"
     },
     {
       "experiment_id": "text_noise_medium_ocr",
@@ -166,7 +166,7 @@
       "input_type": "text-noise",
       "source_group": "export_control_act",
       "gold_id": "gold_03",
-      "gold_path": "data/goldstandard_json_flat/gold_03.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_03.json"
     },
     {
       "experiment_id": "text_noise_medium_substitution",
@@ -174,7 +174,7 @@
       "input_type": "text-noise",
       "source_group": "export_control_act",
       "gold_id": "gold_03",
-      "gold_path": "data/goldstandard_json_flat/gold_03.json"
+      "gold_path": "data/goldstandard_json_flat_with_types/gold_03.json"
     }
   ]
 }

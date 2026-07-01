@@ -18,7 +18,7 @@ relation_data={"triples": [
 }
 
 entity_data={"entities": 
-    ["Entity1", "Entity2"]
+    [{"name": "Entity1", "type": "PER"}, {"name": "Entity2", "type": "PER"}]
 }
 #json strings der daten
 arguments_string_entities = json.dumps(entity_data)

@@ -1,0 +1,26 @@
+Goldstandard JSON Index
+========================
+Hier liegen die Goldstandard-JSONs (gold_00.json .. gold_03.json).
+Jede Datei kommt von insprect.py, gefüttert mit der Re-DocRED doc_id,
+die im passenden Goldstandard-Textdump unter noised-text/ steht.
+
+Mapping:
+- gold_00.json
+	Text: experiments/noisemaker/noised-text/coherence/gold_standard.txt
+	Bereich: coherence
+	Re-DocRED doc_id: 48
+
+- gold_01.json
+	Text: experiments/noisemaker/noised-text/cohesion/compacting-patterns/pro-forms/goldstandard.txt
+	Bereich: cohesion / compacting-patterns / pro-forms
+	Re-DocRED doc_id: 140
+
+- gold_02.json
+	Text: experiments/noisemaker/noised-text/cohesion/repetition/goldstandard.txt
+	Bereich: cohesion / repetition
+	Re-DocRED doc_id: 0
+
+- gold_03.json
+	Text: experiments/noisemaker/noised-text/text-noise/goldstandard.txt
+	Bereich: text-noise
+	Re-DocRED doc_id: 263
