@@ -52,4 +52,9 @@ def send_llm_candidates(query_item, candidate_list_items):
     response_data = dedup_response.json()
     dedup_content = response_data["choices"][0]["message"]["tool_calls"][0]["function"]["arguments"]
     dedup_mappings = json.loads(dedup_content)["duplicates"]
+#fuer den entity fall, wenn der query item ein dict ist, dann muss auch der type mitgegeben werden, damit die mapping korrekt ist
+    if isinstance(query_item, dict):
+        for i,item in enumerate(dedup_mappings):
+            dedup_mappings[i] = (item, query_item["type"])
+
     return dedup_mappings

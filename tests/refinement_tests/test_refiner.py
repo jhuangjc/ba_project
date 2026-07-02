@@ -13,7 +13,14 @@ from app.pipeline.refiner import (
 @pytest.fixture
 def sample_data():
     return {
-        "entities": ["Alice", "Bob", "alice", "Robert","bob","Robert Smith"],
+        "entities": [
+            {"name": "Alice", "type": "PER"},
+            {"name": "Bob", "type": "PER"},
+            {"name": "alice", "type": "PER"},
+            {"name": "Robert", "type": "PER"},
+            {"name": "bob", "type": "PER"},
+            {"name": "Robert Smith", "type": "PER"},
+        ],
         "triples": [
             {"subject": "Alice", "predicate": "knows", "object": "Bob"},
             {"subject": "Alice", "predicate": "knows", "object": "Bob"},
@@ -27,7 +34,7 @@ def sample_data():
 ##############testblock data_to_lowercase########################
 def test_data_to_lowercase(sample_data):
     result = data_to_lowercase(sample_data)
-    assert all( (entity.islower() for entity in result["entities"]) )
+    assert all( (entity["name"].islower() for entity in result["entities"]) )
     assert all( ( triple["subject"].islower() and triple["predicate"].islower() and triple["object"].islower() for triple in result["triples"] ))
 
 #################testblock dedup_list#########################
@@ -101,28 +108,23 @@ def test_gen_reverse_mapping(sample_mapping):
 @pytest.fixture
 def test_mapping():
     return {
-        "Alice": ["alice"],
-        "Bob": ["bob", "Robert Smith","bob","Robert","robert"],
+        ("Alice", "PER"): [("alice", "PER")],
+        ("Bob", "PER"): [("bob", "PER"), ("Robert Smith", "PER"), ("Robert", "PER"), ("robert", "PER")],
     }
 def test_apply_mapping(sample_data, test_mapping):
     entity_mapping = test_mapping
     relation_mapping = {"knows": ["knows"]}
     result = apply_mapping(sample_data, entity_mapping, relation_mapping)
     #prüft ob die duplikate in entities ersetzt wurden
-    assert "alice" not in result["entities"]
-    assert "bob" not in result["entities"]
-    assert "Robert Smith" not in result["entities"]
+    for entity in result["entities"]:
+        assert entity["name"] not in ["alice", "bob", "robert", "robert smith"]
 
     #prüft ob die duplikate in relationen ersetzt wurden
     assert "knows" in result["relations"]
     #prüft ob die duplikate in triples ersetzt wurden
     for triple in result["triples"]:
-        assert triple["subject"] != "alice"
-        assert triple["subject"] != "bob"
-        assert triple["subject"] != "Robert Smith"
-        assert triple["object"] != "alice"
-        assert triple["object"] != "bob"
-        assert triple["object"] != "Robert Smith"
+        assert triple["subject"] not in ["alice", "bob", "robert", "robert smith"]
+        assert triple["object"] not in ["alice", "bob", "robert", "robert smith"]
 
 ########################testblock refine_data#########################
 def test_refine_data_errors(sample_data):
