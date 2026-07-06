@@ -31,7 +31,8 @@ entity_ext_tool = [
                                         "type": "string"
                                     },
                                     "type": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "enum": ["PER", "ORG", "LOC", "MISC", "TIME", "NUM"]
                                     }
                                 },
                                 "required": ["name", "type"],

@@ -93,7 +93,7 @@ def refine_loop(vectorised_items,bm25_items,work_list_items,item_reference):
                 continue
             top_k_items.append(item_reference[item])
         #send die candidaten and die llm
-        result=send_llm_candidates(query_item, top_k_items)
+        result=send_llm_candidates(query_item, top_k_items,True)
         # remove duplicates from work list
         for item in result:
             for i, work_item in enumerate(work_list_items):
@@ -124,7 +124,7 @@ def refine_entities_loop(vectorised_entities, bm25_entities, work_list_entities,
                 continue
             top_k_entities.append(entities_list[item])
 
-        result = send_llm_candidates(query_entity, top_k_entities)
+        result = send_llm_candidates(query_entity, top_k_entities,False)
 
         for item in result:
             for i, work_item in enumerate(work_list_tuples):

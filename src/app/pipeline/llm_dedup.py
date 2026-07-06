@@ -1,7 +1,7 @@
 import json
 import httpx
 from app.utils.api import set_api_key, build_api_header
-from app.utils.prompts import build_deduplication_prompt
+from app.utils.prompts import build_deduplication_prompt_relation, build_deduplication_prompt_entity
 #tools für deduplication
 dedup_tool = [
     {
@@ -27,13 +27,16 @@ dedup_tool = [
 ]
 
 
-def send_llm_candidates(query_item, candidate_list_items):
+def send_llm_candidates(query_item, candidate_list_items,Is_relation):
     #api ver setzen
     api_key = set_api_key("DEEPSEEK_API_KEY")
     # header bauen
     headers = build_api_header(api_key)
     #mesage bauen
-    prompt = build_deduplication_prompt(query_item, candidate_list_items)
+    if Is_relation:
+        prompt = build_deduplication_prompt_relation(query_item, candidate_list_items)
+    else:
+        prompt = build_deduplication_prompt_entity(query_item, candidate_list_items)
     dedup_response = httpx.post(
             "https://api.deepseek.com/beta/v1/chat/completions",
             headers=headers,
@@ -53,7 +56,7 @@ def send_llm_candidates(query_item, candidate_list_items):
     dedup_content = response_data["choices"][0]["message"]["tool_calls"][0]["function"]["arguments"]
     dedup_mappings = json.loads(dedup_content)["duplicates"]
 #fuer den entity fall, wenn der query item ein dict ist, dann muss auch der type mitgegeben werden, damit die mapping korrekt ist
-    if isinstance(query_item, dict):
+    if not Is_relation:
         for i,item in enumerate(dedup_mappings):
             dedup_mappings[i] = (item, query_item["type"])
 
