@@ -109,7 +109,8 @@ def measure_data(predicted_lowercase,goldstandard_raw, before_refinement):
     if before_refinement:
         predicted_lowercase = data_to_lowercase(predicted_lowercase)
     #hold die entities in lowercase, um die vergleichbarkeit zu erleichtern 
-    gold_list_lowercase= goldstandard_lowercase(goldstandard_raw["entities"])
+    gs_copy = goldstandard_raw.copy()
+    gold_list_lowercase= goldstandard_lowercase(gs_copy["entities"])
 
     # map entites to goldstandard
     entity_matches = map_to_gold(predicted_lowercase["entities"], gold_list_lowercase)
@@ -117,7 +118,7 @@ def measure_data(predicted_lowercase,goldstandard_raw, before_refinement):
 
     True_Positives = generate_true_positives(resolved_entities)
     False_Positives = generate_false_positives(resolved_entities)
-    False_Negatives = generate_false_negatives(resolved_entities, gold_list_lowercase["entities"])
+    False_Negatives = generate_false_negatives(resolved_entities, gold_list_lowercase)
 
     #berechne precision, recall und f1
     precision = calculate_precision(True_Positives, False_Positives)
