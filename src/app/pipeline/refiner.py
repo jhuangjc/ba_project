@@ -199,6 +199,7 @@ def apply_mapping(data,entity_mapping,relation_mapping):
     #ansatz though a reverse mapping
     entity_r_mapping = gen_reverse_mapping(entity_mapping)
     relation_r_mapping = gen_reverse_mapping(relation_mapping)
+    #bau ne name map um das triple mapping zu vereinfachen
     name_map = {}
     for key, value in entity_r_mapping.items():
         name_map[key[0]] = value[0]
@@ -214,7 +215,6 @@ def apply_mapping(data,entity_mapping,relation_mapping):
     for index, data_relation in enumerate(data["relations"]):
         if data_relation in relation_r_mapping:
             data["relations"][index] = relation_r_mapping[data_relation]
-    #bau ne name map um das triple mapping zu vereinfachen
 
     #ersetz die duplikates in triples
     for index, triple in enumerate(data["triples"]):

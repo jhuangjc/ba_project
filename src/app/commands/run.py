@@ -26,12 +26,12 @@ def run(args):
 
     # verfeinere die Daten
     refined_result, entity_mapping, relation_mapping = refine_data(triples_result)
-
+    
     # messingen nach dem Refinement
     metrics_after = measure_data(refined_result, goldstandard, before_refinement=False)
 
     #generiere die Metriken
-    generate_combined_metrics(metrics_before, metrics_after, goldstandard, refined_result)
+    #generate_combined_metrics(metrics_before, metrics_after, goldstandard, refined_result)
     return {
         "experiment_id": ex_id,
         "input_type": exp["input_type"],

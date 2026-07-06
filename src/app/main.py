@@ -19,7 +19,7 @@ def main():
     result = args.func(args)
     if result is not None:
         if isinstance(result, (dict, list)):
-            print(json.dumps(result, ensure_ascii=False, indent=2))
+            print(result)
         else:
             print(result)
 
