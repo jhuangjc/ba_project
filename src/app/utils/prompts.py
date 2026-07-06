@@ -9,11 +9,15 @@ def build_entity_extraction_prompt(text):
     )
 
 # ladet den prompt für die relation extraction, der die entity list als input bekommt
-def build_relation_extraction_prompt(text, entities):
+def build_relation_extraction_prompt(text, entities, gold_relations):
     entity_block = json.dumps(entities, ensure_ascii=False, indent=2)
+    gold_block = ", ".join(gold_relations)
     return (
-        "Extract the relations between the given Objects and return only valid JSON with a 'triples' list.Each object contains the entity name and the entity type. "
-        "Return a list of such objects, not arrays or tuples. Do not include markdown, code fences, or any explanation.\n\n"
+        "Extract the relations between the given Objects and return only valid JSON with a 'triples' list. "
+        "Each object contains the entity name and the entity type. "
+        "Only use these relation types: " + gold_block + ".\n\n"
+        "Return a list of such objects, not arrays or tuples. "
+        "Do not include markdown, code fences, or any explanation.\n\n"
         f"Entities:\n{entity_block}\n\n"
         f"Text:\n{text}"
     )

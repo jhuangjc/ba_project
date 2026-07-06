@@ -20,7 +20,7 @@ def run(args):
 
     goldstandard = load_goldstandard(exp)
     # generiere die Tripel
-    triples_result = gen_triples(input_text)
+    triples_result = gen_triples(input_text,goldstandard)
     # messungen vor dem Refinement
     metrics_before = measure_data(triples_result, goldstandard, before_refinement=True)
 

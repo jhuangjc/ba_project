@@ -4,12 +4,13 @@ import httpx
 from app.utils.prompts import build_entity_extraction_prompt, build_relation_extraction_prompt
 from app.utils.api import set_api_key
 from app.utils.api import build_api_header
+from app.utils.gold import extract_gold_relations
 ################################################util functions######################
 def extract_relations(triples):
-    relations = []
+    relations = set()
     for triple in triples:
-        relations.append(triple["predicate"])
-    return relations
+        relations.add(triple["predicate"])
+    return list(relations)
 #tools for entety extraction
 entity_ext_tool = [
     {
@@ -92,7 +93,7 @@ relation_ext_tool = [
 ]
 
 # diese funtion gitb imputtext rein und gibt die extrahierten entities und triples zurueck
-def gen_triples(input_text):
+def gen_triples(input_text,goldstandard):
     # setzt den API key aus der Umgebungvariable
     api_key = set_api_key("DEEPSEEK_API_KEY")
 
@@ -123,9 +124,10 @@ def gen_triples(input_text):
 
     #das print statement ist nur zum debuggen
     print(entity_content)
-
+    #extract relations from the goldstandard and generate a list of unique relations
+    gold_relations = extract_gold_relations(goldstandard)
     # Bau den extraction promt mit dem imputtext und den entities.
-    relation_prompt = build_relation_extraction_prompt(input_text, entities_object)
+    relation_prompt = build_relation_extraction_prompt(input_text, entities_object, gold_relations)
     relation_response = httpx.post(
         "https://api.deepseek.com/beta/v1/chat/completions",
         headers=headers,

@@ -1,4 +1,6 @@
 from app.pipeline.refiner import data_to_lowercase
+from app.utils.gold import extract_gold_relations
+from app.utils.gold import goldstandard_lowercase
 ######################constants#####################
 MATCH_NAME = "is_name"
 MATCH_ALIAS = "is_alias"
@@ -42,20 +44,6 @@ def map_to_gold(entities,goldstandard):
     return matched_gold_entities
 
 ####################### utility functions fuer metriken#####################
-#hilfsfunktion um die goldstandard entities in lowercase zu wandeln
-def goldstandard_lowercase(goldstandard):
-    for item in goldstandard:
-        item["name"] = item["name"].lower()
-        for i , alias in enumerate(item["aliases"]):
-            item["aliases"][i] = alias.lower()
-    return goldstandard
-#hilfsfuntion um die relations aus dem goldstandard zu extrahieren, wichtig fuer das endergebnis
-def extract_relations_from_gold(goldstandard):
-    relations = []
-    for item in goldstandard:
-        relations.append(item["relation_label"].lower())
-    return relations
-
 #entities matche= {name: [matches...]}
 #hilfsfunktion um die doppelten matches zu resolven
 def resolve_duplicate_matches(matches):
@@ -126,7 +114,7 @@ def measure_data(predicted_lowercase,goldstandard_raw, before_refinement):
     f1 = calculate_f1(precision, recall)
     # map relations to goldstandard
     #generate a list of goldstandard relations
-    gold_relations = extract_relations_from_gold(goldstandard_raw["relations"])
+    gold_relations = extract_gold_relations(goldstandard_raw)
 
 
     metrics = {"entity_metrics":
