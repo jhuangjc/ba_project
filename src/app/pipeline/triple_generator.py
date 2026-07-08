@@ -67,7 +67,16 @@ relation_ext_tool = [
                             #jedes Triple soll aus subject, predicate und objekt bestehen
                             "properties": {
                                 "subject": {
-                                    "type": "string",
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string",
+                                            "enum": ["PER", "ORG", "LOC", "MISC", "TIME", "NUM"]
+                                        }
+                                    },
                                     "description": "The subject of the triple"
                                 },
                                 "predicate": {
@@ -75,7 +84,15 @@ relation_ext_tool = [
                                     "description": "The predicate of the triple"
                                 },
                                 "object": {
-                                    "type": "string",
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
                                     "description": "The object of the triple"
                                 },
                             },

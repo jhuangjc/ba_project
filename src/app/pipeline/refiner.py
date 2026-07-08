@@ -13,9 +13,9 @@ def data_to_lowercase(data):
     # triple klein schreiben
     triple_list = data["triples"]
     for triple in triple_list:
-        triple["subject"]=triple["subject"].lower()
+        triple["subject"]["name"]=triple["subject"]["name"].lower()
         triple["predicate"]=triple["predicate"].lower()
-        triple["object"]=triple["object"].lower()
+        triple["object"]["name"]=triple["object"]["name"].lower()
     # relation klein schreiben 
     for index, relation in enumerate(data["relations"]):
         data["relations"][index]=relation.lower()
@@ -46,14 +46,14 @@ def rm_exact_duplicates(data):
 def convert_dicts_to_tuples(triples_dicts):
     triples_list = []
     for elem in triples_dicts:
-        t_values = (elem["subject"], elem["predicate"], elem["object"])
+        t_values = ((elem["subject"]["name"], elem["subject"]["type"]), elem["predicate"], (elem["object"]["name"], elem["object"]["type"]))
         triples_list.append(t_values)
     return triples_list
 #hilfsfunktion um liste von triples zu liste von dicts zu konvertieren
 def convert_tuples_to_dicts(triples_tuples):
     triples_dicts = []
     for elem in triples_tuples:
-        t_dict = {"subject": elem[0], "predicate": elem[1], "object": elem[2]}
+        t_dict = {"subject": {"name": elem[0][0], "type": elem[0][1]}, "predicate": elem[1], "object": {"name": elem[2][0], "type": elem[2][1]}}
         triples_dicts.append(t_dict)
     return triples_dicts
 
@@ -199,10 +199,6 @@ def apply_mapping(data,entity_mapping,relation_mapping):
     #ansatz though a reverse mapping
     entity_r_mapping = gen_reverse_mapping(entity_mapping)
     relation_r_mapping = gen_reverse_mapping(relation_mapping)
-    #bau ne name map um das triple mapping zu vereinfachen
-    name_map = {}
-    for key, value in entity_r_mapping.items():
-        name_map[key[0]] = value[0]
     #ersetz die duplikates in entities
     for index, data_entity in enumerate(data["entities"]):
         enity_key = (data_entity["name"], data_entity["type"])
@@ -218,10 +214,12 @@ def apply_mapping(data,entity_mapping,relation_mapping):
 
     #ersetz die duplikates in triples
     for index, triple in enumerate(data["triples"]):
-        if (triple["subject"]) in name_map:
-            data["triples"][index]["subject"] = name_map[triple["subject"]]
-        if (triple["object"]) in name_map:
-            data["triples"][index]["object"] = name_map[triple["object"]]
+        subject = (triple["subject"]["name"], triple["subject"]["type"])
+        t_object_ = (triple["object"]["name"], triple["object"]["type"])
+        if subject in entity_r_mapping:
+            data["triples"][index]["subject"] = {"name": entity_r_mapping[subject][0], "type": entity_r_mapping[subject][1]}
+        if t_object_ in entity_r_mapping:
+            data["triples"][index]["object"] = {"name": entity_r_mapping[t_object_][0], "type": entity_r_mapping[t_object_][1]}
         if triple["predicate"] in relation_r_mapping:
             data["triples"][index]["predicate"] = relation_r_mapping[triple["predicate"]]
 

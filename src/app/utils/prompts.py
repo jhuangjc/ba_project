@@ -13,13 +13,14 @@ def build_relation_extraction_prompt(text, entities, gold_relations):
     entity_block = json.dumps(entities, ensure_ascii=False, indent=2)
     gold_block = ", ".join(gold_relations)
     return (
-        "Extract the relations between the given Objects and return only valid JSON with a 'triples' list. "
-        "Each object contains the entity name and the entity type. "
+        "Extract the relations between the given entities and return only valid JSON with a 'triples' list. "
+        "Each triple must have 'subject' (object with 'name' and 'type'), "
+        "'predicate' (string), and 'object' (object with 'name' and 'type'). "
         "Only use these relation types: " + gold_block + ".\n\n"
         "Return a list of such objects, not arrays or tuples. "
         "Do not include markdown, code fences, or any explanation.\n\n"
         f"Entities:\n{entity_block}\n\n"
-        f"Text:\n{text}"
+        f"Text:\n{text}" 
     )
 # ladet den prompt für die deduplication, der die query item und die candidate items als input bekommt
 def build_deduplication_prompt_relation(query_item, candidate_items):
