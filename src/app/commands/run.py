@@ -3,6 +3,7 @@ from app.pipeline.triple_generator import gen_triples
 from app.pipeline.refiner import refine_data
 from app.pipeline.metrics import measure_data, generate_combined_metrics
 
+
 def run(args):
     ex_id = args.expId
     registry_data = load_registry()
@@ -31,7 +32,7 @@ def run(args):
     metrics_after = measure_data(refined_result, goldstandard, before_refinement=False)
 
     #generiere die Metriken
-    #generate_combined_metrics(metrics_before, metrics_after, goldstandard, refined_result)
+    ŕes=generate_combined_metrics(metrics_before, metrics_after, goldstandard, entity_mapping)
     return {
         "experiment_id": ex_id,
         "input_type": exp["input_type"],

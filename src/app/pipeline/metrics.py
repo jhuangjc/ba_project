@@ -1,10 +1,15 @@
 from app.pipeline.refiner import data_to_lowercase
 from app.utils.gold import extract_gold_relations
 from app.utils.gold import goldstandard_lowercase
+from scipy.optimize import linear_sum_assignment
+
+import copy
+
+
 ######################constants#####################
 MATCH_NAME = "is_name"
 MATCH_ALIAS = "is_alias"
-#####################other utility functions#####################
+##################### utility functions#####################
 #hilfsfunktion um die ids der entities in die triples zu schreiben, damit sie mit dem goldstandard verglichen werden koennen
 def apply_id(triples, resolved_entities):
     for triple in triples:
@@ -13,7 +18,6 @@ def apply_id(triples, resolved_entities):
         triple["subject"]["id"] = resolved_entities.get(subject, -1)
         triple["object"]["id"] = resolved_entities.get(object_, -1)
     return triples
-#####################utility functions fuer metriken#####################
 #hilfsfunktion um die precision zu berechnen
 def calculate_precision(true_positives, false_positives):
     if true_positives + false_positives == 0:
@@ -29,7 +33,7 @@ def calculate_f1(precision, recall):
     if precision + recall == 0:
         return 0
     return 2 * (precision * recall) / (precision + recall)
-############### matching functions fuer entitties#####################
+############### matching functions fuer entities#####################
 # hilfsfunktion um heraus wie viele mappings eine Entity im goldstandard hat,es wird eine liste von gefundenen matchen zuruckgegeben, mit der id, in welchen eintrag im golstandard.
 def match_entities_in_gold(predicted_entity, goldstandard):
     result = []
@@ -42,7 +46,6 @@ def match_entities_in_gold(predicted_entity, goldstandard):
                 result.append([gold_item["name"], gold_item["id"], alias, MATCH_ALIAS])
     return result
 
-    
 #hilfsfunktion um die predicted triples mit den goldstandard triples zu vergleichen, wichtig fuer das endergebnis
 def map_to_gold(entities,goldstandard):
     #wandelt die golstandard in eine verschachtelte liste um.
@@ -51,7 +54,6 @@ def map_to_gold(entities,goldstandard):
         #for each entity, invoke compare_entities to find the corresponding goldstandard entities
         matched_gold_entities[(entity["name"], entity["type"])] = match_entities_in_gold(entity,goldstandard)
     return matched_gold_entities
-#######################matching functions fuer relations#####################
 #hilfsfunktion um die predicted triples mit den goldstandard triples zu vergleichen, wichtig fuer das endergebnis
 def map_relations_to_gold(predicted_relations, gold_relations):
     matches=set()
@@ -68,15 +70,13 @@ def triples_in_gold(predicted_triples, goldstandard):
             if relation["head_id"] == elem["subject"]["id"] and relation["relation_label"] == elem["predicate"] and relation["tail_id"] == elem["object"]["id"]:
                 matches.append(elem)
     return matches
-####################### utility functions fuer metriken#####################
-#entities matche= {name: [matches...]}
+
+####################### utility functions fuer matches #####################
 #hilfsfunktion um die doppelten matches zu resolven
 def resolve_duplicate_matches(matches):
     for match in matches:
         if match[3] == MATCH_NAME:
             return match[1]
-#placholder loesung, bis passenderes matching implemetiert ist
-    return -1
 #hilfsfunktion, die ein dict mit den predicted items den matches baut
 def resolve_entity_matches(entity_matches, predicted_entities):
     #build the table
@@ -91,9 +91,8 @@ def resolve_entity_matches(entity_matches, predicted_entities):
 
 
     return resolved_entities
- 
-#################### gen metriken utility #######################
-# hilfsfunktion um true positives zu generieren. TP haben genau ein match
+############################zaehlfunktionen fuer die metriken#####################
+#hilfsfunktion tp, fp, fn zu generieren    
 def generate_true_positives(resolved_entities):
     true_positives = 0
     for entity, value in resolved_entities.items():
@@ -117,7 +116,61 @@ def generate_false_negatives(resolved_entities, goldstandard):
     #berechnet die false negatives, indem die goldstandard ids mit den resolved entity ids verglichen werden 
     false_negatives = len(matched_gold_ids - resolved_entity_ids)
     return false_negatives
-#####################orchastration functions fuer metriken#####################
+#####################cluster metrics################################
+
+def gen_cluster_metrics(predicted_clusters, goldstandard_clusters):
+    #kostenmatrix erstellen.
+    pc=copy.deepcopy(predicted_clusters)
+    #name ist nicht in predicted clusters drinne, wird hier hinzugefuegt
+    predicted_clusters_adjusted = []
+    for key,value in pc.items():
+        c=set(value)
+        c.add(key)
+        predicted_clusters_adjusted.append(c)
+    #goldstand muss auch adjustet werden, damit der algorithmus funktioniert
+    gc=copy.deepcopy(goldstandard_clusters)
+    goldstandard_clusters_adjusted = []
+    for cluster in gc:
+        c=set()
+        for alias in cluster["aliases"]:
+            c.add((alias, cluster["type"]))
+        goldstandard_clusters_adjusted.append(c)
+    #bau die kostenmatrix
+    cost_matrix = []
+    for i in range(len(predicted_clusters_adjusted)):
+        row = []
+        for j in range(len(goldstandard_clusters_adjusted)):
+            row.append(-len(predicted_clusters_adjusted[i].intersection(goldstandard_clusters_adjusted[j])))
+        cost_matrix.append(row)
+    #call den hungarian algorithmus
+    row_ind, col_ind = linear_sum_assignment(cost_matrix)
+    #berechne die true positives, false positives und false negatives
+    true_positives = 0
+    false_positives = 0
+    false_negatives = 0
+    for i,j in zip(row_ind, col_ind):
+        intersection = predicted_clusters_adjusted[i].intersection(goldstandard_clusters_adjusted[j])
+        true_positives += len(intersection)
+
+    for i in range(len(predicted_clusters_adjusted)):
+        if i not in row_ind:
+            false_positives += len(predicted_clusters_adjusted[i])
+    for j in range(len(goldstandard_clusters_adjusted)):
+        if j not in col_ind:
+            false_negatives += len(goldstandard_clusters_adjusted[j])
+    #berechne precision, recall und f1
+    precision = calculate_precision(true_positives, false_positives)
+    recall = calculate_recall(true_positives, false_negatives)
+    f1 = calculate_f1(precision, recall)
+    return {
+        "precision": precision,
+        "recall": recall,
+        "f1": f1
+    } 
+
+
+
+#####################orchestration functions fuer metriken#####################
 def measure_data(predicted_lowercase,goldstandard_raw, before_refinement):
     if before_refinement:
         predicted_lowercase = data_to_lowercase(predicted_lowercase)
@@ -159,13 +212,12 @@ def measure_data(predicted_lowercase,goldstandard_raw, before_refinement):
     triples = predicted_lowercase["triples"]
     triples = apply_id(triples, resolved_entities)
     triples_matches = triples_in_gold(triples, goldstandard_raw)
-    tripels_true_positives = len(triples_matches)
-    tripels_false_positives = len(triples) - len(triples_matches)
-    tripels_false_negatives = len(goldstandard_raw["relations"]) - len(triples_matches)
-    precision_triples = calculate_precision(tripels_true_positives, tripels_false_positives)
-    recall_triples = calculate_recall(tripels_true_positives, tripels_false_negatives)
+    triples_true_positives = len(triples_matches)
+    triples_false_positives = len(triples) - len(triples_matches)
+    triples_false_negatives = len(goldstandard_raw["relations"]) - len(triples_matches)
+    precision_triples = calculate_precision(triples_true_positives, triples_false_positives)
+    recall_triples = calculate_recall(triples_true_positives, triples_false_negatives)
     f1_triples = calculate_f1(precision_triples, recall_triples)
-
     metrics = {"entity_metrics":
                {
                    "true_positives": True_Positives_entities,
@@ -185,9 +237,9 @@ def measure_data(predicted_lowercase,goldstandard_raw, before_refinement):
                 },
                 "triple_metrics":
                 {
-                    "true_positives": tripels_true_positives,
-                    "false_positives": tripels_false_positives,
-                    "false_negatives": tripels_false_negatives,
+                    "true_positives": triples_true_positives,
+                    "false_positives": triples_false_positives,
+                    "false_negatives": triples_false_negatives,
                     "precision": precision_triples,
                     "recall": recall_triples,
                     "f1": f1_triples
@@ -196,5 +248,12 @@ def measure_data(predicted_lowercase,goldstandard_raw, before_refinement):
 
     
     return metrics
-def generate_combined_metrics(metrics_before, metrics_after, goldstandard, refined_result):
-    pass
+def generate_combined_metrics(metrics_before, metrics_after, goldstandard,entity_mapping):
+    #berechne die metrics der deduplizierung
+    dedup_metrics = gen_cluster_metrics(entity_mapping, goldstandard["enities"])
+    combined_metrics = {
+        "before_refinement": metrics_before,
+        "after_refinement": metrics_after,
+        "deduplication_metrics": dedup_metrics
+    }
+    return combined_metrics
