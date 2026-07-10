@@ -119,7 +119,7 @@ def generate_false_negatives(resolved_entities, goldstandard):
 #####################cluster metrics################################
 
 def gen_cluster_metrics(predicted_clusters, goldstandard_clusters):
-    #kostenmatrix erstellen.
+    #preprocessing
     pc=copy.deepcopy(predicted_clusters)
     #name ist nicht in predicted clusters drinne, wird hier hinzugefuegt
     predicted_clusters_adjusted = []
@@ -151,13 +151,15 @@ def gen_cluster_metrics(predicted_clusters, goldstandard_clusters):
     for i,j in zip(row_ind, col_ind):
         intersection = predicted_clusters_adjusted[i].intersection(goldstandard_clusters_adjusted[j])
         true_positives += len(intersection)
-
+        false_positives += len(predicted_clusters_adjusted[i]) - len(intersection)
+        false_negatives += len(goldstandard_clusters_adjusted[j]) - len(intersection)
+    #ungemachte cluster auswerten
     for i in range(len(predicted_clusters_adjusted)):
         if i not in row_ind:
             false_positives += len(predicted_clusters_adjusted[i])
     for j in range(len(goldstandard_clusters_adjusted)):
         if j not in col_ind:
-            false_negatives += len(goldstandard_clusters_adjusted[j])
+            false_negatives += len(goldstandard_clusters_adjusted[j])    
     #berechne precision, recall und f1
     precision = calculate_precision(true_positives, false_positives)
     recall = calculate_recall(true_positives, false_negatives)
@@ -250,7 +252,7 @@ def measure_data(predicted_lowercase,goldstandard_raw, before_refinement):
     return metrics
 def generate_combined_metrics(metrics_before, metrics_after, goldstandard,entity_mapping):
     #berechne die metrics der deduplizierung
-    dedup_metrics = gen_cluster_metrics(entity_mapping, goldstandard["enities"])
+    dedup_metrics = gen_cluster_metrics(entity_mapping, goldstandard["entities"])
     combined_metrics = {
         "before_refinement": metrics_before,
         "after_refinement": metrics_after,
