@@ -32,7 +32,7 @@ def run(args):
     metrics_after = measure_data(refined_result, goldstandard, before_refinement=False)
 
     #generiere die Metriken
-    ŕes=generate_combined_metrics(metrics_before, metrics_after, goldstandard, entity_mapping)
+    res=generate_combined_metrics(metrics_before, metrics_after, goldstandard, entity_mapping)
     return {
         "experiment_id": ex_id,
         "input_type": exp["input_type"],
@@ -43,4 +43,4 @@ def run(args):
         "relations": refined_result["relations"],
         "entity_mapping": entity_mapping,
         "relation_mapping": relation_mapping,
-    }
+        "combined_metrics": res}
