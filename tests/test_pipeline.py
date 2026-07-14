@@ -1,20 +1,37 @@
 import pytest
 from app.pipeline.refiner import refine_data
 
-def fake_send_llm_candidates(query_item, candidates):
-    #fake implementation die einfach die ersten 3 items zurückgibt, außer das query item ist unter den candidates, dann wird es übersprungen
+def fake_send_llm_candidates(query_item, candidates, Is_relation=False):
+    #fake implementation die einfach die ersten 3 items zurückgibt
     ret= candidates[:3]
+    #für entities: in tuples konvertieren (wie die echte Funktion)
+    tupel_ret = []
+    if not Is_relation:
+       for i in range(len(ret)):
+        tupel_ret.append((ret[i]["name"], ret[i]["type"]))
+       return tupel_ret
+    
+
     return ret
 
 def test_refine_data(monkeypatch):
     monkeypatch.setattr("app.pipeline.refiner.send_llm_candidates", fake_send_llm_candidates)
     #testdaten
     data ={
-        "entities": ["Alice Smith", "Alice S.", "Sergey","Sergay","Bob Marley","Bobby M."],
-        "triples": [{"subject": "Alice Smith", "predicate": "knows", "object": "Sergey"},
-                   {"subject": "Alice S.", "predicate": "knows", "object": "Sergay"},
-                   {"subject": "Bob Marley", "predicate": "knows", "object": "Sergey"},
-                   {"subject": "Bobby M.", "predicate": "knows", "object": "Sergay"}],
+        "entities": [
+            {"name": "Alice Smith", "type": "PER"},
+            {"name": "Alice S.", "type": "PER"},
+            {"name": "Sergey", "type": "PER"},
+            {"name": "Sergay", "type": "PER"},
+            {"name": "Bob Marley", "type": "PER"},
+            {"name": "Bobby M.", "type": "PER"},
+        ],
+        "triples": [
+            {"subject": {"name": "Alice Smith", "type": "PER"}, "predicate": "knows", "object": {"name": "Sergey", "type": "PER"}},
+            {"subject": {"name": "Alice S.", "type": "PER"}, "predicate": "knows", "object": {"name": "Sergay", "type": "PER"}},
+            {"subject": {"name": "Bob Marley", "type": "PER"}, "predicate": "knows", "object": {"name": "Sergey", "type": "PER"}},
+            {"subject": {"name": "Bobby M.", "type": "PER"}, "predicate": "knows", "object": {"name": "Sergay", "type": "PER"}},
+        ],
         "relations": ["knows"]}
     # execution
     result,entity_mapping,relation_mapping = refine_data(data)
@@ -30,11 +47,20 @@ def test_refine_count(monkeypatch):
     
     #testdaten
     data ={
-        "entities": ["Alice Smith", "Alice S.", "Sergey","Sergay","Bob Marley","Bobby M."],
-        "triples": [{"subject": "Alice Smith", "predicate": "knows", "object": "Sergey"},
-                   {"subject": "Alice S.", "predicate": "knows", "object": "Sergay"},
-                   {"subject": "Bob Marley", "predicate": "knows", "object": "Sergey"},
-                   {"subject": "Bobby M.", "predicate": "knows", "object": "Sergay"}],
+        "entities": [
+            {"name": "Alice Smith", "type": "PER"},
+            {"name": "Alice S.", "type": "PER"},
+            {"name": "Sergey", "type": "PER"},
+            {"name": "Sergay", "type": "PER"},
+            {"name": "Bob Marley", "type": "PER"},
+            {"name": "Bobby M.", "type": "PER"},
+        ],
+        "triples": [
+            {"subject": {"name": "Alice Smith", "type": "PER"}, "predicate": "knows", "object": {"name": "Sergey", "type": "PER"}},
+            {"subject": {"name": "Alice S.", "type": "PER"}, "predicate": "knows", "object": {"name": "Sergay", "type": "PER"}},
+            {"subject": {"name": "Bob Marley", "type": "PER"}, "predicate": "knows", "object": {"name": "Sergey", "type": "PER"}},
+            {"subject": {"name": "Bobby M.", "type": "PER"}, "predicate": "knows", "object": {"name": "Sergay", "type": "PER"}},
+        ],
         "relations": ["knows"]}
     # execution
     before_count = len(data["entities"])
@@ -59,14 +85,15 @@ def test_refine_one_entity(monkeypatch):
     monkeypatch.setattr("app.pipeline.refiner.send_llm_candidates", fake_send_llm_candidates)
     
     #testdaten
-    data ={"entities": ["Alice Smith"],
-       "triples": [{"subject": "Alice Smith", "predicate": "knows", "object": "Alice Smith"}],
-       "relations": ["knows"]}
+    data ={
+        "entities": [{"name": "Alice Smith", "type": "PER"}],
+        "triples": [{"subject": {"name": "Alice Smith", "type": "PER"}, "predicate": "knows", "object": {"name": "Alice Smith", "type": "PER"}}],
+        "relations": ["knows"]}
     # execution with raised error
     result,entity_mapping,relation_mapping = refine_data(data)
     #asserts
-    assert result["entities"] == ["alice smith"]
-    assert result["triples"] == [{"subject": "alice smith", "predicate": "knows", "object": "alice smith"}]
+    assert result["entities"] == [{"name": "alice smith", "type": "PER"}]
+    assert result["triples"] == [{"subject": {"name": "alice smith", "type": "PER"}, "predicate": "knows", "object": {"name": "alice smith", "type": "PER"}}]
     assert result["relations"] == ["knows"]
-    assert entity_mapping == {"alice smith": []}
+    assert entity_mapping == {("alice smith", "PER"): []}
     assert relation_mapping == {"knows": []}

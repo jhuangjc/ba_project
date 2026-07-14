@@ -22,12 +22,12 @@ def sample_data():
             {"name": "Robert Smith", "type": "PER"},
         ],
         "triples": [
-            {"subject": "Alice", "predicate": "knows", "object": "Bob"},
-            {"subject": "Alice", "predicate": "knows", "object": "Bob"},
-            {"subject": "Bob", "predicate": "knows", "object": "Alice"},
-            {"subject": "Robert", "predicate": "knows", "object": "Alice"},
-            {"subject": "bob", "predicate": "knows", "object": "Alice"},
-            {"subject": "Robert Smith", "predicate": "knows", "object": "Alice"},
+            {"subject": {"name": "Alice", "type": "PER"}, "predicate": "knows", "object": {"name": "Bob", "type": "PER"}},
+            {"subject": {"name": "Alice", "type": "PER"}, "predicate": "knows", "object": {"name": "Bob", "type": "PER"}},
+            {"subject": {"name": "Bob", "type": "PER"}, "predicate": "knows", "object": {"name": "Alice", "type": "PER"}},
+            {"subject": {"name": "Robert", "type": "PER"}, "predicate": "knows", "object": {"name": "Alice", "type": "PER"}},
+            {"subject": {"name": "bob", "type": "PER"}, "predicate": "knows", "object": {"name": "Alice", "type": "PER"}},
+            {"subject": {"name": "Robert Smith", "type": "PER"}, "predicate": "knows", "object": {"name": "Alice", "type": "PER"}},
         ],
         "relations": ["knows", "knows"],
     }
@@ -35,7 +35,7 @@ def sample_data():
 def test_data_to_lowercase(sample_data):
     result = data_to_lowercase(sample_data)
     assert all( (entity["name"].islower() for entity in result["entities"]) )
-    assert all( ( triple["subject"].islower() and triple["predicate"].islower() and triple["object"].islower() for triple in result["triples"] ))
+    assert all( ( triple["subject"]["name"].islower() and triple["predicate"].islower() and triple["object"]["name"].islower() for triple in result["triples"] ))
 
 #################testblock dedup_list#########################
 def test_dedup_list():
@@ -55,23 +55,23 @@ def test_dedup_list_empty_list():
 def test_convert_dicts_to_tuples(sample_data): 
     dict_triples = sample_data["triples"]
     expected_tuples = [
-        ("Alice", "knows", "Bob"),
-        ("Alice", "knows", "Bob"),
-        ("Bob", "knows", "Alice"),
-        ("Robert", "knows", "Alice"),
-        ("bob", "knows", "Alice"),
-        ("Robert Smith", "knows", "Alice"),
+        (("Alice", "PER"), "knows", ("Bob", "PER")),
+        (("Alice", "PER"), "knows", ("Bob", "PER")),
+        (("Bob", "PER"), "knows", ("Alice", "PER")),
+        (("Robert", "PER"), "knows", ("Alice", "PER")),
+        (("bob", "PER"), "knows", ("Alice", "PER")),
+        (("Robert Smith", "PER"), "knows", ("Alice", "PER")),
     ]
     assert convert_dicts_to_tuples(dict_triples) == expected_tuples
 
 def test_convert_tuples_to_dicts(sample_data):
     tuples_triples = [
-        ("Alice", "knows", "Bob"),
-        ("Alice", "knows", "Bob"),
-        ("Bob", "knows", "Alice"),
-        ("Robert", "knows", "Alice"),
-        ("bob", "knows", "Alice"),
-        ("Robert Smith", "knows", "Alice"),
+        (("Alice", "PER"), "knows", ("Bob", "PER")),
+        (("Alice", "PER"), "knows", ("Bob", "PER")),
+        (("Bob", "PER"), "knows", ("Alice", "PER")),
+        (("Robert", "PER"), "knows", ("Alice", "PER")),
+        (("bob", "PER"), "knows", ("Alice", "PER")),
+        (("Robert Smith", "PER"), "knows", ("Alice", "PER")),
     ]
     expected_dicts = sample_data["triples"]
     assert convert_tuples_to_dicts(tuples_triples) == expected_dicts
@@ -123,8 +123,8 @@ def test_apply_mapping(sample_data, test_mapping):
     assert "knows" in result["relations"]
     #prüft ob die duplikate in triples ersetzt wurden
     for triple in result["triples"]:
-        assert triple["subject"] not in ["alice", "bob", "robert", "robert smith"]
-        assert triple["object"] not in ["alice", "bob", "robert", "robert smith"]
+        assert triple["subject"]["name"] not in ["alice", "bob", "robert", "robert smith"]
+        assert triple["object"]["name"] not in ["alice", "bob", "robert", "robert smith"]
 
 ########################testblock refine_data#########################
 def test_refine_data_errors(sample_data):

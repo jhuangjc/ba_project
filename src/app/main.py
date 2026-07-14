@@ -19,9 +19,9 @@ def main():
     result = args.func(args)
     if result is not None:
         if isinstance(result, (dict, list)):
-            print(result)
+            print(json.dumps(result, indent=2, ensure_ascii=False))
         else:
-            print(result)
+            print(json.dumps(result, indent=2, ensure_ascii=False))
 
 
 if __name__ == "__main__":

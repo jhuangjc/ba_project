@@ -53,10 +53,14 @@ def test_triple_generator(monkeypatch):
     # Testet die Triple Generator Funktion mit einem Fake Response
     monkeypatch.setattr("app.pipeline.triple_generator.httpx.post", lambda *args, **kwargs: next(responses))
     gen_result = triple_generator.gen_triples("Test input text",{
-    "triples": [
-        {"predicate": "related_to"},
-        {"predicate": "part_of"},
-        {"predicate": "located_in"}
+    "entities": [
+        {"id": 0, "name": "Entity1", "type": "PER", "aliases": ["Entity1"]},
+        {"id": 1, "name": "Entity2", "type": "PER", "aliases": ["Entity2"]},
+    ],
+    "relations": [
+        {"head_id": 0, "tail_id": 1, "relation_label": "related_to"},
+        {"head_id": 0, "tail_id": 1, "relation_label": "part_of"},
+        {"head_id": 0, "tail_id": 1, "relation_label": "located_in"},
     ]})
     # schaut ob die results den erwarteten daten entsprechen
     assert gen_result["entities"] == entity_data["entities"]

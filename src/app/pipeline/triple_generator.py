@@ -140,8 +140,6 @@ def gen_triples(input_text,goldstandard):
     entity_content = entity_data["choices"][0]["message"]["tool_calls"][0]["function"]["arguments"]
     entities_object = json.loads(entity_content)["entities"]
 
-    #das print statement ist nur zum debuggen
-    print(entity_content)
     #extract relations from the goldstandard and generate a list of unique relations
     gold_relations = extract_gold_relations(goldstandard)
     # Bau den extraction promt mit dem imputtext und den entities.
@@ -166,8 +164,6 @@ def gen_triples(input_text,goldstandard):
     triples= json.loads(relation_content)["triples"]
     #generate the relations list from the triples
     relations = extract_relations(triples)
-    #das print statement ist nur zum debuggen
-    print(relation_content)
     return {
         "entities": entities_object,
         "triples": triples,
