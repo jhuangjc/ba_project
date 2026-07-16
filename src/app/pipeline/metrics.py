@@ -10,6 +10,12 @@ import copy
 MATCH_NAME = "is_name"
 MATCH_ALIAS = "is_alias"
 ##################### utility functions#####################
+#hilfsfunktion die das triple key in ein string umwandelt
+def resolve_to_string(value):
+    result = {}
+    for entity, g_id in value.items():
+        result[entity[0] + "_" + entity[1]] = g_id
+    return result
 #hilfsfunktion um die ids der entities in die triples zu schreiben, damit sie mit dem goldstandard verglichen werden koennen
 def apply_id(triples, resolved_entities):
     for triple in triples:
@@ -33,8 +39,98 @@ def calculate_f1(precision, recall):
     if precision + recall == 0:
         return 0
     return 2 * (precision * recall) / (precision + recall)
+#loose match funktion
+def loose_match(predicted_name, gold_name):
+    #beide name normalieren und leerzeichen entfernen
+    predicted_name = predicted_name.lower().replace(" ", "")
+    gold_name = gold_name.lower().replace(" ", "")
+    if gold_name in predicted_name:
+        return True
+    return False
+#metrik-helper für entities
+def gen_entity_metrics(resolved_matches, goldstandard_lowercase):
+    #generiere counts
+    true_positives = generate_true_positives(resolved_matches)
+    false_positives = generate_false_positives(resolved_matches)
+    false_negatives = generate_false_negatives(resolved_matches, goldstandard_lowercase)
+    #metriken berechnen
+    precision = calculate_precision(true_positives, false_positives)
+    recall = calculate_recall(true_positives, false_negatives)
+    f1 = calculate_f1(precision, recall)
+
+    return {
+        "true_positives": true_positives,
+        "false_positives": false_positives,
+        "false_negatives": false_negatives,
+        "precision": precision,
+        "recall": recall,
+        "f1": f1
+    }
+# metrik-helper für relationen
+def gen_relation_metrics(predicted_relations, gold_relations):
+    #pre processing
+    relation_matches, extra_relations = map_relations_to_gold(predicted_relations, gold_relations)
+    matched_relations, unmatched_relations = get_details_relations(relation_matches, gold_relations)
+    #generiere counts
+    tp = len(relation_matches)
+    fp = len(predicted_relations) - len(relation_matches)
+    fn = len(gold_relations) - len(relation_matches)
+    #metriken berechnen
+    precision = calculate_precision(tp, fp)
+    recall = calculate_recall(tp, fn)
+    f1 = calculate_f1(precision, recall)
+    metrics = {
+        "true_positives": tp,
+        "false_positives": fp,
+        "false_negatives": fn,
+        "precision": precision,
+        "recall": recall,
+        "f1": f1
+    }
+    details = {
+        "matched": matched_relations,
+        "unmatched": unmatched_relations,
+        "extra": extra_relations
+    }
+    return metrics, details
+# metrik-helper für triples
+def gen_triple_metrics(triples, resolved_entities, goldstandard_raw):
+    triples_copy = copy.deepcopy(triples)
+    triples_with_ids = apply_id(triples_copy, resolved_entities)
+    triples_matches, extra_triples = triples_in_gold(triples_with_ids, goldstandard_raw)
+    matched_triples, unmatched_triples = get_details_triples(triples_matches, goldstandard_raw)
+    #generiere counts
+    tp = len(triples_matches)
+    fp = len(triples) - len(triples_matches)
+    fn = len(goldstandard_raw["relations"]) - len(triples_matches)
+    #metriken berechnen
+    precision = calculate_precision(tp, fp)
+    recall = calculate_recall(tp, fn)
+    f1 = calculate_f1(precision, recall)
+    metrics = {
+        "true_positives": tp,
+        "false_positives": fp,
+        "false_negatives": fn,
+        "precision": precision,
+        "recall": recall,
+        "f1": f1
+    }
+    details = {
+        "matched": matched_triples,
+        "unmatched": unmatched_triples,
+        "extra": extra_triples
+    }
+    return metrics, details
+#delta zwischen strict und loose berechnen
+def compute_metrics_delta(strict_metrics, loose_metrics):
+    delta = {}
+    for metric_type in strict_metrics:
+        delta[metric_type] = {}
+        for key in strict_metrics[metric_type]:
+            delta[metric_type][key] = loose_metrics[metric_type][key] - strict_metrics[metric_type][key]
+    return delta
 ############### matching functions fuer entities#####################
-# hilfsfunktion um heraus wie viele mappings eine Entity im goldstandard hat,es wird eine liste von gefundenen matchen zuruckgegeben, mit der id, in welchen eintrag im golstandard.
+# hilfsfunktion um heraus wie viele mappings eine Entity im goldstandard hat,es wird eine liste von gefundenen matchen zuruckgegeben. 
 def match_entities_in_gold(predicted_entity, goldstandard):
     result = []
     for gold_item in goldstandard:
@@ -45,14 +141,41 @@ def match_entities_in_gold(predicted_entity, goldstandard):
             if predicted_entity["name"] == alias and predicted_entity["type"] == gold_item["type"]:
                 result.append([gold_item["name"], gold_item["id"], alias, MATCH_ALIAS])
     return result
+#gleiche funktion mit loose matching
+def loose_match_entities(predicted_entity, goldstandard):
+    result = []
+    for gold_item in goldstandard:
+        if predicted_entity["type"] == gold_item["type"]:
+            if predicted_entity["name"] == gold_item["name"]:
+                result.append([gold_item["name"], gold_item["id"], gold_item["name"],MATCH_NAME])
+                continue
+
+            for alias in gold_item["aliases"]:
+                if predicted_entity["name"] == alias:
+                    result.append([gold_item["name"], gold_item["id"], alias, MATCH_ALIAS])
+                    break
+    if not result:
+        for entity in goldstandard:
+            if predicted_entity["type"] == entity["type"]:
+                if loose_match(predicted_entity["name"], entity["name"]):
+                    result.append([entity["name"], entity["id"], entity["name"],MATCH_NAME])
+                    continue
+                for alias in entity["aliases"]:
+                    if loose_match(predicted_entity["name"], alias):
+                        result.append([entity["name"], entity["id"], alias, MATCH_ALIAS])
+                        break
+    return result
 
 #hilfsfunktion um die predicted triples mit den goldstandard triples zu vergleichen, wichtig fuer das endergebnis
-def map_to_gold(entities,goldstandard):
+def map_to_gold(entities,goldstandard, loose_matching=False):
     #wandelt die golstandard in eine verschachtelte liste um.
     matched_gold_entities = {} 
     for entity in entities:
         #for each entity, invoke compare_entities to find the corresponding goldstandard entities
-        matched_gold_entities[(entity["name"], entity["type"])] = match_entities_in_gold(entity,goldstandard)
+        if loose_matching:
+            matched_gold_entities[(entity["name"], entity["type"])] = loose_match_entities(entity,goldstandard)
+        else:
+            matched_gold_entities[(entity["name"], entity["type"])] = match_entities_in_gold(entity,goldstandard)
     return matched_gold_entities
 #hilfsfunktion um die predicted triples mit den goldstandard triples zu vergleichen, wichtig fuer das endergebnis
 def map_relations_to_gold(predicted_relations, gold_relations):
@@ -88,6 +211,9 @@ def resolve_duplicate_matches(matches):
     for match in matches:
         if match[3] == MATCH_NAME:
             return match[1]
+
+
+    return matches[0][1]
 #hilfsfunktion, die ein dict mit den predicted items den matches baut
 def resolve_entity_matches(entity_matches, predicted_entities):
     #build the table
@@ -95,11 +221,10 @@ def resolve_entity_matches(entity_matches, predicted_entities):
     for entity in predicted_entities:
         resolved_entities[(entity["name"], entity["type"])] = -1
     for entity, matches in entity_matches.items():
-            if len(matches) == 1:
-                resolved_entities[entity] = matches[0][1]
-            elif len(matches) > 1:
-                resolved_entities[entity] = resolve_duplicate_matches(matches)
-
+        if len(matches) == 1:
+            resolved_entities[entity] = matches[0][1]
+        elif len(matches) > 1:
+            resolved_entities[entity] = resolve_duplicate_matches(matches)
 
     return resolved_entities
 ############################zaehlfunktionen fuer die metriken#####################
@@ -222,104 +347,128 @@ def gen_cluster_metrics(predicted_clusters, goldstandard_clusters):
         "recall": recall,
         "f1": f1
     } 
+#################################cluster coverage metrics################################
+def gen_cluster_hit_table(resolved_entities, gold_entities):
+    hit_table = []
+    #fuell die tabllelle
+    for entity in gold_entities:
+        hit_table.append({"gold_id": entity["id"], "name": entity["name"], "type": entity["type"], "hit": 0})
+    
+    #berechne die hits
+    for entity, value in resolved_entities.items():
+        if value != -1:
+            for row in hit_table:
+                if row["gold_id"] == value:
+                    row["hit"] += 1
+                    break
 
+    return hit_table
 
+def gen_cluster_coverage_metrics(resolved_entities, gold_entities):
+    hit_table = gen_cluster_hit_table(resolved_entities, gold_entities)
+    #berechne die coverage
+    table_length = len(gold_entities)
+    count =0
+    for row in hit_table:
+        if row["hit"] > 0:
+            count += 1
+    covered_gold = count
+    coverage = covered_gold / table_length if table_length > 0 else 0
+    #berchne mit avg cluster hit
+    total_hits=0
+    for row in hit_table:
+        total_hits += row["hit"]
+    avg_cluster_hit = total_hits / table_length if table_length > 0 else 0
+
+    return {
+        "covered_gold": covered_gold,
+        "coverage": coverage,
+        "avg_cluster_hit": avg_cluster_hit
+    }
 
 #####################orchestration functions fuer metriken#####################
-def measure_data(predicted_lowercase,goldstandard_raw, before_refinement):
-    if before_refinement:
-        predicted_lowercase = data_to_lowercase(predicted_lowercase)
-    #hold die entities in lowercase, um die vergleichbarkeit zu erleichtern 
+def measure_data(predicted_lowercase, goldstandard_raw, before_refinement):
+
     gs_copy = goldstandard_raw.copy()
-    gold_list_lowercase= goldstandard_lowercase(gs_copy["entities"])
+    p_copy = predicted_lowercase.copy()
+    # normalisiere die predicted data, wenn es vor dem refinement ist
+    if before_refinement:
+        p_copy = data_to_lowercase(p_copy)
 
-    # map entites to goldstandard
-    entity_matches = map_to_gold(predicted_lowercase["entities"], gold_list_lowercase)
-    resolved_entities = resolve_entity_matches(entity_matches,predicted_lowercase["entities"])
-    
-    #mengen von matched, unmatched und extra entities
-    matched_entities,unmatched_entities,extra_entities = get_details_entities(resolved_entities, gold_list_lowercase) 
+    gold_list_lowercase = goldstandard_lowercase(gs_copy["entities"])
+    gold_relations = extract_gold_relations(goldstandard_raw)
 
-    True_Positives_entities = generate_true_positives(resolved_entities)
-    False_Positives_entities = generate_false_positives(resolved_entities)
-    False_Negatives_entities = generate_false_negatives(resolved_entities, gold_list_lowercase)
+    # entity matching fuer strict
+    entity_matches_strict = map_to_gold(p_copy["entities"], gold_list_lowercase, loose_matching=False)
+    resolved_entities_strict = resolve_entity_matches(entity_matches_strict, p_copy["entities"])
 
-    #berechne precision, recall und f1
-    precision_entities = calculate_precision(True_Positives_entities, False_Positives_entities)
-    recall_entities = calculate_recall(True_Positives_entities, False_Negatives_entities)
-    f1_entities = calculate_f1(precision_entities, recall_entities)
-    # map relations to goldstandard
-    #generate a list of goldstandard relations
-    gold_relations = extract_gold_relations(goldstandard_raw) 
+    cluster_hit_metrics_strict = gen_cluster_coverage_metrics(resolved_entities_strict, gold_list_lowercase)
+
+    # entity matching fuer loose
+    entity_matches_loose = map_to_gold(p_copy["entities"], gold_list_lowercase, loose_matching=True)
+    resolved_entities_loose = resolve_entity_matches(entity_matches_loose, p_copy["entities"])
+
+    # metriken
+    entity_metrics_strict = gen_entity_metrics(resolved_entities_strict, gold_list_lowercase)
+    entity_details_strict = get_details_entities(resolved_entities_strict, gold_list_lowercase)
+
+    cluster_hit_metrics_loose = gen_cluster_coverage_metrics(resolved_entities_loose, gold_list_lowercase)
+    entity_metrics_loose = gen_entity_metrics(resolved_entities_loose, gold_list_lowercase)
+    entity_details_loose = get_details_entities(resolved_entities_loose, gold_list_lowercase)
+
+    # metriken fuer relationen
+    relation_metrics, relation_details = gen_relation_metrics(p_copy["relations"], gold_relations)
+
+    # metriken fuer triples
+    triple_metrics_strict, triple_details_strict = gen_triple_metrics(p_copy["triples"], resolved_entities_strict, goldstandard_raw)
+    triple_metrics_loose, triple_details_loose = gen_triple_metrics(p_copy["triples"], resolved_entities_loose, goldstandard_raw)
+
+    # output
+    metrics_strict = {
+        "entity_metrics": entity_metrics_strict,
+        "relation_metrics": relation_metrics,
+        "triple_metrics": triple_metrics_strict,
+        "cluster_hit_metrics": cluster_hit_metrics_strict
+    }
+    details_strict = {
+        "entities": {"matched": entity_details_strict[0], "unmatched": entity_details_strict[1], "extra": entity_details_strict[2]},
+        "relations": relation_details,
+        "triples": triple_details_strict
+    }
+
+    metrics_loose = {
+        "entity_metrics": entity_metrics_loose,
+        "relation_metrics": relation_metrics,
+        "triple_metrics": triple_metrics_loose,
+        "cluster_hit_metrics": cluster_hit_metrics_loose
+    }
+    details_loose = {
+        "entities": {"matched": entity_details_loose[0], "unmatched": entity_details_loose[1], "extra": entity_details_loose[2]},
+        "relations": relation_details,
+        "triples": triple_details_loose
+    }
+
+    delta = compute_metrics_delta(metrics_strict, metrics_loose)
+
+    return {
+        "strict": {
+            "metrics": metrics_strict,
+            "details": details_strict
+        },
+        "loose": {
+            "metrics": metrics_loose,
+            "details": details_loose
+        },
+        "delta": delta,
+        "debug": {"resolved_entities_strict": resolve_to_string(resolved_entities_strict), "resolved_entities_loose": resolve_to_string(resolved_entities_loose)},
+        "resolved_strict_raw": resolved_entities_strict
+    }
 
 
 
-    #metrics relations
-    relation_matches, extra_relations = map_relations_to_gold(predicted_lowercase["relations"], gold_relations)
-
-    matched_relations,unmatched_relations = get_details_relations(relation_matches,gold_relations)
-
-    False_Positives_relations = len(predicted_lowercase["relations"]) - len(relation_matches)
-    True_Positives_relations = len(relation_matches)
-    False_Negatives_relations = len(gold_relations) - len(relation_matches)
-    
-    
-    
-    #berechne precision, recall und f1
-    precision_relations = calculate_precision(True_Positives_relations, False_Positives_relations)
-    recall_relations = calculate_recall(True_Positives_relations, False_Negatives_relations)
-    f1_relations = calculate_f1(precision_relations, recall_relations)
-    #metrics triples
-    triples = predicted_lowercase["triples"]
-    triples = apply_id(triples, resolved_entities)
-    triples_matches,extra_triples = triples_in_gold(triples, goldstandard_raw)
-    matched_triples, unmatched_triples = get_details_triples(triples_matches, goldstandard_raw)
-    triples_true_positives = len(triples_matches)
-    triples_false_positives = len(triples) - len(triples_matches)
-    triples_false_negatives = len(goldstandard_raw["relations"]) - len(triples_matches)
-    precision_triples = calculate_precision(triples_true_positives, triples_false_positives)
-    recall_triples = calculate_recall(triples_true_positives, triples_false_negatives)
-    f1_triples = calculate_f1(precision_triples, recall_triples)
-    metrics = {"entity_metrics":
-               {
-                   "true_positives": True_Positives_entities,
-                   "false_positives": False_Positives_entities,
-                   "false_negatives": False_Negatives_entities,
-                   "precision": precision_entities,
-                   "recall": recall_entities,
-                   "f1": f1_entities},
-                "relation_metrics":
-                {
-                    "true_positives": True_Positives_relations,
-                    "false_positives": False_Positives_relations,
-                    "false_negatives": False_Negatives_relations,
-                    "precision": precision_relations,
-                    "recall": recall_relations,
-                    "f1": f1_relations
-                },
-                "triple_metrics":
-                {
-                    "true_positives": triples_true_positives,
-                    "false_positives": triples_false_positives,
-                    "false_negatives": triples_false_negatives,
-                    "precision": precision_triples,
-                    "recall": recall_triples,
-                    "f1": f1_triples
-                }
-               }
-    details = {"entities": {"matched": matched_entities, "unmatched": unmatched_entities, "extra": extra_entities},
-               "triples": {"matched": matched_triples, "unmatched": unmatched_triples, "extra": extra_triples},
-               "relations": {"matched": matched_relations, "unmatched": unmatched_relations, "extra": extra_relations}
-               }
-
-    
-    return metrics,details
-def generate_combined_metrics(metrics_before, metrics_after, goldstandard,entity_mapping):
-    #berechne die metrics der deduplizierung
+def generate_combined_metrics(goldstandard, entity_mapping, resolved_before=None, resolved_after=None):
     dedup_metrics = gen_cluster_metrics(entity_mapping, goldstandard["entities"])
     combined_metrics = {
-        "before_refinement": metrics_before,
-        "after_refinement": metrics_after,
         "deduplication_metrics": dedup_metrics
     }
     return combined_metrics

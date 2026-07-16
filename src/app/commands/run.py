@@ -1,4 +1,6 @@
 from app.utils.io import load_input_file, load_registry, load_goldstandard
+from app.utils.json import serialize_tuple_keys
+
 from app.pipeline.triple_generator import gen_triples
 from app.pipeline.refiner import refine_data
 from app.pipeline.metrics import measure_data, generate_combined_metrics
@@ -26,17 +28,16 @@ def run(args):
     # generiere die Tripel
     triples_result = gen_triples(input_text,goldstandard)
     # messungen vor dem Refinement
-    metrics_before,_ = measure_data(triples_result, goldstandard, before_refinement=True)
-
+    data_before = measure_data(triples_result, goldstandard, before_refinement=True)
     # verfeinere die Daten
     refined_result, entity_mapping, relation_mapping = refine_data(triples_result)
     
-    # messingen nach dem Refinement
-    metrics_after,details = measure_data(refined_result, goldstandard, before_refinement=False)
+    # messungen nach dem Refinement
+    data_after = measure_data(refined_result, goldstandard, before_refinement=False)
 
     #generiere die Metriken
-    res=generate_combined_metrics(metrics_before, metrics_after, goldstandard, entity_mapping)
-    output ={
+    res = generate_combined_metrics(goldstandard, entity_mapping)
+    output = {
         "metadata": {
             "experiment_id": ex_id,
             "input_type": exp["input_type"],
@@ -49,14 +50,23 @@ def run(args):
             "relations": refined_result["relations"]
         },
         "evaluation_results": {
-            "metrics_before_refinement": metrics_before,
-            "metrics_after_refinement": metrics_after,
+            "metrics_before_refinement": data_before["strict"]["metrics"],
+            "metrics_after_refinement": data_after["strict"]["metrics"],
+            "metrics_loose_before": data_before["loose"]["metrics"],
+            "metrics_loose_after": data_after["loose"]["metrics"],
+            "delta_before": data_before["delta"],
+            "delta_after": data_after["delta"],
             "combined_metrics": res
         },
         "details": {
-            "entities": details["entities"],
-            "triples": details["triples"],
-            "relations": details["relations"]
+            "strict": data_before["strict"]["details"],
+            "loose": data_before["loose"]["details"]
+        },
+        "debug": {
+            "resolved_entities_strict": data_after["debug"]["resolved_entities_strict"],
+            "resolved_entities_loose": data_after["debug"]["resolved_entities_loose"],
+            "entity_mapping": serialize_tuple_keys(entity_mapping),
+            "relation_mapping": relation_mapping
         }
     }
     #speicher die Ergebnisse in einer Datei

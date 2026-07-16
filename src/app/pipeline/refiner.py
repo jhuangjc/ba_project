@@ -208,9 +208,9 @@ def apply_mapping(data,entity_mapping,relation_mapping):
     
     
     #ersetz die duplikates in relationen
-    for index, data_relation in enumerate(data["relations"]):
-        if data_relation in relation_r_mapping:
-            data["relations"][index] = relation_r_mapping[data_relation]
+    #for index, data_relation in enumerate(data["relations"]):
+    #    if data_relation in relation_r_mapping:
+    #        data["relations"][index] = relation_r_mapping[data_relation]
 
     #ersetz die duplikates in triples
     for index, triple in enumerate(data["triples"]):
