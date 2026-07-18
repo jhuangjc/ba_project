@@ -3,7 +3,7 @@ from app.utils.json import serialize_tuple_keys
 
 from app.pipeline.triple_generator import gen_triples
 from app.pipeline.refiner import refine_data
-from app.pipeline.metrics import measure_data, generate_combined_metrics
+from app.pipeline.metrics import measure_data, generate_combined_metrics, categorize_error_sources
 
 from datetime import datetime
 from pathlib import Path
@@ -35,6 +35,10 @@ def run(args):
     # messungen nach dem Refinement
     data_after = measure_data(refined_result, goldstandard, before_refinement=False)
 
+    #error sources
+    error_sources = categorize_error_sources(data_before["strict"]["details"], data_after["strict"]["details"])
+
+
     #generiere die Metriken
     res = generate_combined_metrics(goldstandard, entity_mapping)
     output = {
@@ -59,8 +63,11 @@ def run(args):
             "combined_metrics": res
         },
         "details": {
-            "strict": data_before["strict"]["details"],
-            "loose": data_before["loose"]["details"]
+            "strict_before": data_before["strict"]["details"],
+            "strict_after": data_after["strict"]["details"],
+            "loose_before": data_before["loose"]["details"],
+            "loose_after": data_after["loose"]["details"],
+            "error_sources": error_sources
         },
         "debug": {
             "resolved_entities_strict": data_after["debug"]["resolved_entities_strict"],

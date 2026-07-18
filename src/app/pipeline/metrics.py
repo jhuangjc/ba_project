@@ -385,6 +385,45 @@ def gen_cluster_coverage_metrics(resolved_entities, gold_entities):
         "coverage": coverage,
         "avg_cluster_hit": avg_cluster_hit
     }
+def tuple_dict(tuple_set):
+    result = []
+    for item in tuple_set:
+        result.append({"name": item[0], "type": item[1]})
+    return result
+
+def categorize_error_sources(details_before, details_after):
+    """Klassifiziert Fehlerquellen durch Before/After-Vergleich der Entity-Details.
+
+    Returns:
+        dict mit:
+        - generation_error: Entities, die sowohl vor als auch nach Refinement FP sind
+        - refinement_error: Entities, die NACH Refinement neu FP wurden
+        - resolved_through_refinement: Entities, die VOR Refinement FP waren, danach nicht mehr
+        - lost_matches: Entities, die VOR Refinement gematcht waren, NACH Refinement nicht mehr
+    """
+    def _entity_set(details, key):
+        result = set()
+        for item in details["entities"][key]:
+            result.add((item["name"], item["type"]))
+        return result
+
+    before_extra = _entity_set(details_before, "extra")
+    after_extra = _entity_set(details_after, "extra")
+    before_matched = _entity_set(details_before, "matched")
+    after_matched = _entity_set(details_after, "matched")
+
+    generation_error = before_extra & after_extra
+    refinement_error = after_extra - before_extra
+    resolved_error = before_extra - after_extra
+    lost_matches = before_matched - after_matched
+
+    return {
+        "generation_error": tuple_dict(generation_error),
+        "refinement_error": tuple_dict(refinement_error),
+        "resolved_through_refinement": tuple_dict(resolved_error),
+        "lost_matches": tuple_dict(lost_matches)
+    }
+ 
 
 #####################orchestration functions fuer metriken#####################
 def measure_data(predicted_lowercase, goldstandard_raw, before_refinement):
