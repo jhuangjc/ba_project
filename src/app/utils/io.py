@@ -2,8 +2,8 @@ import json
 from pathlib import Path
 # Projekt Pfad hilfsvariable
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent.parent
-
 REGISTRY_PATH = PROJECT_ROOT / "data/registry/registry.json"
+RESULTS_DIR = PROJECT_ROOT / "data/results"
 # Hilfsfuntion fuer das Lesen von Dateien
 def read_file(path):
     with open(path, "r") as file:

@@ -1,4 +1,4 @@
-from app.utils.io import load_input_file, load_registry, load_goldstandard
+from app.utils.io import load_input_file, load_registry, load_goldstandard,RESULTS_DIR
 from app.utils.json import serialize_tuple_keys
 
 from app.pipeline.triple_generator import gen_triples
@@ -9,7 +9,7 @@ from datetime import datetime
 from pathlib import Path
 import json
 
-def run(args):
+def run(args, output_dir=None):
     ex_id = args.expId
     registry_data = load_registry()
     experiments = registry_data["experiments"]
@@ -21,6 +21,7 @@ def run(args):
     if exp is None:
         raise ValueError(f"{ex_id} nicht in der Registry")
 
+    
     # lade den input text
     input_text = load_input_file(exp)
 
@@ -77,12 +78,17 @@ def run(args):
         }
     }
     #speicher die Ergebnisse in einer Datei
-    result_dir = Path(__file__).resolve().parent.parent.parent.parent/"data/results"
-    result_dir.mkdir(parents=True, exist_ok=True)
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     filename = f"result_{ex_id}_{timestamp}.json"
 
+    #output order bestimmen
+    if output_dir is not None:
+        result_dir = Path(output_dir)
+    else:
+        result_dir = RESULTS_DIR
+    result_dir.mkdir(parents=True, exist_ok=True)
+    
     with open(result_dir / filename, "w") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
 

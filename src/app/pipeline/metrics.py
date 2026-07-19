@@ -506,7 +506,8 @@ def measure_data(predicted_lowercase, goldstandard_raw, before_refinement):
 
 
 def generate_combined_metrics(goldstandard, entity_mapping, resolved_before=None, resolved_after=None):
-    dedup_metrics = gen_cluster_metrics(entity_mapping, goldstandard["entities"])
+    gs_copy = goldstandard_lowercase(copy.deepcopy(goldstandard["entities"]))
+    dedup_metrics = gen_cluster_metrics(entity_mapping, gs_copy)
     combined_metrics = {
         "deduplication_metrics": dedup_metrics
     }
