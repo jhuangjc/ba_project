@@ -1,7 +1,7 @@
 import pytest
 from app.pipeline.refiner import refine_data
 
-def fake_send_llm_candidates(query_item, candidates, Is_relation=False):
+def fake_send_llm_candidates(query_item, candidates, input_text, Is_relation=False):
     #fake implementation die einfach die ersten 3 items zurückgibt
     ret= candidates[:3]
     #für entities: in tuples konvertieren (wie die echte Funktion)
@@ -34,7 +34,7 @@ def test_refine_data(monkeypatch):
         ],
         "relations": ["knows"]}
     # execution
-    result,entity_mapping,relation_mapping = refine_data(data)
+    result,entity_mapping,relation_mapping = refine_data(data,"Test input text for context")
     #asserts
     assert "entities" in result
     assert "triples" in result
@@ -64,7 +64,7 @@ def test_refine_count(monkeypatch):
         "relations": ["knows"]}
     # execution
     before_count = len(data["entities"])
-    result,entity_mapping,relation_mapping = refine_data(data)
+    result,entity_mapping,relation_mapping = refine_data(data,"Test input text for context")
     after_count = len(result["entities"])
 
     #asserts
@@ -79,7 +79,7 @@ def test_refine_empty_entities(monkeypatch):
        "relations": []}
     # execution with raised error
     with pytest.raises(ValueError, match="No entities or relations to refine."):
-        result,entity_mapping,relation_mapping = refine_data(data)
+        result,entity_mapping,relation_mapping = refine_data(data,"Test input text for context")
 
 def test_refine_one_entity(monkeypatch):
     monkeypatch.setattr("app.pipeline.refiner.send_llm_candidates", fake_send_llm_candidates)
@@ -90,7 +90,7 @@ def test_refine_one_entity(monkeypatch):
         "triples": [{"subject": {"name": "Alice Smith", "type": "PER"}, "predicate": "knows", "object": {"name": "Alice Smith", "type": "PER"}}],
         "relations": ["knows"]}
     # execution with raised error
-    result,entity_mapping,relation_mapping = refine_data(data)
+    result,entity_mapping,relation_mapping = refine_data(data,"Test input text for context")
     #asserts
     assert result["entities"] == [{"name": "alice smith", "type": "PER"}]
     assert result["triples"] == [{"subject": {"name": "alice smith", "type": "PER"}, "predicate": "knows", "object": {"name": "alice smith", "type": "PER"}}]

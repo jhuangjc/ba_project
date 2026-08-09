@@ -129,10 +129,10 @@ def test_apply_mapping(sample_data, test_mapping):
 ########################testblock refine_data#########################
 def test_refine_data_errors(sample_data):
     with pytest.raises(ValueError):
-        refine_data("not a dict")
+        refine_data("not a dict", "Test input text for context")
 
     with pytest.raises(ValueError):
-        refine_data(["list", "of", "things"])
+        refine_data(["list", "of", "things"], "Test input text for context")
 
     with pytest.raises(ValueError):
-        refine_data(None)
+        refine_data(None, "Test input text for context")

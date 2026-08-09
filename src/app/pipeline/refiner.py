@@ -60,23 +60,23 @@ def convert_tuples_to_dicts(triples_tuples):
 ##############orchestration#######################
 
 # Hauptfunktion um die Daten zu refinen
-def refine_data(data):
+def refine_data(data, input_text):
 
     if not isinstance(data, dict):
         raise ValueError("Input data must be a dictionary.")
     data_lowercase = data_to_lowercase(data)
 
-    # entfernt exekte Duplikate
+    # entfernt exakte Duplikate
     dedup_data = rm_exact_duplicates(data_lowercase)
     
-    entity_mapping, relation_mapping = process_retrieval(dedup_data)
+    entity_mapping, relation_mapping = process_retrieval(dedup_data, input_text)
     dedup_data= apply_mapping(dedup_data, entity_mapping, relation_mapping)
 
     return dedup_data, entity_mapping, relation_mapping
 
 ##########retrieval loop#######################
 #goal main loop: arbeite durch die work list und rufe die top k elemente ab, die dann and die LLM geschickt werden um die deduplikation mapping zu generieren.
-def refine_loop(vectorised_items,bm25_items,work_list_items,item_reference):
+def refine_loop(vectorised_items,bm25_items,work_list_items,item_reference,input_text):
     llm_mappings = {}
    #haupt loop um die arbeitsliste durchzuarbeiten 
     while len(work_list_items) > 0:
@@ -93,7 +93,7 @@ def refine_loop(vectorised_items,bm25_items,work_list_items,item_reference):
                 continue
             top_k_items.append(item_reference[item])
         #send die candidaten and die llm
-        result=send_llm_candidates(query_item, top_k_items,True)
+        result=send_llm_candidates(query_item, top_k_items,input_text,True)
         # remove duplicates from work list
         for item in result:
             for i, work_item in enumerate(work_list_items):
@@ -103,7 +103,7 @@ def refine_loop(vectorised_items,bm25_items,work_list_items,item_reference):
         llm_mappings[query_item] = result
     return llm_mappings
 
-def refine_entities_loop(vectorised_entities, bm25_entities, work_list_entities, entities_list):
+def refine_entities_loop(vectorised_entities, bm25_entities, work_list_entities, entities_list, input_text):
     work_list_tuples = []
     for entity in work_list_entities:
         work_list_tuples.append((entity["name"], entity["type"]))
@@ -124,7 +124,7 @@ def refine_entities_loop(vectorised_entities, bm25_entities, work_list_entities,
                 continue
             top_k_entities.append(entities_list[item])
 
-        result = send_llm_candidates(query_entity, top_k_entities,False)
+        result = send_llm_candidates(query_entity, top_k_entities, input_text, False)
 
         for item in result:
             for i, work_item in enumerate(work_list_tuples):
@@ -136,7 +136,7 @@ def refine_entities_loop(vectorised_entities, bm25_entities, work_list_entities,
     return llm_mappings
 
 #hauptfunktion retrieval
-def process_retrieval(data):
+def process_retrieval(data, input_text):
 
     entities = data["entities"]
 
@@ -157,8 +157,8 @@ def process_retrieval(data):
     work_list_entities = copy.copy(entities)
     work_list_relations = copy.copy(relations)
     #ruf main loop fuer entities
-    entity_mappings = refine_entities_loop(vectorised_entities, bm25_entities, work_list_entities, entities)
-    relation_mappings = refine_loop(vectorised_relations, bm25_relations, work_list_relations, relations)
+    entity_mappings = refine_entities_loop(vectorised_entities, bm25_entities, work_list_entities, entities, input_text)
+    relation_mappings = refine_loop(vectorised_relations, bm25_relations, work_list_relations, relations, input_text)
 
     return [entity_mappings, relation_mappings]
 

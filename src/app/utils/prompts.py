@@ -23,11 +23,11 @@ def build_relation_extraction_prompt(text, entities, gold_relations):
         f"Text:\n{text}" 
     )
 # ladet den prompt für die deduplication, der die query item und die candidate items als input bekommt
-def build_deduplication_prompt_relation(query_item, candidate_items):
+def build_deduplication_prompt_relation(query_item, candidate_items, input_text):
     candidate_block = json.dumps(candidate_items, ensure_ascii=False, indent=2)
     return (
         "Given a query item (a relation predicate) and a list of candidate relation predicates, "
-        "identify which candidates are duplicates of the query item. "
+        "identify which candidates are duplicates of the query item, using the provided input text for context. "
         "Only merge predicates that have identical meaning (e.g., 'screenwriter' and 'written_by' "
         "refer to the same relation). "
         "Be conservative: keep predicates separate unless they are clearly synonyms. "
@@ -35,13 +35,14 @@ def build_deduplication_prompt_relation(query_item, candidate_items):
         "Return only valid JSON with a 'duplicates' list containing the duplicate items. "
         "Do not include markdown, code fences, or any explanation.\n\n"
         f"Query Item:\n{query_item}\n\n"
-        f"Candidate Items:\n{candidate_block}"
+        f"Candidate Items:\n{candidate_block}\n\n"
+        f"Input Text:\n{input_text}"
     )
 #promt fuer die entity refinement
-def build_deduplication_prompt_entity(query_item, candidate_items):
+def build_deduplication_prompt_entity(query_item, candidate_items, input_text):
     candidate_block = json.dumps(candidate_items, ensure_ascii=False, indent=2)
     return (
-        "Given a query item and a list of candidate items, identify which candidates are duplicates of the query item. "
+        "Given a query item and a list of candidate items, identify which candidates are duplicates of the query item, using the provided input text for context. "
         "Each item is a dictionary with 'name' and 'type' (PER, ORG, LOC, MISC, TIME, NUM). "
         "Only consider candidates as duplicates if they refer to the same real-world entity. "
         "Items with the same name but different types are NOT duplicates "
@@ -49,5 +50,6 @@ def build_deduplication_prompt_entity(query_item, candidate_items):
         "Return only valid JSON with a 'duplicates' list containing the duplicate items. "
         "Do not include markdown, code fences, or any explanation.\n\n"
         f"Query Item:\n{query_item}\n\n"
-        f"Candidate Items:\n{candidate_block}"
+        f"Candidate Items:\n{candidate_block}\n\n"
+        f"Input Text:\n{input_text}"
     )

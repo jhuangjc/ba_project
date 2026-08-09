@@ -27,16 +27,16 @@ dedup_tool = [
 ]
 
 
-def send_llm_candidates(query_item, candidate_list_items,Is_relation):
+def send_llm_candidates(query_item, candidate_list_items,input_text,Is_relation):
     #api ver setzen
     api_key = set_api_key("DEEPSEEK_API_KEY")
     # header bauen
     headers = build_api_header(api_key)
     #mesage bauen
     if Is_relation:
-        prompt = build_deduplication_prompt_relation(query_item, candidate_list_items)
+        prompt = build_deduplication_prompt_relation(query_item, candidate_list_items, input_text)
     else:
-        prompt = build_deduplication_prompt_entity(query_item, candidate_list_items)
+        prompt = build_deduplication_prompt_entity(query_item, candidate_list_items, input_text)
     dedup_response = httpx.post(
             "https://api.deepseek.com/beta/v1/chat/completions",
             headers=headers,

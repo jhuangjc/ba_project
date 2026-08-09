@@ -31,7 +31,7 @@ def run(args, output_dir=None):
     # messungen vor dem Refinement
     data_before = measure_data(triples_result, goldstandard, before_refinement=True)
     # verfeinere die Daten
-    refined_result, entity_mapping, relation_mapping = refine_data(triples_result)
+    refined_result, entity_mapping, relation_mapping = refine_data(triples_result,input_text)
     
     # messungen nach dem Refinement
     data_after = measure_data(refined_result, goldstandard, before_refinement=False)
