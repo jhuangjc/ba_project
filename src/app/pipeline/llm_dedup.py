@@ -15,8 +15,8 @@ dedup_tool = [
                 "properties": {
                     "duplicates": {
                         "type": "array",
-                        "items": {"type": "string"},
-                        "description": "List of candidates that are considered duplicates of the query item",
+                        "items": {"type": "integer"},
+                        "description": "indices(1 based) of the candidate items that are considered duplicates of the query item",
                     }
                 },
                 "required": ["duplicates"],
@@ -32,11 +32,20 @@ def send_llm_candidates(query_item, candidate_list_items,input_text,Is_relation)
     api_key = set_api_key("DEEPSEEK_API_KEY")
     # header bauen
     headers = build_api_header(api_key)
-    #mesage bauen
+
+    #fueg indeces zu den candidate items hinzu, damit die mapping korrekt ist
+    candidate_lines = []
+    for i, item in enumerate(candidate_list_items, start=1):
+        if Is_relation:
+            candidate_lines.append(f"{i}. {item}")
+        else:
+            candidate_lines.append(f"{i}. {item['name']} ({item['type']})")
+    numbered_block = "\n".join(candidate_lines)
+
     if Is_relation:
-        prompt = build_deduplication_prompt_relation(query_item, candidate_list_items, input_text)
+        prompt = build_deduplication_prompt_relation(query_item, numbered_block, input_text)
     else:
-        prompt = build_deduplication_prompt_entity(query_item, candidate_list_items, input_text)
+        prompt = build_deduplication_prompt_entity(query_item, numbered_block, input_text)
     dedup_response = httpx.post(
             "https://api.deepseek.com/beta/v1/chat/completions",
             headers=headers,
@@ -55,9 +64,16 @@ def send_llm_candidates(query_item, candidate_list_items,input_text,Is_relation)
     response_data = dedup_response.json()
     dedup_content = response_data["choices"][0]["message"]["tool_calls"][0]["function"]["arguments"]
     dedup_mappings = json.loads(dedup_content)["duplicates"]
+    #rm indeces aus der antwort relationen
+    result_mappings =[]
+    for i in dedup_mappings:
+        candidate_item = candidate_list_items[i - 1]  # 1-based index to 0-based
+        result_mappings.append(candidate_item)
+
 #fuer den entity fall, wenn der query item ein dict ist, dann muss auch der type mitgegeben werden, damit die mapping korrekt ist
     if not Is_relation:
-        for i,item in enumerate(dedup_mappings):
-            dedup_mappings[i] = (item, query_item["type"])
-
-    return dedup_mappings
+        tuple_mappings = []
+        for item in result_mappings:
+            tuple_mappings.append((item["name"], item["type"]))
+        result_mappings = tuple_mappings
+    return result_mappings
