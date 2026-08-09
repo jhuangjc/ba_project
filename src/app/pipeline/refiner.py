@@ -109,21 +109,25 @@ def refine_entities_loop(vectorised_entities, bm25_entities, work_list_entities,
         work_list_tuples.append((entity["name"], entity["type"]))
 
     llm_mappings = {}
+    #haupt loop um die arbeitsliste durchzuarbeiten
     while len(work_list_tuples) > 0:
+        #setup fuer das query item
         query_entity_tuple = work_list_tuples.pop(0)
         query_entity = {"name": query_entity_tuple[0], "type": query_entity_tuple[1]}
-        query_entity_embedding = model.encode(query_entity_tuple[0])
-
+        query_string = f"{query_entity_tuple[0]} ({query_entity_tuple[1]})"
+        query_entity_embedding = model.encode(query_string)
+        #hol die top k indizes
         top_k_entity_indices = get_top_k_elements(
-            vectorised_entities, bm25_entities, query_entity_tuple[0],
+            vectorised_entities, bm25_entities, query_string,
             query_entity_embedding, k=17
         )
+        #hol die namen der indizes
         top_k_entities = []
         for item in top_k_entity_indices:
             if entities_list[item] == query_entity:
                 continue
             top_k_entities.append(entities_list[item])
-
+        #send die kandidaten and die llm
         result = send_llm_candidates(query_entity, top_k_entities, input_text, False)
 
         for item in result:
@@ -142,7 +146,7 @@ def process_retrieval(data, input_text):
 
     entity_names = []
     for entity in entities:
-        entity_names.append(entity["name"])
+        entity_names.append(f"{entity['name']} ({entity['type']})")
 
     relations = data["relations"]
     #wenn keine entities oder relationen vorhanden sind, raise error,
