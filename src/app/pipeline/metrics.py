@@ -1,7 +1,6 @@
 from app.pipeline.refiner import data_to_lowercase
 from app.utils.gold import extract_gold_relations
 from app.utils.gold import goldstandard_lowercase
-from scipy.optimize import linear_sum_assignment
 
 import copy
 
@@ -294,59 +293,6 @@ def generate_false_negatives(resolved_entities, goldstandard):
     #berechnet die false negatives, indem die goldstandard ids mit den resolved entity ids verglichen werden 
     false_negatives = len(matched_gold_ids - resolved_entity_ids)
     return false_negatives
-#####################cluster metrics################################
-
-def gen_cluster_metrics(predicted_clusters, goldstandard_clusters):
-    #preprocessing
-    pc=copy.deepcopy(predicted_clusters)
-    #name ist nicht in predicted clusters drinne, wird hier hinzugefuegt
-    predicted_clusters_adjusted = []
-    for key,value in pc.items():
-        c=set(value)
-        c.add(key)
-        predicted_clusters_adjusted.append(c)
-    #goldstand muss auch adjustet werden, damit der algorithmus funktioniert
-    gc=copy.deepcopy(goldstandard_clusters)
-    goldstandard_clusters_adjusted = []
-    for cluster in gc:
-        c=set()
-        for alias in cluster["aliases"]:
-            c.add((alias, cluster["type"]))
-        goldstandard_clusters_adjusted.append(c)
-    #bau die kostenmatrix
-    cost_matrix = []
-    for i in range(len(predicted_clusters_adjusted)):
-        row = []
-        for j in range(len(goldstandard_clusters_adjusted)):
-            row.append(-len(predicted_clusters_adjusted[i].intersection(goldstandard_clusters_adjusted[j])))
-        cost_matrix.append(row)
-    #call den hungarian algorithmus
-    row_ind, col_ind = linear_sum_assignment(cost_matrix)
-    #berechne die true positives, false positives und false negatives
-    true_positives = 0
-    false_positives = 0
-    false_negatives = 0
-    for i,j in zip(row_ind, col_ind):
-        intersection = predicted_clusters_adjusted[i].intersection(goldstandard_clusters_adjusted[j])
-        true_positives += len(intersection)
-        false_positives += len(predicted_clusters_adjusted[i]) - len(intersection)
-        false_negatives += len(goldstandard_clusters_adjusted[j]) - len(intersection)
-    #ungemachte cluster auswerten
-    for i in range(len(predicted_clusters_adjusted)):
-        if i not in row_ind:
-            false_positives += len(predicted_clusters_adjusted[i])
-    for j in range(len(goldstandard_clusters_adjusted)):
-        if j not in col_ind:
-            false_negatives += len(goldstandard_clusters_adjusted[j])    
-    #berechne precision, recall und f1
-    precision = calculate_precision(true_positives, false_positives)
-    recall = calculate_recall(true_positives, false_negatives)
-    f1 = calculate_f1(precision, recall)
-    return {
-        "precision": precision,
-        "recall": recall,
-        "f1": f1
-    } 
 #################################cluster coverage metrics################################
 def gen_cluster_hit_table(resolved_entities, gold_entities):
     hit_table = []
@@ -385,6 +331,53 @@ def gen_cluster_coverage_metrics(resolved_entities, gold_entities):
         "coverage": coverage,
         "avg_cluster_hit": avg_cluster_hit
     }
+
+#hilfsfunktion um den anteil der FPs zu berechnen, deren name im goldstandard existiert (falscher typ)
+def gen_fp_name_in_gold_metrics(resolved_entities, predicted_entities, gold_entities):
+    #aggregiere alle gold-namen (name + aliases) fuer schnellen lookup
+    gold_names = set()
+    for entity in gold_entities:
+        gold_names.add(entity["name"])
+        for alias in entity["aliases"]:
+            gold_names.add(alias)
+    #zaehle FPs und wie viele davon im goldstandard existieren
+    fp_total = 0
+    fp_name_in_gold = 0
+    for entity in predicted_entities:
+        key = (entity["name"], entity["type"])
+        if resolved_entities.get(key, -1) == -1:
+            fp_total += 1
+            if entity["name"] in gold_names:
+                fp_name_in_gold += 1
+    #berechne rate
+    name_in_gold_rate = fp_name_in_gold / fp_total if fp_total > 0 else 0.0
+    return {
+        "fp_total": fp_total,
+        "fp_name_in_gold": fp_name_in_gold,
+        "name_in_gold_rate": name_in_gold_rate
+    }
+
+#hilfsfunktion um den anteil der gold-cluster zu berechnen, die mehrfach getroffen wurden (duplikate)
+def gen_duplicated_cluster_metrics(resolved_entities, gold_entities):
+    hit_table = gen_cluster_hit_table(resolved_entities, gold_entities)
+    total_clusters = len(hit_table)
+    #zaehle cluster mit mehr als einem hit
+    duplicated_clusters = 0
+    total_hits_in_dup = 0
+    for row in hit_table:
+        if row["hit"] > 1:
+            duplicated_clusters += 1
+            total_hits_in_dup += row["hit"]
+    #berechne raten
+    duplicated_rate = duplicated_clusters / total_clusters if total_clusters > 0 else 0.0
+    avg_hit_in_duplicated = total_hits_in_dup / duplicated_clusters if duplicated_clusters > 0 else 0.0
+    return {
+        "duplicated_clusters": duplicated_clusters,
+        "total_clusters": total_clusters,
+        "duplicated_rate": duplicated_rate,
+        "avg_hit_in_duplicated": avg_hit_in_duplicated
+    }
+
 def tuple_dict(tuple_set):
     result = []
     for item in tuple_set:
@@ -442,6 +435,8 @@ def measure_data(predicted_lowercase, goldstandard_raw, before_refinement):
     resolved_entities_strict = resolve_entity_matches(entity_matches_strict, p_copy["entities"])
 
     cluster_hit_metrics_strict = gen_cluster_coverage_metrics(resolved_entities_strict, gold_list_lowercase)
+    fp_name_in_gold_strict = gen_fp_name_in_gold_metrics(resolved_entities_strict, p_copy["entities"], gold_list_lowercase)
+    duplicated_cluster_strict = gen_duplicated_cluster_metrics(resolved_entities_strict, gold_list_lowercase)
 
     # entity matching fuer loose
     entity_matches_loose = map_to_gold(p_copy["entities"], gold_list_lowercase, loose_matching=True)
@@ -452,6 +447,8 @@ def measure_data(predicted_lowercase, goldstandard_raw, before_refinement):
     entity_details_strict = get_details_entities(resolved_entities_strict, gold_list_lowercase)
 
     cluster_hit_metrics_loose = gen_cluster_coverage_metrics(resolved_entities_loose, gold_list_lowercase)
+    fp_name_in_gold_loose = gen_fp_name_in_gold_metrics(resolved_entities_loose, p_copy["entities"], gold_list_lowercase)
+    duplicated_cluster_loose = gen_duplicated_cluster_metrics(resolved_entities_loose, gold_list_lowercase)
     entity_metrics_loose = gen_entity_metrics(resolved_entities_loose, gold_list_lowercase)
     entity_details_loose = get_details_entities(resolved_entities_loose, gold_list_lowercase)
 
@@ -467,7 +464,9 @@ def measure_data(predicted_lowercase, goldstandard_raw, before_refinement):
         "entity_metrics": entity_metrics_strict,
         "relation_metrics": relation_metrics,
         "triple_metrics": triple_metrics_strict,
-        "cluster_hit_metrics": cluster_hit_metrics_strict
+        "cluster_hit_metrics": cluster_hit_metrics_strict,
+        "fp_name_in_gold_metrics": fp_name_in_gold_strict,
+        "duplicated_cluster_metrics": duplicated_cluster_strict
     }
     details_strict = {
         "entities": {"matched": entity_details_strict[0], "unmatched": entity_details_strict[1], "extra": entity_details_strict[2]},
@@ -479,7 +478,9 @@ def measure_data(predicted_lowercase, goldstandard_raw, before_refinement):
         "entity_metrics": entity_metrics_loose,
         "relation_metrics": relation_metrics,
         "triple_metrics": triple_metrics_loose,
-        "cluster_hit_metrics": cluster_hit_metrics_loose
+        "cluster_hit_metrics": cluster_hit_metrics_loose,
+        "fp_name_in_gold_metrics": fp_name_in_gold_loose,
+        "duplicated_cluster_metrics": duplicated_cluster_loose
     }
     details_loose = {
         "entities": {"matched": entity_details_loose[0], "unmatched": entity_details_loose[1], "extra": entity_details_loose[2]},
@@ -505,10 +506,4 @@ def measure_data(predicted_lowercase, goldstandard_raw, before_refinement):
 
 
 
-def generate_combined_metrics(goldstandard, entity_mapping, resolved_before=None, resolved_after=None):
-    gs_copy = goldstandard_lowercase(copy.deepcopy(goldstandard["entities"]))
-    dedup_metrics = gen_cluster_metrics(entity_mapping, gs_copy)
-    combined_metrics = {
-        "deduplication_metrics": dedup_metrics
-    }
-    return combined_metrics
+

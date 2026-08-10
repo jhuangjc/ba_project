@@ -124,7 +124,8 @@ def gen_triples(input_text,goldstandard):
         "https://api.deepseek.com/beta/v1/chat/completions",
         headers=headers,
         json={
-            "model": "deepseek-chat",
+            "model": "deepseek-v4-flash",
+            "thinking": {"type": "disabled"},
             "messages": [
                 {"role": "user", "content": entity_prompt}
             ],
@@ -148,7 +149,8 @@ def gen_triples(input_text,goldstandard):
         "https://api.deepseek.com/beta/v1/chat/completions",
         headers=headers,
         json={
-            "model": "deepseek-chat",
+            "model": "deepseek-v4-flash",
+            "thinking": {"type": "disabled"},
             "messages": [
                 {"role": "user", "content": relation_prompt}
             ],

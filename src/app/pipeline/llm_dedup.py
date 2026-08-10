@@ -50,7 +50,8 @@ def send_llm_candidates(query_item, candidate_list_items,input_text,Is_relation)
             "https://api.deepseek.com/beta/v1/chat/completions",
             headers=headers,
             json={
-                "model": "deepseek-chat",
+                "model": "deepseek-v4-flash",
+                "thinking": {"type": "disabled"},
                 "messages": [
                     {"role": "user", "content": prompt}
                 ],
