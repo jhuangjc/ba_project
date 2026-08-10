@@ -28,33 +28,6 @@ def build_relation_extraction_prompt(text, entities, gold_relations):
         f"Entities:\n{entity_block}\n\n"
         f"Text:\n{text}" 
     )
-# ladet den prompt für die deduplication, der die query item und die candidate items als input bekommt
-def build_deduplication_prompt_relation(query_item, candidate_items, input_text):
-    return (
-        "Given a query item (a relation predicate) and a numbered list of candidate relation predicates, "
-        "determine which candidates are duplicates of the query item. "
-        "Duplicates are predicates that have the EXACT SAME meaning.\n\n"
-        "CRITICAL — You MUST use the source text to verify:\n"
-        "- Check the source text to see how each predicate is actually used. "
-        "Two predicates that connect the same pairs of entities in the same way are likely duplicates.\n"
-        "- If two predicates describe different kinds of relationships in the text, "
-        "they are NOT duplicates even if they sound similar.\n"
-        "- If the source text does not provide clear evidence, do NOT merge.\n\n"
-        "RULES:\n"
-        "1. Only merge unambiguous synonyms used identically in the text "
-        "(e.g., 'country' and 'country of origin' describing the same relationship).\n"
-        "2. Do NOT merge predicates with related but distinct meanings "
-        "(e.g., 'broadcast on' vs 'produced by', 'participant' vs 'creator').\n"
-        "3. Do NOT merge predicates that differ in semantic direction "
-        "(e.g., 'owns' vs 'owned by').\n"
-        "4. When in doubt, keep predicates separate.\n\n"
-        "Return only valid JSON with a 'duplicates' list containing the 1-based indices of matching candidates. "
-        "Return an empty list if there are none. "
-        "Do not include markdown, code fences, or any explanation.\n\n"
-        f"Query Item:\n{query_item}\n\n"
-        f"Candidate Items:\n{candidate_items}\n\n"
-        f"Source Text:\n{input_text}"
-    )
 #promt fuer die entity refinement
 def build_deduplication_prompt_entity(query_item, candidate_items, input_text):
     return (

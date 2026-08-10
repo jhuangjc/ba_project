@@ -113,14 +113,11 @@ def test_mapping():
     }
 def test_apply_mapping(sample_data, test_mapping):
     entity_mapping = test_mapping
-    relation_mapping = {"knows": ["knows"]}
-    result = apply_mapping(sample_data, entity_mapping, relation_mapping)
+    result = apply_mapping(sample_data, entity_mapping)
     #prüft ob die duplikate in entities ersetzt wurden
     for entity in result["entities"]:
         assert entity["name"] not in ["alice", "bob", "robert", "robert smith"]
 
-    #prüft ob die duplikate in relationen ersetzt wurden
-    assert "knows" in result["relations"]
     #prüft ob die duplikate in triples ersetzt wurden
     for triple in result["triples"]:
         assert triple["subject"]["name"] not in ["alice", "bob", "robert", "robert smith"]

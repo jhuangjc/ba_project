@@ -31,7 +31,7 @@ def run(args, output_dir=None):
     # messungen vor dem Refinement
     data_before = measure_data(triples_result, goldstandard, before_refinement=True)
     # verfeinere die Daten
-    refined_result, entity_mapping, relation_mapping = refine_data(triples_result,input_text)
+    refined_result, entity_mapping = refine_data(triples_result, input_text)
     
     # messungen nach dem Refinement
     data_after = measure_data(refined_result, goldstandard, before_refinement=False)
@@ -70,8 +70,7 @@ def run(args, output_dir=None):
         "debug": {
             "resolved_entities_strict": data_after["debug"]["resolved_entities_strict"],
             "resolved_entities_loose": data_after["debug"]["resolved_entities_loose"],
-            "entity_mapping": serialize_tuple_keys(entity_mapping),
-            "relation_mapping": relation_mapping
+            "entity_mapping": serialize_tuple_keys(entity_mapping)
         }
     }
     #speicher die Ergebnisse in einer Datei

@@ -69,40 +69,13 @@ def refine_data(data, input_text):
     # entfernt exakte Duplikate
     dedup_data = rm_exact_duplicates(data_lowercase)
     
-    entity_mapping, relation_mapping = process_retrieval(dedup_data, input_text)
-    dedup_data= apply_mapping(dedup_data, entity_mapping, relation_mapping)
+    entity_mapping = process_retrieval(dedup_data, input_text)
+    dedup_data = apply_mapping(dedup_data, entity_mapping)
 
-    return dedup_data, entity_mapping, relation_mapping
+    return dedup_data, entity_mapping
 
 ##########retrieval loop#######################
 #goal main loop: arbeite durch die work list und rufe die top k elemente ab, die dann and die LLM geschickt werden um die deduplikation mapping zu generieren.
-def refine_loop(vectorised_items,bm25_items,work_list_items,item_reference,input_text):
-    llm_mappings = {}
-   #haupt loop um die arbeitsliste durchzuarbeiten 
-    while len(work_list_items) > 0:
-        #setup fuer das query item
-        query_item = work_list_items.pop(0)
-        query_name = query_item
-        query_item_embedding = model.encode(query_name)
-        #hol die tip k indizes
-        top_k_item_indices = get_top_k_elements(vectorised_items, bm25_items, query_name, query_item_embedding, k=17)
-        top_k_items = []
-        #hol die namen der items
-        for item in top_k_item_indices:
-            if item_reference[item] == query_item:
-                continue
-            top_k_items.append(item_reference[item])
-        #send die candidaten and die llm
-        result=send_llm_candidates(query_item, top_k_items,input_text,True)
-        # remove duplicates from work list
-        for item in result:
-            for i, work_item in enumerate(work_list_items):
-                if item == work_item:
-                    work_list_items.pop(i)
-                    break
-        llm_mappings[query_item] = result
-    return llm_mappings
-
 def refine_entities_loop(vectorised_entities, bm25_entities, work_list_entities, entities_list, input_text):
     work_list_tuples = []
     for entity in work_list_entities:
@@ -128,7 +101,7 @@ def refine_entities_loop(vectorised_entities, bm25_entities, work_list_entities,
                 continue
             top_k_entities.append(entities_list[item])
         #send die kandidaten and die llm
-        result = send_llm_candidates(query_entity, top_k_entities, input_text, False)
+        result = send_llm_candidates(query_entity, top_k_entities, input_text)
 
         for item in result:
             for i, work_item in enumerate(work_list_tuples):
@@ -148,23 +121,19 @@ def process_retrieval(data, input_text):
     for entity in entities:
         entity_names.append(f"{entity['name']} ({entity['type']})")
 
-    relations = data["relations"]
-    #wenn keine entities oder relationen vorhanden sind, raise error,
-    if len(entities) == 0 or len(relations) == 0:
-        raise ValueError("No entities or relations to refine.")
+    #wenn keine entities vorhanden sind, raise error
+    if len(entities) == 0:
+        raise ValueError("No entities to refine.")
     #embeddings 
-    vectorised_entities, vectorised_relations = vectorise_data(entity_names, relations)
+    vectorised_entities = vectorise_data(entity_names)
     #bm objects
     bm25_entities = prepare_bm25(entity_names)
-    bm25_relations = prepare_bm25(relations)
-    #deep copies fuer main loop
+    #deep copy fuer main loop
     work_list_entities = copy.copy(entities)
-    work_list_relations = copy.copy(relations)
     #ruf main loop fuer entities
     entity_mappings = refine_entities_loop(vectorised_entities, bm25_entities, work_list_entities, entities, input_text)
-    relation_mappings = refine_loop(vectorised_relations, bm25_relations, work_list_relations, relations, input_text)
 
-    return [entity_mappings, relation_mappings]
+    return entity_mappings
 
 ###########andere utils#####################
 #hilfsfunktion um 2 dicts zu vegleichten
@@ -198,24 +167,17 @@ def gen_reverse_mapping(mapping):
 #todo rewrite the funciton so that dicts work
 #entity mapping: (name,type) -> (name,type)
 #hilfsfunktion um die mappings auf die Graphen anzuwenden
-def apply_mapping(data,entity_mapping,relation_mapping):
+def apply_mapping(data, entity_mapping):
     
-    #ansatz though a reverse mapping
+    #ansatz through a reverse mapping
     entity_r_mapping = gen_reverse_mapping(entity_mapping)
-    relation_r_mapping = gen_reverse_mapping(relation_mapping)
     #ersetz die duplikates in entities
     for index, data_entity in enumerate(data["entities"]):
         enity_key = (data_entity["name"], data_entity["type"])
         if enity_key in entity_r_mapping:
-           res=entity_r_mapping[enity_key] 
+           res = entity_r_mapping[enity_key] 
            data["entities"][index] = {"name": res[0], "type": res[1]} 
     
-    
-    #ersetz die duplikates in relationen
-    #for index, data_relation in enumerate(data["relations"]):
-    #    if data_relation in relation_r_mapping:
-    #        data["relations"][index] = relation_r_mapping[data_relation]
-
     #ersetz die duplikates in triples
     for index, triple in enumerate(data["triples"]):
         subject = (triple["subject"]["name"], triple["subject"]["type"])
@@ -224,11 +186,8 @@ def apply_mapping(data,entity_mapping,relation_mapping):
             data["triples"][index]["subject"] = {"name": entity_r_mapping[subject][0], "type": entity_r_mapping[subject][1]}
         if t_object_ in entity_r_mapping:
             data["triples"][index]["object"] = {"name": entity_r_mapping[t_object_][0], "type": entity_r_mapping[t_object_][1]}
-        if triple["predicate"] in relation_r_mapping:
-            data["triples"][index]["predicate"] = relation_r_mapping[triple["predicate"]]
 
     #dedupliziert die neuen triples die durch die ersetzungen entstanden sind
-    #tripel
     triples_tuples = convert_dicts_to_tuples(data["triples"])
     triples_tuples = dedup_list(triples_tuples)
     data["triples"] = convert_tuples_to_dicts(triples_tuples)

@@ -5,11 +5,9 @@ from rank_bm25 import BM25Okapi
 # lade das Modell
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
-# input: dict mit den keys "entities", "triples" und "relations"
-def vectorise_data(entity_names, relations):
+def vectorise_data(entity_names):
     entity_embeddings = model.encode(entity_names)
-    relation_embeddings = model.encode(relations)
-    return entity_embeddings, relation_embeddings
+    return entity_embeddings
 # auslagerung bm 25 prepwork
 def prepare_bm25(item_list):
     tokenized_items = []
