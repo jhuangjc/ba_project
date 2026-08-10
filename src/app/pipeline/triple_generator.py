@@ -9,7 +9,8 @@ from app.utils.gold import extract_gold_relations
 def extract_relations(triples):
     relations = set()
     for triple in triples:
-        relations.add(triple["predicate"])
+        if "predicate" in triple:
+            relations.add(triple["predicate"])
     return list(relations)
 #tools for entety extraction
 entity_ext_tool = [

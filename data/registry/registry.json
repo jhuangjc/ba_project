@@ -81,24 +81,24 @@
       "gold_path": "data/goldstandard_json_flat_with_types/gold_01.json"
     },
     {
-      "experiment_id": "repetition_dup_high_density_inp",
-      "input_path": "data/inputexamples/repetition/dup_high_density_inp.txt",
+      "experiment_id": "repetition_entity",
+      "input_path": "data/inputexamples/repetition/dup_entity.txt",
       "input_type": "repetition",
       "source_group": "airasia_zest",
       "gold_id": "gold_02",
       "gold_path": "data/goldstandard_json_flat_with_types/gold_02.json"
     },
     {
-      "experiment_id": "repetition_full_dup_input",
-      "input_path": "data/inputexamples/repetition/full_dup_input.txt",
+      "experiment_id": "repetition_sentence",
+      "input_path": "data/inputexamples/repetition/dup_sentence.txt",
       "input_type": "repetition",
       "source_group": "airasia_zest",
       "gold_id": "gold_02",
       "gold_path": "data/goldstandard_json_flat_with_types/gold_02.json"
     },
     {
-      "experiment_id": "repetition_proform_dup_input",
-      "input_path": "data/inputexamples/repetition/proform_dup_input.txt",
+      "experiment_id": "repetition_duo_doc",
+      "input_path": "data/inputexamples/repetition/duo_doc.txt",
       "input_type": "repetition",
       "source_group": "airasia_zest",
       "gold_id": "gold_02",
