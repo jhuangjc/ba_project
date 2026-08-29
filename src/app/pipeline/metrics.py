@@ -217,7 +217,6 @@ def resolve_duplicate_matches(matches):
         if match[3] == MATCH_NAME:
             return match[1]
 
-
     return matches[0][1]
 #hilfsfunktion, die ein dict mit den predicted items den matches baut
 def resolve_entity_matches(entity_matches, predicted_entities):
