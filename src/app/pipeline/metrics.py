@@ -181,7 +181,9 @@ def map_relations_to_gold(predicted_relations, gold_relations):
     matches=set()
     extra=set()
     for relation in predicted_relations:
-        if relation in gold_relations:
+        #falls die relation in den gold_relations ist und noch nicht gematcht wurde, 
+        # dann wird sie als match hinzugefuegt, sonst als extra 
+        if relation in gold_relations and relation not in matches:
             matches.add(relation)
         else:
             extra.add(relation)
@@ -318,8 +320,7 @@ def gen_cluster_coverage_metrics(resolved_entities, gold_entities):
     for row in hit_table:
         if row["hit"] > 0:
             count += 1
-    covered_gold = count
-    coverage = covered_gold / table_length if table_length > 0 else 0
+    coverage = count / table_length if table_length > 0 else 0
     #berchne mit avg cluster hit
     total_hits=0
     for row in hit_table:
@@ -327,7 +328,6 @@ def gen_cluster_coverage_metrics(resolved_entities, gold_entities):
     avg_cluster_hit = total_hits / table_length if table_length > 0 else 0
 
     return {
-        "covered_gold": covered_gold,
         "coverage": coverage,
         "avg_cluster_hit": avg_cluster_hit
     }
