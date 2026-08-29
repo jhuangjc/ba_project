@@ -97,7 +97,7 @@
       "gold_path": "data/goldstandard_json_flat_with_types/gold_02.json"
     },
     {
-      "experiment_id": "repetition_duo_doc",
+      "experiment_id": "repetition_doc",
       "input_path": "data/inputexamples/repetition/duo_doc.txt",
       "input_type": "repetition",
       "source_group": "airasia_zest",
