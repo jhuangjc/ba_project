@@ -18,6 +18,8 @@ from app.pipeline.metrics import (
     gen_entity_metrics,
     gen_relation_metrics,
     gen_triple_metrics,
+    map_to_gold,
+    resolve_entity_matches,
 )
 
 
@@ -113,6 +115,47 @@ def test_gen_entity_metrics_alias_variants_same_gold_id():
     assert m["precision"] == pytest.approx(2 / 3)
     assert m["recall"] == 1.0
     assert m["f1"] == pytest.approx(0.8)
+
+
+# -------------------- entity resolution (matching) --------------------
+# Lock-in fuer die Match-Praeferenzen: innerhalb eines Passes gewinnt ein
+# Name-Match gegenueber einem Alias-Match (exakt: 0 < 1, substring: 2 < 3).
+
+def test_resolve_prefers_exact_name_over_exact_alias():
+    # ein predicted name matcht exakt den Namen eines Clusters und exakt
+    # einen Alias eines anderen Clusters -> exakter Name gewinnt
+    pred = {"name": "x", "type": "PER"}
+    gold = [
+        {"id": 1, "name": "x", "type": "PER", "aliases": []},
+        {"id": 2, "name": "y", "type": "PER", "aliases": ["x"]},
+    ]
+    matches = map_to_gold([pred], gold, loose_matching=True)
+    resolved = resolve_entity_matches(matches, [pred])
+    assert resolved[("x", "PER")] == 1
+
+
+def test_resolve_prefers_exact_name_over_exact_alias_strict():
+    # gleiche Praeferenz im strikten Matching
+    pred = {"name": "x", "type": "PER"}
+    gold = [
+        {"id": 1, "name": "x", "type": "PER", "aliases": []},
+        {"id": 2, "name": "y", "type": "PER", "aliases": ["x"]},
+    ]
+    matches = map_to_gold([pred], gold, loose_matching=False)
+    resolved = resolve_entity_matches(matches, [pred])
+    assert resolved[("x", "PER")] == 1
+
+
+def test_resolve_prefers_substring_name_over_substring_alias():
+    # substring-pass: name-hit schlaegt alias-hit
+    pred = {"name": "xylophone", "type": "MISC"}
+    gold = [
+        {"id": 1, "name": "xylo", "type": "MISC", "aliases": []},
+        {"id": 2, "name": "phonee", "type": "MISC", "aliases": ["phone"]},
+    ]
+    matches = map_to_gold([pred], gold, loose_matching=True)
+    resolved = resolve_entity_matches(matches, [pred])
+    assert resolved[("xylophone", "MISC")] == 1
 
 
 # -------------------- relation metrics --------------------
