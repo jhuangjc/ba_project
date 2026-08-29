@@ -188,7 +188,6 @@ def map_relations_to_gold(predicted_relations, gold_relations):
             extra.add(relation)
     return list(matches), list(extra)
 def triples_in_gold(predicted_triples, goldstandard):
-    #probelem, the dicts are named differently, so we need to map them to the same format
 
     matches = []
     extra = []
@@ -208,7 +207,6 @@ def triples_in_gold(predicted_triples, goldstandard):
         #um duplikates zu vermeiden, wird die relation nach der for aufgenommen
         if not found:
             extra.append(elem)
-    #wandel die tupel fuer die ausgabe wieder in dicts um
 
     return matches, extra
 
