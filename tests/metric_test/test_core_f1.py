@@ -6,10 +6,8 @@ Covers the calculation helpers and the three metric generators:
   gen_relation_metrics
   gen_triple_metrics
 
-The triple tests assert one-to-one matching semantics (each gold relation can be
-matched by at most one predicted triple). Tests that encode this intended
-behavior are marked with the reason string where the current implementation
-diverges.
+The entity and triple tests assert one-to-one matching semantics: each gold
+entity/relation is matched by at most one predicted item.
 """
 import pytest
 
@@ -98,6 +96,23 @@ def test_gen_entity_metrics_none_matched():
     assert m["precision"] == 0.0
     assert m["recall"] == 0.0
     assert m["f1"] == 0.0
+
+
+def test_gen_entity_metrics_alias_variants_same_gold_id():
+    # zwei Namensvarianten loesen auf dieselbe Gold-Entity auf: ein TP, ein FP
+    resolved = {
+        ("blackadder", "MISC"): 2,
+        ("blackadder goes forth", "MISC"): 2,
+        ("bbc1", "ORG"): 4,
+    }
+    gold = [{"id": 2, "name": "blackadder goes forth"}, {"id": 4, "name": "bbc1"}]
+    m = gen_entity_metrics(resolved, gold)
+    assert m["true_positives"] == 2
+    assert m["false_positives"] == 1
+    assert m["false_negatives"] == 0
+    assert m["precision"] == pytest.approx(2 / 3)
+    assert m["recall"] == 1.0
+    assert m["f1"] == pytest.approx(0.8)
 
 
 # -------------------- relation metrics --------------------
@@ -199,9 +214,7 @@ def test_gen_triple_metrics_unresolved_entity():
 def test_gen_triple_metrics_duplicate_predicted_triples():
     """Two identical predicted triples vs one gold relation.
 
-    Intended one-to-one semantics: one TP, the copy is an FP.
-    KNOWN BUG: current triples_in_gold double-matches the same gold relation,
-    giving tp=3/fn=-1 and F1 > 1.
+    One-to-one semantics: one TP, the copy is an FP.
     """
     triples = [
         make_triple("Alice", "PER", "knows", "Bob", "PER"),
@@ -222,9 +235,6 @@ def test_gen_triple_metrics_duplicate_predicted_triples():
 def test_gen_triple_metrics_alias_variants_same_gold_id():
     """Two name variants resolving to the same gold id must not both match the
     same gold relation.
-
-    KNOWN BUG: current triples_in_gold matches both against the same gold
-    relation, giving tp=2/fn=0 and F1=1.0 instead of 0.5.
     """
     triples = [
         make_triple("Blackadder", "MISC", "present in work", "BBC1", "ORG"),

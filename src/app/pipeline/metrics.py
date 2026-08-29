@@ -49,8 +49,7 @@ def loose_match(predicted_name, gold_name):
 #metrik-helper für entities
 def gen_entity_metrics(resolved_matches, goldstandard_lowercase):
     #generiere counts
-    true_positives = generate_true_positives(resolved_matches)
-    false_positives = generate_false_positives(resolved_matches)
+    true_positives, false_positives = generate_entity_tp_fp(resolved_matches)
     false_negatives = generate_false_negatives(resolved_matches, goldstandard_lowercase)
     #metriken berechnen
     precision = calculate_precision(true_positives, false_positives)
@@ -193,17 +192,24 @@ def triples_in_gold(predicted_triples, goldstandard):
 
     matches = []
     extra = []
+    # nutz die indizes der relations um tracked ob ein gold schon mal gematcht wurde
+    matched_indices = set()
 
     for elem in predicted_triples:
         found = False
-        for relation in goldstandard["relations"]:
-            if relation["head_id"] == elem["subject"]["id"] and relation["relation_label"] == elem["predicate"] and relation["tail_id"] == elem["object"]["id"]:
-                matches.append(elem)
-                found = True
-                break
+        for i, relation in enumerate(goldstandard["relations"]):
+            if i not in matched_indices: 
+                if relation["head_id"] == elem["subject"]["id"] and relation["relation_label"] == elem["predicate"] and relation["tail_id"] == elem["object"]["id"]:
+                    matches.append(elem)
+                    matched_indices.add(i)
+                    found = True
+                    break
+
         #um duplikates zu vermeiden, wird die relation nach der for aufgenommen
         if not found:
             extra.append(elem)
+    #wandel die tupel fuer die ausgabe wieder in dicts um
+
     return matches, extra
 
 ####################### utility functions fuer matches #####################
@@ -272,18 +278,18 @@ def get_details_triples(triples_matches, goldstandard):
             unmatched.append(relation)
     return matched, unmatched
 #hilfsfunktion tp, fp, fn zu generieren    
-def generate_true_positives(resolved_entities):
-    true_positives = 0
+def generate_entity_tp_fp(resolved_entities):
+    tp = 0
+    fp = 0
+    visited_gold_ids = set()
     for entity, value in resolved_entities.items():
-        if value != -1:
-            true_positives += 1
-    return true_positives  
-def generate_false_positives(resolved_entities):
-    false_positives = 0
-    for entity, value in resolved_entities.items():
-        if value == -1:
-            false_positives += 1
-    return false_positives 
+        if value != -1 and value not in visited_gold_ids:
+            tp += 1
+            visited_gold_ids.add(value)
+        else:
+            fp += 1
+    return tp, fp
+
 def generate_false_negatives(resolved_entities, goldstandard):
     false_negatives = 0
     #aggegiert alle resolved entity ids
