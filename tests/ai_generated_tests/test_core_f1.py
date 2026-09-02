@@ -6,8 +6,10 @@ Covers the calculation helpers and the three metric generators:
   gen_relation_metrics
   gen_triple_metrics
 
-The entity and triple tests assert one-to-one matching semantics: each gold
-entity/relation is matched by at most one predicted item.
+The triple tests assert one-to-one matching semantics: each gold relation is
+matched by at most one predicted triple. Entity metrics zaehlen jeden
+distinkten (name, type)-Treffer als TP — die Gold-Seite wird nicht gelockt
+(Alias-Hits sind gewonnene Information).
 """
 import pytest
 
@@ -101,7 +103,8 @@ def test_gen_entity_metrics_none_matched():
 
 
 def test_gen_entity_metrics_alias_variants_same_gold_id():
-    # zwei Namensvarianten loesen auf dieselbe Gold-Entity auf: ein TP, ein FP
+    # zwei Namensvarianten loesen auf dieselbe Gold-Entity auf: beide zaehlen
+    # als TP (Alias-Hits sind gewonnene Information, Gold-Seite wird nicht gelockt)
     resolved = {
         ("blackadder", "MISC"): 2,
         ("blackadder goes forth", "MISC"): 2,
@@ -109,12 +112,12 @@ def test_gen_entity_metrics_alias_variants_same_gold_id():
     }
     gold = [{"id": 2, "name": "blackadder goes forth"}, {"id": 4, "name": "bbc1"}]
     m = gen_entity_metrics(resolved, gold)
-    assert m["true_positives"] == 2
-    assert m["false_positives"] == 1
+    assert m["true_positives"] == 3
+    assert m["false_positives"] == 0
     assert m["false_negatives"] == 0
-    assert m["precision"] == pytest.approx(2 / 3)
+    assert m["precision"] == 1.0
     assert m["recall"] == 1.0
-    assert m["f1"] == pytest.approx(0.8)
+    assert m["f1"] == 1.0
 
 
 # -------------------- entity resolution (matching) --------------------

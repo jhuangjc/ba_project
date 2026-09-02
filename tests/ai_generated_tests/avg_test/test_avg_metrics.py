@@ -1,5 +1,5 @@
 """
-Tests für scripts/avg_metrics.py — Durchschnittsberechnung über Batch-Runs.
+Tests für ai_generated_tools/avg_metrics.py — Durchschnittsberechnung über Batch-Runs.
 """
 import json
 import sys
@@ -8,10 +8,10 @@ import pytest
 from pathlib import Path
 from statistics import mean
 
-# Projekt-Root ins sys.path, damit avg_metrics importierbar ist
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
+# Projekt-Root ins sys.path, damit ai_generated_tools importierbar ist
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 
-from scripts.avg_metrics import load_run_metrics, collect_batch, compute_averages, METRICS
+from ai_generated_tools.avg_metrics import load_run_metrics, collect_batch, compute_averages, METRICS
 
 
 # ── Hilfsfunktion: Mini-Batch-Struktur im tmp_path aufbauen ──

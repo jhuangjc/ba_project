@@ -278,11 +278,10 @@ def get_details_triples(triples_matches, goldstandard):
 def generate_entity_tp_fp(resolved_entities):
     tp = 0
     fp = 0
-    visited_gold_ids = set()
+    
     for entity, value in resolved_entities.items():
-        if value != -1 and value not in visited_gold_ids:
+        if value != -1:
             tp += 1
-            visited_gold_ids.add(value)
         else:
             fp += 1
     return tp, fp

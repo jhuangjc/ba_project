@@ -12,7 +12,7 @@ import json
 import sys
 from pathlib import Path
 
-DATA_FILE = Path(__file__).resolve().parent.parent / "data" / "batch_20260810_204548_avg.json"
+DATA_FILE = Path(__file__).resolve().parent.parent / "data" / "thesis_results" / "batch_20260810_204548_corrected_avg.json"
 
 METRIC_LABELS = {
     "entity_f1":         "Entity F1",

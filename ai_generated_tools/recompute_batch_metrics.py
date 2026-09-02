@@ -15,6 +15,8 @@ Inputs:
   - data/goldstandard_json_flat_with_types/gold_0X.json
 
 Outputs (separate dir, by default batch_..._corrected/):
+  - corrected result copies (exp/run/result_*.json, Struktur wie im Batch),
+    damit avg_metrics.py unveraendert darauf laufen kann
   - corrected_metrics.json  (per-run + per-experiment, stored vs recalculated)
   - SUMMARY.md              (human-readable overview + recheck cross-check)
 """
@@ -23,14 +25,12 @@ import glob
 import os
 import sys
 from datetime import datetime
-from pathlib import Path
-from statistics import mean
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, PROJECT_ROOT)
 sys.path.insert(0, os.path.join(PROJECT_ROOT, "src"))
 
-from app.pipeline.metrics import measure_data  # noqa: E402 (aktuelle Version)
+from app.pipeline.metrics import measure_data, categorize_error_sources  # noqa: E402 (aktuelle Version)
 
 BATCH = "data/thesis_results/batch_20260810_204548"
 GOLD_DIR = "data/goldstandard_json_flat_with_types"
@@ -71,10 +71,6 @@ def reconstruct_before(details):
     return {"entities": entities, "triples": triples}
 
 
-def f1_of(metrics, which):
-    return metrics[which]["f1"]
-
-
 def extract_f1s(section_result):
     m = section_result["metrics"]
     return {
@@ -88,7 +84,7 @@ def main():
     files = sorted(glob.glob(os.path.join(BATCH, "**", "result_*.json"), recursive=True))
 
     runs = {}
-    per_exp = {}
+    warnings = []
     for f in files:
         d = json.load(open(f))
         gid = d["metadata"]["gold_id"]
@@ -99,16 +95,50 @@ def main():
 
         after_pred = d["extraction_results"]
 
-        # before-dict needs relations from extraction_results
+        # before-dict: relations from the stored before-details (exactly the data
+        # the original run measured). Using after_pred["relations"] would silently
+        # drift if refinement ever changes the relation list.
         before_strict = reconstruct_before(det["strict_before"])
-        before_strict["relations"] = after_pred["relations"]
+        before_strict["relations"] = (
+            det["strict_before"]["relations"]["matched"]
+            + det["strict_before"]["relations"]["extra"])
         before_loose = reconstruct_before(det["loose_before"])
-        before_loose["relations"] = after_pred["relations"]
+        before_loose["relations"] = (
+            det["loose_before"]["relations"]["matched"]
+            + det["loose_before"]["relations"]["extra"])
 
         # aktuelle measure_data; Daten sind bereits lowercase -> keine weitere Normalisierung
         res_strict_before = measure_data(before_strict, gold, before_refinement=False)
         res_loose_before = measure_data(before_loose, gold, before_refinement=False)
         res_after = measure_data(after_pred, gold, before_refinement=False)
+
+        # korrigierte result-Kopie schreiben (Struktur wie im Original-Batch)
+        corrected_details = {
+            "strict_before": res_strict_before["strict"]["details"],
+            "strict_after": res_after["strict"]["details"],
+            "loose_before": res_loose_before["loose"]["details"],
+            "loose_after": res_after["loose"]["details"],
+        }
+        copy = {
+            "metadata": d["metadata"],
+            "extraction_results": d["extraction_results"],
+            "evaluation_results": {
+                "metrics_before_refinement": res_strict_before["strict"]["metrics"],
+                "metrics_after_refinement": res_after["strict"]["metrics"],
+                "metrics_loose_before": res_loose_before["loose"]["metrics"],
+                "metrics_loose_after": res_after["loose"]["metrics"],
+                "delta_before": res_strict_before["delta"],
+                "delta_after": res_after["delta"],
+            },
+            "details": corrected_details,
+            "error_sources": categorize_error_sources(
+                corrected_details["strict_before"], corrected_details["strict_after"]),
+        }
+        rel = os.path.relpath(f, BATCH)
+        copy_path = os.path.join(OUT_DIR, rel)
+        os.makedirs(os.path.dirname(copy_path), exist_ok=True)
+        with open(copy_path, "w") as fh:
+            json.dump(copy, fh, indent=2)
 
         corrected_by_sec = {
             "strict_before": extract_f1s(res_strict_before["strict"]),
@@ -118,7 +148,6 @@ def main():
         }
 
         entry = {"experiment_id": eid, "gold_id": gid, "sections": {}}
-        per_exp.setdefault(eid, {s: {"stored": [], "corrected": []} for s in SECTIONS})
 
         for sec, mkey in SECTIONS.items():
             stored = {
@@ -132,24 +161,19 @@ def main():
                 "corrected": {k: round(v, 6) for k, v in corrected.items()},
                 "delta": {k: round(corrected[k] - stored[k], 6) for k in stored},
             }
-            per_exp[eid][sec]["stored"].append(stored["entity_f1"])
-            per_exp[eid][sec]["corrected"].append(corrected["entity_f1"])
+
+            # raw pre-refinement entity list may contain duplicate (name, type) keys;
+            # details only store the collapsed set -> recomputed fp_name_in_gold is based
+            # on the deduped list. Warn instead of drifting silently.
+            stored_fp_total = ev[mkey]["fp_name_in_gold_metrics"]["fp_total"]
+            unique_extras = len(det[sec]["entities"]["extra"])
+            if stored_fp_total != unique_extras:
+                warnings.append(
+                    f"{os.path.basename(f)} {sec}: stored fp_total={stored_fp_total} "
+                    f"vs {unique_extras} unique extras (duplicate keys in raw list; "
+                    f"recomputed fp_name_in_gold uses the deduped set)")
 
         runs[os.path.basename(f)] = entry
-
-    # per-experiment averages (entity F1, loose blocks like avg_metrics.py)
-    avg = {}
-    for eid, secs in per_exp.items():
-        avg[eid] = {}
-        for sec in SECTIONS:
-            if secs[sec]["stored"]:
-                avg[eid][sec] = {
-                    "stored_mean": round(mean(secs[sec]["stored"]), 6),
-                    "corrected_mean": round(mean(secs[sec]["corrected"]), 6),
-                    "delta": round(mean(secs[sec]["corrected"]) - mean(secs[sec]["stored"]), 6),
-                }
-            else:
-                avg[eid][sec] = {"stored_mean": None, "corrected_mean": None, "delta": None}
 
     # cross-check against the recheck scripts (counting-only correction)
     mismatches = []
@@ -169,23 +193,24 @@ def main():
         "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "batch_dir": BATCH,
         "method": {
-            "before": "predicted entities/triples reconstructed from details.<sec> (matched + extra); relations from extraction_results",
+            "before": "predicted entities/triples reconstructed from details.<sec> (matched + extra); relations from details.<sec> (matched + extra)",
             "after": "extraction_results used directly",
             "computation": "aktuelle measure_data (z.B. mit One-to-One-Matching) aus src/app/pipeline/metrics.py",
             "caveats": [
                 "before-sections: predicted order = matched then extra, so which duplicate lands in matched/extra may differ from the original run",
+                "details (get_details_entities) und fp_name_in_gold nutzen in den Kopien noch die alte Semantik, solange die Konsistenz-Patches in metrics.py ausstehen; nach solchen Aenderungen das Tool erneut ausfuehren",
                 "gold: data/goldstandard_json_flat_with_types",
             ],
         },
         "recheck_mismatches": mismatches,
+        "warnings": warnings,
         "runs": runs,
-        "experiment_averages": avg,
     }
     os.makedirs(OUT_DIR, exist_ok=True)
     with open(os.path.join(OUT_DIR, "corrected_metrics.json"), "w") as fh:
         json.dump(out, fh, indent=2)
 
-    # ---- SUMMARY.md (loose blocks) ----
+    # ---- SUMMARY.md ----
     lines = [
         "# Batch metrics recalculated with current measure_data",
         "",
@@ -193,27 +218,19 @@ def main():
         "",
         "Stored metrics come from the old run (double-counting bugs). Corrected",
         "metrics are recalculated from the stored data with the current measure_data.",
-        "Thesis aggregation uses LOOSE blocks; table shows entity F1.",
         "",
-        "| Experiment | stored before/after | corrected before/after | delta before | delta after |",
-        "|---|---|---|---|---|",
-    ]
-    for eid in sorted(avg):
-        lb = avg[eid]["loose_before"]
-        la = avg[eid]["loose_after"]
-        lines.append(
-            f"| {eid} | {lb['stored_mean']:.4f} / {la['stored_mean']:.4f} | "
-            f"{lb['corrected_mean']:.4f} / {la['corrected_mean']:.4f} | "
-            f"{lb['delta']:+.4f} | {la['delta']:+.4f} |"
-        )
-    lines += [
-        "",
+        f"Corrected result copies: {OUT_DIR}/ (avg_metrics.py kann unveraendert auf diesem Verzeichnis laufen)",
         f"Recheck cross-check mismatches: {len(mismatches)}",
+        f"Reconstruction warnings: {len(warnings)}",
     ]
     if mismatches:
         lines.append("Mismatches between rebuild and the counting-only recheck scripts:")
         for m in mismatches[:20]:
             lines.append(f"- {m['file']} {m['section']} {m['metric']}: recheck {m['recheck']:.6f} vs rebuild {m['rebuild']:.6f}")
+    if warnings:
+        lines.append("Warnings: reconstructed before-dict deviates from the original run's input:")
+        for w in warnings:
+            lines.append(f"- {w}")
     lines += [
         "",
         "Full per-run numbers: corrected_metrics.json",
@@ -226,6 +243,7 @@ def main():
     print(f"wrote: {OUT_DIR}/SUMMARY.md")
     print(f"files processed: {len(files)}")
     print(f"recheck mismatches: {len(mismatches)}")
+    print(f"reconstruction warnings: {len(warnings)}")
 
 
 if __name__ == "__main__":
