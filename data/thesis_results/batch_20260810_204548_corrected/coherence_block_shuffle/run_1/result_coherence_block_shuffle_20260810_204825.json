@@ -1,0 +1,2708 @@
+{
+  "metadata": {
+    "experiment_id": "coherence_block_shuffle",
+    "input_type": "coherence",
+    "source_group": "goodbyeee",
+    "gold_id": "gold_00"
+  },
+  "extraction_results": {
+    "entities": [
+      {
+        "name": "goodbyeee",
+        "type": "MISC"
+      },
+      {
+        "name": "blackadder",
+        "type": "MISC"
+      },
+      {
+        "name": "bbc1",
+        "type": "ORG"
+      },
+      {
+        "name": "united kingdom",
+        "type": "LOC"
+      },
+      {
+        "name": "2 november 1989",
+        "type": "TIME"
+      },
+      {
+        "name": "armistice day",
+        "type": "TIME"
+      },
+      {
+        "name": "british",
+        "type": "MISC"
+      },
+      {
+        "name": "western front",
+        "type": "LOC"
+      },
+      {
+        "name": "first world war",
+        "type": "MISC"
+      },
+      {
+        "name": "captain blackadder",
+        "type": "PER"
+      },
+      {
+        "name": "general melchett",
+        "type": "PER"
+      },
+      {
+        "name": "field marshal haig",
+        "type": "PER"
+      },
+      {
+        "name": "richard curtis",
+        "type": "PER"
+      },
+      {
+        "name": "ben elton",
+        "type": "PER"
+      },
+      {
+        "name": "decade",
+        "type": "TIME"
+      }
+    ],
+    "triples": [
+      {
+        "subject": {
+          "name": "goodbyeee",
+          "type": "MISC"
+        },
+        "predicate": "part of",
+        "object": {
+          "name": "blackadder",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "goodbyeee",
+          "type": "MISC"
+        },
+        "predicate": "original network",
+        "object": {
+          "name": "bbc1",
+          "type": "ORG"
+        }
+      },
+      {
+        "subject": {
+          "name": "goodbyeee",
+          "type": "MISC"
+        },
+        "predicate": "country of origin",
+        "object": {
+          "name": "united kingdom",
+          "type": "LOC"
+        }
+      },
+      {
+        "subject": {
+          "name": "goodbyeee",
+          "type": "MISC"
+        },
+        "predicate": "publication date",
+        "object": {
+          "name": "2 november 1989",
+          "type": "TIME"
+        }
+      },
+      {
+        "subject": {
+          "name": "blackadder",
+          "type": "MISC"
+        },
+        "predicate": "series",
+        "object": {
+          "name": "goodbyeee",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "blackadder",
+          "type": "MISC"
+        },
+        "predicate": "series",
+        "object": {
+          "name": "blackadder",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "goodbyeee",
+          "type": "MISC"
+        },
+        "predicate": "screenwriter",
+        "object": {
+          "name": "richard curtis",
+          "type": "PER"
+        }
+      },
+      {
+        "subject": {
+          "name": "goodbyeee",
+          "type": "MISC"
+        },
+        "predicate": "screenwriter",
+        "object": {
+          "name": "ben elton",
+          "type": "PER"
+        }
+      },
+      {
+        "subject": {
+          "name": "goodbyeee",
+          "type": "MISC"
+        },
+        "predicate": "characters",
+        "object": {
+          "name": "captain blackadder",
+          "type": "PER"
+        }
+      },
+      {
+        "subject": {
+          "name": "goodbyeee",
+          "type": "MISC"
+        },
+        "predicate": "characters",
+        "object": {
+          "name": "general melchett",
+          "type": "PER"
+        }
+      },
+      {
+        "subject": {
+          "name": "goodbyeee",
+          "type": "MISC"
+        },
+        "predicate": "characters",
+        "object": {
+          "name": "field marshal haig",
+          "type": "PER"
+        }
+      },
+      {
+        "subject": {
+          "name": "goodbyeee",
+          "type": "MISC"
+        },
+        "predicate": "country of origin",
+        "object": {
+          "name": "british",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "goodbyeee",
+          "type": "MISC"
+        },
+        "predicate": "present in work",
+        "object": {
+          "name": "western front",
+          "type": "LOC"
+        }
+      },
+      {
+        "subject": {
+          "name": "goodbyeee",
+          "type": "MISC"
+        },
+        "predicate": "present in work",
+        "object": {
+          "name": "first world war",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "captain blackadder",
+          "type": "PER"
+        },
+        "predicate": "participant of",
+        "object": {
+          "name": "goodbyeee",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "general melchett",
+          "type": "PER"
+        },
+        "predicate": "participant of",
+        "object": {
+          "name": "goodbyeee",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "field marshal haig",
+          "type": "PER"
+        },
+        "predicate": "participant of",
+        "object": {
+          "name": "goodbyeee",
+          "type": "MISC"
+        }
+      }
+    ],
+    "relations": [
+      "original network",
+      "series",
+      "country of origin",
+      "screenwriter",
+      "characters",
+      "present in work",
+      "participant of",
+      "publication date",
+      "part of"
+    ]
+  },
+  "evaluation_results": {
+    "metrics_before_refinement": {
+      "entity_metrics": {
+        "true_positives": 10,
+        "false_positives": 7,
+        "false_negatives": 6,
+        "precision": 0.5882352941176471,
+        "recall": 0.625,
+        "f1": 0.6060606060606061
+      },
+      "relation_metrics": {
+        "true_positives": 9,
+        "false_positives": 0,
+        "false_negatives": 7,
+        "precision": 1.0,
+        "recall": 0.5625,
+        "f1": 0.72
+      },
+      "triple_metrics": {
+        "true_positives": 5,
+        "false_positives": 13,
+        "false_negatives": 34,
+        "precision": 0.2777777777777778,
+        "recall": 0.1282051282051282,
+        "f1": 0.17543859649122806
+      },
+      "cluster_hit_metrics": {
+        "coverage": 0.5714285714285714,
+        "avg_cluster_hit": 0.7142857142857143
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": 7,
+        "fp_name_in_gold": 3,
+        "name_in_gold_rate": 0.42857142857142855
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 2,
+        "total_clusters": 14,
+        "duplicated_rate": 0.14285714285714285,
+        "avg_hit_in_duplicated": 2.0
+      }
+    },
+    "metrics_after_refinement": {
+      "entity_metrics": {
+        "true_positives": 8,
+        "false_positives": 7,
+        "false_negatives": 6,
+        "precision": 0.5333333333333333,
+        "recall": 0.5714285714285714,
+        "f1": 0.5517241379310344
+      },
+      "relation_metrics": {
+        "true_positives": 9,
+        "false_positives": 0,
+        "false_negatives": 7,
+        "precision": 1.0,
+        "recall": 0.5625,
+        "f1": 0.72
+      },
+      "triple_metrics": {
+        "true_positives": 5,
+        "false_positives": 12,
+        "false_negatives": 34,
+        "precision": 0.29411764705882354,
+        "recall": 0.1282051282051282,
+        "f1": 0.17857142857142858
+      },
+      "cluster_hit_metrics": {
+        "coverage": 0.5714285714285714,
+        "avg_cluster_hit": 0.5714285714285714
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": 7,
+        "fp_name_in_gold": 3,
+        "name_in_gold_rate": 0.42857142857142855
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 0,
+        "total_clusters": 14,
+        "duplicated_rate": 0.0,
+        "avg_hit_in_duplicated": 0.0
+      }
+    },
+    "metrics_loose_before": {
+      "entity_metrics": {
+        "true_positives": 13,
+        "false_positives": 4,
+        "false_negatives": 3,
+        "precision": 0.7647058823529411,
+        "recall": 0.8125,
+        "f1": 0.787878787878788
+      },
+      "relation_metrics": {
+        "true_positives": 9,
+        "false_positives": 0,
+        "false_negatives": 7,
+        "precision": 1.0,
+        "recall": 0.5625,
+        "f1": 0.72
+      },
+      "triple_metrics": {
+        "true_positives": 5,
+        "false_positives": 13,
+        "false_negatives": 34,
+        "precision": 0.2777777777777778,
+        "recall": 0.1282051282051282,
+        "f1": 0.17543859649122806
+      },
+      "cluster_hit_metrics": {
+        "coverage": 0.7857142857142857,
+        "avg_cluster_hit": 0.9285714285714286
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": 4,
+        "fp_name_in_gold": 3,
+        "name_in_gold_rate": 0.75
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 2,
+        "total_clusters": 14,
+        "duplicated_rate": 0.14285714285714285,
+        "avg_hit_in_duplicated": 2.0
+      }
+    },
+    "metrics_loose_after": {
+      "entity_metrics": {
+        "true_positives": 11,
+        "false_positives": 4,
+        "false_negatives": 3,
+        "precision": 0.7333333333333333,
+        "recall": 0.7857142857142857,
+        "f1": 0.7586206896551724
+      },
+      "relation_metrics": {
+        "true_positives": 9,
+        "false_positives": 0,
+        "false_negatives": 7,
+        "precision": 1.0,
+        "recall": 0.5625,
+        "f1": 0.72
+      },
+      "triple_metrics": {
+        "true_positives": 5,
+        "false_positives": 12,
+        "false_negatives": 34,
+        "precision": 0.29411764705882354,
+        "recall": 0.1282051282051282,
+        "f1": 0.17857142857142858
+      },
+      "cluster_hit_metrics": {
+        "coverage": 0.7857142857142857,
+        "avg_cluster_hit": 0.7857142857142857
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": 4,
+        "fp_name_in_gold": 3,
+        "name_in_gold_rate": 0.75
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 0,
+        "total_clusters": 14,
+        "duplicated_rate": 0.0,
+        "avg_hit_in_duplicated": 0.0
+      }
+    },
+    "delta_before": {
+      "entity_metrics": {
+        "true_positives": 3,
+        "false_positives": -3,
+        "false_negatives": -3,
+        "precision": 0.17647058823529405,
+        "recall": 0.1875,
+        "f1": 0.18181818181818188
+      },
+      "relation_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "triple_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "cluster_hit_metrics": {
+        "coverage": 0.2142857142857143,
+        "avg_cluster_hit": 0.2142857142857143
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": -3,
+        "fp_name_in_gold": 0,
+        "name_in_gold_rate": 0.32142857142857145
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 0,
+        "total_clusters": 0,
+        "duplicated_rate": 0.0,
+        "avg_hit_in_duplicated": 0.0
+      }
+    },
+    "delta_after": {
+      "entity_metrics": {
+        "true_positives": 3,
+        "false_positives": -3,
+        "false_negatives": -3,
+        "precision": 0.19999999999999996,
+        "recall": 0.2142857142857143,
+        "f1": 0.206896551724138
+      },
+      "relation_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "triple_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "cluster_hit_metrics": {
+        "coverage": 0.2142857142857143,
+        "avg_cluster_hit": 0.2142857142857143
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": -3,
+        "fp_name_in_gold": 0,
+        "name_in_gold_rate": 0.32142857142857145
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 0,
+        "total_clusters": 0,
+        "duplicated_rate": 0.0,
+        "avg_hit_in_duplicated": 0.0
+      }
+    }
+  },
+  "details": {
+    "strict_before": {
+      "entities": {
+        "matched": [
+          {
+            "name": "goodbyeee",
+            "type": "MISC",
+            "id": 0
+          },
+          {
+            "name": "plan f: goodbyeee",
+            "type": "MISC",
+            "id": 0
+          },
+          {
+            "name": "blackadder",
+            "type": "MISC",
+            "id": 2
+          },
+          {
+            "name": "blackadder goes forth",
+            "type": "MISC",
+            "id": 2
+          },
+          {
+            "name": "bbc1",
+            "type": "ORG",
+            "id": 3
+          },
+          {
+            "name": "united kingdom",
+            "type": "LOC",
+            "id": 4
+          },
+          {
+            "name": "2 november 1989",
+            "type": "TIME",
+            "id": 5
+          },
+          {
+            "name": "first world war",
+            "type": "MISC",
+            "id": 8
+          },
+          {
+            "name": "richard curtis",
+            "type": "PER",
+            "id": 12
+          },
+          {
+            "name": "ben elton",
+            "type": "PER",
+            "id": 13
+          }
+        ],
+        "unmatched": [
+          {
+            "name": "british",
+            "type": "LOC",
+            "id": 1
+          },
+          {
+            "name": "armistice day",
+            "type": "MISC",
+            "id": 6
+          },
+          {
+            "name": "western front",
+            "type": "MISC",
+            "id": 7
+          },
+          {
+            "name": "blackadder",
+            "type": "PER",
+            "id": 9
+          },
+          {
+            "name": "melchett",
+            "type": "PER",
+            "id": 10
+          },
+          {
+            "name": "haig",
+            "type": "PER",
+            "id": 11
+          }
+        ],
+        "extra": [
+          {
+            "name": "armistice day",
+            "type": "TIME"
+          },
+          {
+            "name": "british",
+            "type": "MISC"
+          },
+          {
+            "name": "western front",
+            "type": "LOC"
+          },
+          {
+            "name": "captain blackadder",
+            "type": "PER"
+          },
+          {
+            "name": "general melchett",
+            "type": "PER"
+          },
+          {
+            "name": "field marshal haig",
+            "type": "PER"
+          },
+          {
+            "name": "decade",
+            "type": "TIME"
+          }
+        ]
+      },
+      "relations": {
+        "matched": [
+          "screenwriter",
+          "part of",
+          "present in work",
+          "series",
+          "participant of",
+          "characters",
+          "publication date",
+          "original network",
+          "country of origin"
+        ],
+        "unmatched": [
+          "has part",
+          "country of citizenship",
+          "located in the administrative territorial entity",
+          "creator",
+          "conflict",
+          "participant",
+          "country"
+        ],
+        "extra": []
+      },
+      "triples": {
+        "matched": [
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "original network",
+            "object": {
+              "name": "bbc1",
+              "type": "ORG",
+              "id": 3
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "country of origin",
+            "object": {
+              "name": "united kingdom",
+              "type": "LOC",
+              "id": 4
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "2 november 1989",
+              "type": "TIME",
+              "id": 5
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "screenwriter",
+            "object": {
+              "name": "richard curtis",
+              "type": "PER",
+              "id": 12
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "screenwriter",
+            "object": {
+              "name": "ben elton",
+              "type": "PER",
+              "id": 13
+            }
+          }
+        ],
+        "unmatched": [
+          {
+            "head_id": 0,
+            "tail_id": 2,
+            "relation_label": "series"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 2,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 4,
+            "relation_label": "country of origin"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 10,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 12,
+            "relation_label": "creator"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 12,
+            "relation_label": "screenwriter"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 13,
+            "relation_label": "screenwriter"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 9,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 12,
+            "relation_label": "creator"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 2,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 2,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 0,
+            "tail_id": 9,
+            "relation_label": "series"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 3,
+            "relation_label": "original network"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 4,
+            "relation_label": "country of origin"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 8,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 8,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 1,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 8,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 1,
+            "relation_label": "country of origin"
+          },
+          {
+            "head_id": 7,
+            "tail_id": 8,
+            "relation_label": "part of"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 4,
+            "relation_label": "country of citizenship"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 0,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 0,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 11,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 6,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 10,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 7,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 8,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 8,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 1,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 8,
+            "relation_label": "participant of"
+          }
+        ],
+        "extra": [
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "part of",
+            "object": {
+              "name": "blackadder goes forth",
+              "type": "MISC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "plan f: goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "part of",
+            "object": {
+              "name": "blackadder goes forth",
+              "type": "MISC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "blackadder goes forth",
+              "type": "MISC",
+              "id": 2
+            },
+            "predicate": "series",
+            "object": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            }
+          },
+          {
+            "subject": {
+              "name": "blackadder",
+              "type": "MISC",
+              "id": 2
+            },
+            "predicate": "series",
+            "object": {
+              "name": "blackadder goes forth",
+              "type": "MISC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "characters",
+            "object": {
+              "name": "captain blackadder",
+              "type": "PER",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "characters",
+            "object": {
+              "name": "general melchett",
+              "type": "PER",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "characters",
+            "object": {
+              "name": "field marshal haig",
+              "type": "PER",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "country of origin",
+            "object": {
+              "name": "british",
+              "type": "MISC",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "western front",
+              "type": "LOC",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "first world war",
+              "type": "MISC",
+              "id": 8
+            }
+          },
+          {
+            "subject": {
+              "name": "captain blackadder",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            }
+          },
+          {
+            "subject": {
+              "name": "general melchett",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            }
+          },
+          {
+            "subject": {
+              "name": "field marshal haig",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            }
+          }
+        ]
+      }
+    },
+    "strict_after": {
+      "entities": {
+        "matched": [
+          {
+            "name": "goodbyeee",
+            "type": "MISC",
+            "id": 0
+          },
+          {
+            "name": "blackadder",
+            "type": "MISC",
+            "id": 2
+          },
+          {
+            "name": "bbc1",
+            "type": "ORG",
+            "id": 3
+          },
+          {
+            "name": "united kingdom",
+            "type": "LOC",
+            "id": 4
+          },
+          {
+            "name": "2 november 1989",
+            "type": "TIME",
+            "id": 5
+          },
+          {
+            "name": "first world war",
+            "type": "MISC",
+            "id": 8
+          },
+          {
+            "name": "richard curtis",
+            "type": "PER",
+            "id": 12
+          },
+          {
+            "name": "ben elton",
+            "type": "PER",
+            "id": 13
+          }
+        ],
+        "unmatched": [
+          {
+            "name": "british",
+            "type": "LOC",
+            "id": 1
+          },
+          {
+            "name": "armistice day",
+            "type": "MISC",
+            "id": 6
+          },
+          {
+            "name": "western front",
+            "type": "MISC",
+            "id": 7
+          },
+          {
+            "name": "blackadder",
+            "type": "PER",
+            "id": 9
+          },
+          {
+            "name": "melchett",
+            "type": "PER",
+            "id": 10
+          },
+          {
+            "name": "haig",
+            "type": "PER",
+            "id": 11
+          }
+        ],
+        "extra": [
+          {
+            "name": "armistice day",
+            "type": "TIME"
+          },
+          {
+            "name": "british",
+            "type": "MISC"
+          },
+          {
+            "name": "western front",
+            "type": "LOC"
+          },
+          {
+            "name": "captain blackadder",
+            "type": "PER"
+          },
+          {
+            "name": "general melchett",
+            "type": "PER"
+          },
+          {
+            "name": "field marshal haig",
+            "type": "PER"
+          },
+          {
+            "name": "decade",
+            "type": "TIME"
+          }
+        ]
+      },
+      "relations": {
+        "matched": [
+          "part of",
+          "present in work",
+          "series",
+          "participant of",
+          "country of origin",
+          "characters",
+          "publication date",
+          "original network",
+          "screenwriter"
+        ],
+        "unmatched": [
+          "has part",
+          "country of citizenship",
+          "located in the administrative territorial entity",
+          "creator",
+          "conflict",
+          "participant",
+          "country"
+        ],
+        "extra": []
+      },
+      "triples": {
+        "matched": [
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "original network",
+            "object": {
+              "name": "bbc1",
+              "type": "ORG",
+              "id": 3
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "country of origin",
+            "object": {
+              "name": "united kingdom",
+              "type": "LOC",
+              "id": 4
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "2 november 1989",
+              "type": "TIME",
+              "id": 5
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "screenwriter",
+            "object": {
+              "name": "richard curtis",
+              "type": "PER",
+              "id": 12
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "screenwriter",
+            "object": {
+              "name": "ben elton",
+              "type": "PER",
+              "id": 13
+            }
+          }
+        ],
+        "unmatched": [
+          {
+            "head_id": 0,
+            "tail_id": 2,
+            "relation_label": "series"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 2,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 4,
+            "relation_label": "country of origin"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 10,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 12,
+            "relation_label": "creator"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 12,
+            "relation_label": "screenwriter"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 13,
+            "relation_label": "screenwriter"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 9,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 12,
+            "relation_label": "creator"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 2,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 2,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 0,
+            "tail_id": 9,
+            "relation_label": "series"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 3,
+            "relation_label": "original network"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 4,
+            "relation_label": "country of origin"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 8,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 8,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 1,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 8,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 1,
+            "relation_label": "country of origin"
+          },
+          {
+            "head_id": 7,
+            "tail_id": 8,
+            "relation_label": "part of"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 4,
+            "relation_label": "country of citizenship"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 0,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 0,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 11,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 6,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 10,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 7,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 8,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 8,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 1,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 8,
+            "relation_label": "participant of"
+          }
+        ],
+        "extra": [
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "part of",
+            "object": {
+              "name": "blackadder",
+              "type": "MISC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "blackadder",
+              "type": "MISC",
+              "id": 2
+            },
+            "predicate": "series",
+            "object": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            }
+          },
+          {
+            "subject": {
+              "name": "blackadder",
+              "type": "MISC",
+              "id": 2
+            },
+            "predicate": "series",
+            "object": {
+              "name": "blackadder",
+              "type": "MISC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "characters",
+            "object": {
+              "name": "captain blackadder",
+              "type": "PER",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "characters",
+            "object": {
+              "name": "general melchett",
+              "type": "PER",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "characters",
+            "object": {
+              "name": "field marshal haig",
+              "type": "PER",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "country of origin",
+            "object": {
+              "name": "british",
+              "type": "MISC",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "western front",
+              "type": "LOC",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "first world war",
+              "type": "MISC",
+              "id": 8
+            }
+          },
+          {
+            "subject": {
+              "name": "captain blackadder",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            }
+          },
+          {
+            "subject": {
+              "name": "general melchett",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            }
+          },
+          {
+            "subject": {
+              "name": "field marshal haig",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            }
+          }
+        ]
+      }
+    },
+    "loose_before": {
+      "entities": {
+        "matched": [
+          {
+            "name": "goodbyeee",
+            "type": "MISC",
+            "id": 0
+          },
+          {
+            "name": "plan f: goodbyeee",
+            "type": "MISC",
+            "id": 0
+          },
+          {
+            "name": "blackadder",
+            "type": "MISC",
+            "id": 2
+          },
+          {
+            "name": "blackadder goes forth",
+            "type": "MISC",
+            "id": 2
+          },
+          {
+            "name": "bbc1",
+            "type": "ORG",
+            "id": 3
+          },
+          {
+            "name": "united kingdom",
+            "type": "LOC",
+            "id": 4
+          },
+          {
+            "name": "2 november 1989",
+            "type": "TIME",
+            "id": 5
+          },
+          {
+            "name": "first world war",
+            "type": "MISC",
+            "id": 8
+          },
+          {
+            "name": "captain blackadder",
+            "type": "PER",
+            "id": 9
+          },
+          {
+            "name": "general melchett",
+            "type": "PER",
+            "id": 10
+          },
+          {
+            "name": "field marshal haig",
+            "type": "PER",
+            "id": 11
+          },
+          {
+            "name": "richard curtis",
+            "type": "PER",
+            "id": 12
+          },
+          {
+            "name": "ben elton",
+            "type": "PER",
+            "id": 13
+          }
+        ],
+        "unmatched": [
+          {
+            "name": "british",
+            "type": "LOC",
+            "id": 1
+          },
+          {
+            "name": "armistice day",
+            "type": "MISC",
+            "id": 6
+          },
+          {
+            "name": "western front",
+            "type": "MISC",
+            "id": 7
+          }
+        ],
+        "extra": [
+          {
+            "name": "armistice day",
+            "type": "TIME"
+          },
+          {
+            "name": "british",
+            "type": "MISC"
+          },
+          {
+            "name": "western front",
+            "type": "LOC"
+          },
+          {
+            "name": "decade",
+            "type": "TIME"
+          }
+        ]
+      },
+      "relations": {
+        "matched": [
+          "screenwriter",
+          "part of",
+          "present in work",
+          "series",
+          "participant of",
+          "characters",
+          "publication date",
+          "original network",
+          "country of origin"
+        ],
+        "unmatched": [
+          "has part",
+          "country of citizenship",
+          "located in the administrative territorial entity",
+          "creator",
+          "conflict",
+          "participant",
+          "country"
+        ],
+        "extra": []
+      },
+      "triples": {
+        "matched": [
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "original network",
+            "object": {
+              "name": "bbc1",
+              "type": "ORG",
+              "id": 3
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "country of origin",
+            "object": {
+              "name": "united kingdom",
+              "type": "LOC",
+              "id": 4
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "2 november 1989",
+              "type": "TIME",
+              "id": 5
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "screenwriter",
+            "object": {
+              "name": "richard curtis",
+              "type": "PER",
+              "id": 12
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "screenwriter",
+            "object": {
+              "name": "ben elton",
+              "type": "PER",
+              "id": 13
+            }
+          }
+        ],
+        "unmatched": [
+          {
+            "head_id": 0,
+            "tail_id": 2,
+            "relation_label": "series"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 2,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 4,
+            "relation_label": "country of origin"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 10,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 12,
+            "relation_label": "creator"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 12,
+            "relation_label": "screenwriter"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 13,
+            "relation_label": "screenwriter"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 9,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 12,
+            "relation_label": "creator"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 2,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 2,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 0,
+            "tail_id": 9,
+            "relation_label": "series"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 3,
+            "relation_label": "original network"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 4,
+            "relation_label": "country of origin"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 8,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 8,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 1,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 8,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 1,
+            "relation_label": "country of origin"
+          },
+          {
+            "head_id": 7,
+            "tail_id": 8,
+            "relation_label": "part of"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 4,
+            "relation_label": "country of citizenship"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 0,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 0,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 11,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 6,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 10,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 7,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 8,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 8,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 1,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 8,
+            "relation_label": "participant of"
+          }
+        ],
+        "extra": [
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "part of",
+            "object": {
+              "name": "blackadder goes forth",
+              "type": "MISC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "plan f: goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "part of",
+            "object": {
+              "name": "blackadder goes forth",
+              "type": "MISC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "blackadder goes forth",
+              "type": "MISC",
+              "id": 2
+            },
+            "predicate": "series",
+            "object": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            }
+          },
+          {
+            "subject": {
+              "name": "blackadder",
+              "type": "MISC",
+              "id": 2
+            },
+            "predicate": "series",
+            "object": {
+              "name": "blackadder goes forth",
+              "type": "MISC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "characters",
+            "object": {
+              "name": "captain blackadder",
+              "type": "PER",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "characters",
+            "object": {
+              "name": "general melchett",
+              "type": "PER",
+              "id": 10
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "characters",
+            "object": {
+              "name": "field marshal haig",
+              "type": "PER",
+              "id": 11
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "country of origin",
+            "object": {
+              "name": "british",
+              "type": "MISC",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "western front",
+              "type": "LOC",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "first world war",
+              "type": "MISC",
+              "id": 8
+            }
+          },
+          {
+            "subject": {
+              "name": "captain blackadder",
+              "type": "PER",
+              "id": 9
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            }
+          },
+          {
+            "subject": {
+              "name": "general melchett",
+              "type": "PER",
+              "id": 10
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            }
+          },
+          {
+            "subject": {
+              "name": "field marshal haig",
+              "type": "PER",
+              "id": 11
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            }
+          }
+        ]
+      }
+    },
+    "loose_after": {
+      "entities": {
+        "matched": [
+          {
+            "name": "goodbyeee",
+            "type": "MISC",
+            "id": 0
+          },
+          {
+            "name": "blackadder",
+            "type": "MISC",
+            "id": 2
+          },
+          {
+            "name": "bbc1",
+            "type": "ORG",
+            "id": 3
+          },
+          {
+            "name": "united kingdom",
+            "type": "LOC",
+            "id": 4
+          },
+          {
+            "name": "2 november 1989",
+            "type": "TIME",
+            "id": 5
+          },
+          {
+            "name": "first world war",
+            "type": "MISC",
+            "id": 8
+          },
+          {
+            "name": "captain blackadder",
+            "type": "PER",
+            "id": 9
+          },
+          {
+            "name": "general melchett",
+            "type": "PER",
+            "id": 10
+          },
+          {
+            "name": "field marshal haig",
+            "type": "PER",
+            "id": 11
+          },
+          {
+            "name": "richard curtis",
+            "type": "PER",
+            "id": 12
+          },
+          {
+            "name": "ben elton",
+            "type": "PER",
+            "id": 13
+          }
+        ],
+        "unmatched": [
+          {
+            "name": "british",
+            "type": "LOC",
+            "id": 1
+          },
+          {
+            "name": "armistice day",
+            "type": "MISC",
+            "id": 6
+          },
+          {
+            "name": "western front",
+            "type": "MISC",
+            "id": 7
+          }
+        ],
+        "extra": [
+          {
+            "name": "armistice day",
+            "type": "TIME"
+          },
+          {
+            "name": "british",
+            "type": "MISC"
+          },
+          {
+            "name": "western front",
+            "type": "LOC"
+          },
+          {
+            "name": "decade",
+            "type": "TIME"
+          }
+        ]
+      },
+      "relations": {
+        "matched": [
+          "part of",
+          "present in work",
+          "series",
+          "participant of",
+          "country of origin",
+          "characters",
+          "publication date",
+          "original network",
+          "screenwriter"
+        ],
+        "unmatched": [
+          "has part",
+          "country of citizenship",
+          "located in the administrative territorial entity",
+          "creator",
+          "conflict",
+          "participant",
+          "country"
+        ],
+        "extra": []
+      },
+      "triples": {
+        "matched": [
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "original network",
+            "object": {
+              "name": "bbc1",
+              "type": "ORG",
+              "id": 3
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "country of origin",
+            "object": {
+              "name": "united kingdom",
+              "type": "LOC",
+              "id": 4
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "2 november 1989",
+              "type": "TIME",
+              "id": 5
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "screenwriter",
+            "object": {
+              "name": "richard curtis",
+              "type": "PER",
+              "id": 12
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "screenwriter",
+            "object": {
+              "name": "ben elton",
+              "type": "PER",
+              "id": 13
+            }
+          }
+        ],
+        "unmatched": [
+          {
+            "head_id": 0,
+            "tail_id": 2,
+            "relation_label": "series"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 2,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 4,
+            "relation_label": "country of origin"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 10,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 12,
+            "relation_label": "creator"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 12,
+            "relation_label": "screenwriter"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 13,
+            "relation_label": "screenwriter"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 9,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 12,
+            "relation_label": "creator"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 2,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 2,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 0,
+            "tail_id": 9,
+            "relation_label": "series"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 3,
+            "relation_label": "original network"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 4,
+            "relation_label": "country of origin"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 8,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 8,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 1,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 8,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 1,
+            "relation_label": "country of origin"
+          },
+          {
+            "head_id": 7,
+            "tail_id": 8,
+            "relation_label": "part of"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 4,
+            "relation_label": "country of citizenship"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 0,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 0,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 11,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 6,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 10,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 7,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 8,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 8,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 1,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 8,
+            "relation_label": "participant of"
+          }
+        ],
+        "extra": [
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "part of",
+            "object": {
+              "name": "blackadder",
+              "type": "MISC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "blackadder",
+              "type": "MISC",
+              "id": 2
+            },
+            "predicate": "series",
+            "object": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            }
+          },
+          {
+            "subject": {
+              "name": "blackadder",
+              "type": "MISC",
+              "id": 2
+            },
+            "predicate": "series",
+            "object": {
+              "name": "blackadder",
+              "type": "MISC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "characters",
+            "object": {
+              "name": "captain blackadder",
+              "type": "PER",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "characters",
+            "object": {
+              "name": "general melchett",
+              "type": "PER",
+              "id": 10
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "characters",
+            "object": {
+              "name": "field marshal haig",
+              "type": "PER",
+              "id": 11
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "country of origin",
+            "object": {
+              "name": "british",
+              "type": "MISC",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "western front",
+              "type": "LOC",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "first world war",
+              "type": "MISC",
+              "id": 8
+            }
+          },
+          {
+            "subject": {
+              "name": "captain blackadder",
+              "type": "PER",
+              "id": 9
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            }
+          },
+          {
+            "subject": {
+              "name": "general melchett",
+              "type": "PER",
+              "id": 10
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            }
+          },
+          {
+            "subject": {
+              "name": "field marshal haig",
+              "type": "PER",
+              "id": 11
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "goodbyeee",
+              "type": "MISC",
+              "id": 0
+            }
+          }
+        ]
+      }
+    }
+  },
+  "error_sources": {
+    "generation_error": [
+      {
+        "name": "british",
+        "type": "MISC"
+      },
+      {
+        "name": "captain blackadder",
+        "type": "PER"
+      },
+      {
+        "name": "armistice day",
+        "type": "TIME"
+      },
+      {
+        "name": "decade",
+        "type": "TIME"
+      },
+      {
+        "name": "general melchett",
+        "type": "PER"
+      },
+      {
+        "name": "field marshal haig",
+        "type": "PER"
+      },
+      {
+        "name": "western front",
+        "type": "LOC"
+      }
+    ],
+    "refinement_error": [],
+    "resolved_through_refinement": [],
+    "lost_matches": [
+      {
+        "name": "plan f: goodbyeee",
+        "type": "MISC"
+      },
+      {
+        "name": "blackadder goes forth",
+        "type": "MISC"
+      }
+    ]
+  }
+}

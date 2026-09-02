@@ -1,0 +1,3233 @@
+{
+  "metadata": {
+    "experiment_id": "text_noise_low_substitution",
+    "input_type": "text-noise",
+    "source_group": "export_control_act",
+    "gold_id": "gold_03"
+  },
+  "extraction_results": {
+    "entities": [
+      {
+        "name": "export control act of 1940",
+        "type": "MISC"
+      },
+      {
+        "name": "united states",
+        "type": "LOC"
+      },
+      {
+        "name": "president",
+        "type": "PER"
+      },
+      {
+        "name": "world war ii",
+        "type": "MISC"
+      },
+      {
+        "name": "japan",
+        "type": "ORG"
+      },
+      {
+        "name": "indo-chinese coast",
+        "type": "LOC"
+      },
+      {
+        "name": "1940",
+        "type": "TIME"
+      },
+      {
+        "name": "1942",
+        "type": "TIME"
+      },
+      {
+        "name": "1948",
+        "type": "TIME"
+      },
+      {
+        "name": "1949",
+        "type": "TIME"
+      },
+      {
+        "name": "korean war",
+        "type": "MISC"
+      },
+      {
+        "name": "export control act of 1949",
+        "type": "MISC"
+      },
+      {
+        "name": "1958",
+        "type": "TIME"
+      },
+      {
+        "name": "soviet",
+        "type": "ORG"
+      },
+      {
+        "name": "cold war",
+        "type": "MISC"
+      },
+      {
+        "name": "mutual defense assistance control act of 1951",
+        "type": "MISC"
+      },
+      {
+        "name": "1951",
+        "type": "TIME"
+      }
+    ],
+    "triples": [
+      {
+        "subject": {
+          "name": "export control act of 1940",
+          "type": "MISC"
+        },
+        "predicate": "country",
+        "object": {
+          "name": "united states",
+          "type": "LOC"
+        }
+      },
+      {
+        "subject": {
+          "name": "export control act of 1940",
+          "type": "MISC"
+        },
+        "predicate": "participant",
+        "object": {
+          "name": "president",
+          "type": "PER"
+        }
+      },
+      {
+        "subject": {
+          "name": "export control act of 1940",
+          "type": "MISC"
+        },
+        "predicate": "participant",
+        "object": {
+          "name": "japan",
+          "type": "ORG"
+        }
+      },
+      {
+        "subject": {
+          "name": "japan",
+          "type": "ORG"
+        },
+        "predicate": "participant of",
+        "object": {
+          "name": "world war ii",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "president",
+          "type": "PER"
+        },
+        "predicate": "participant",
+        "object": {
+          "name": "export control act of 1940",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "export control act of 1940",
+          "type": "MISC"
+        },
+        "predicate": "publication date",
+        "object": {
+          "name": "1940",
+          "type": "TIME"
+        }
+      },
+      {
+        "subject": {
+          "name": "export control act of 1940",
+          "type": "MISC"
+        },
+        "predicate": "publication date",
+        "object": {
+          "name": "1942",
+          "type": "TIME"
+        }
+      },
+      {
+        "subject": {
+          "name": "export control act of 1940",
+          "type": "MISC"
+        },
+        "predicate": "publication date",
+        "object": {
+          "name": "1948",
+          "type": "TIME"
+        }
+      },
+      {
+        "subject": {
+          "name": "export control act of 1940",
+          "type": "MISC"
+        },
+        "predicate": "publication date",
+        "object": {
+          "name": "1949",
+          "type": "TIME"
+        }
+      },
+      {
+        "subject": {
+          "name": "export control act of 1949",
+          "type": "MISC"
+        },
+        "predicate": "publication date",
+        "object": {
+          "name": "1949",
+          "type": "TIME"
+        }
+      },
+      {
+        "subject": {
+          "name": "export control act of 1949",
+          "type": "MISC"
+        },
+        "predicate": "country",
+        "object": {
+          "name": "united states",
+          "type": "LOC"
+        }
+      },
+      {
+        "subject": {
+          "name": "export control act of 1949",
+          "type": "MISC"
+        },
+        "predicate": "publication date",
+        "object": {
+          "name": "1958",
+          "type": "TIME"
+        }
+      },
+      {
+        "subject": {
+          "name": "export control act of 1949",
+          "type": "MISC"
+        },
+        "predicate": "participant",
+        "object": {
+          "name": "korean war",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "korean war",
+          "type": "MISC"
+        },
+        "predicate": "participant",
+        "object": {
+          "name": "united states",
+          "type": "LOC"
+        }
+      },
+      {
+        "subject": {
+          "name": "united states",
+          "type": "LOC"
+        },
+        "predicate": "participant",
+        "object": {
+          "name": "cold war",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "soviet",
+          "type": "ORG"
+        },
+        "predicate": "participant",
+        "object": {
+          "name": "cold war",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "united states",
+          "type": "LOC"
+        },
+        "predicate": "participant",
+        "object": {
+          "name": "export control act of 1940",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "mutual defense assistance control act of 1951",
+          "type": "MISC"
+        },
+        "predicate": "publication date",
+        "object": {
+          "name": "1951",
+          "type": "TIME"
+        }
+      },
+      {
+        "subject": {
+          "name": "mutual defense assistance control act of 1951",
+          "type": "MISC"
+        },
+        "predicate": "country",
+        "object": {
+          "name": "united states",
+          "type": "LOC"
+        }
+      },
+      {
+        "subject": {
+          "name": "mutual defense assistance control act of 1951",
+          "type": "MISC"
+        },
+        "predicate": "participant",
+        "object": {
+          "name": "soviet",
+          "type": "ORG"
+        }
+      },
+      {
+        "subject": {
+          "name": "export control act of 1940",
+          "type": "MISC"
+        },
+        "predicate": "participant",
+        "object": {
+          "name": "indo-chinese coast",
+          "type": "LOC"
+        }
+      },
+      {
+        "subject": {
+          "name": "united states",
+          "type": "LOC"
+        },
+        "predicate": "participant",
+        "object": {
+          "name": "world war ii",
+          "type": "MISC"
+        }
+      }
+    ],
+    "relations": [
+      "country",
+      "participant",
+      "publication date",
+      "participant of"
+    ]
+  },
+  "evaluation_results": {
+    "metrics_before_refinement": {
+      "entity_metrics": {
+        "true_positives": 13,
+        "false_positives": 9,
+        "false_negatives": 7,
+        "precision": 0.5909090909090909,
+        "recall": 0.65,
+        "f1": 0.6190476190476191
+      },
+      "relation_metrics": {
+        "true_positives": 4,
+        "false_positives": 0,
+        "false_negatives": 7,
+        "precision": 1.0,
+        "recall": 0.36363636363636365,
+        "f1": 0.5333333333333333
+      },
+      "triple_metrics": {
+        "true_positives": 1,
+        "false_positives": 23,
+        "false_negatives": 40,
+        "precision": 0.041666666666666664,
+        "recall": 0.024390243902439025,
+        "f1": 0.030769230769230767
+      },
+      "cluster_hit_metrics": {
+        "coverage": 0.631578947368421,
+        "avg_cluster_hit": 0.6842105263157895
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": 9,
+        "fp_name_in_gold": 3,
+        "name_in_gold_rate": 0.3333333333333333
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 1,
+        "total_clusters": 19,
+        "duplicated_rate": 0.05263157894736842,
+        "avg_hit_in_duplicated": 2.0
+      }
+    },
+    "metrics_after_refinement": {
+      "entity_metrics": {
+        "true_positives": 10,
+        "false_positives": 7,
+        "false_negatives": 9,
+        "precision": 0.5882352941176471,
+        "recall": 0.5263157894736842,
+        "f1": 0.5555555555555555
+      },
+      "relation_metrics": {
+        "true_positives": 4,
+        "false_positives": 0,
+        "false_negatives": 7,
+        "precision": 1.0,
+        "recall": 0.36363636363636365,
+        "f1": 0.5333333333333333
+      },
+      "triple_metrics": {
+        "true_positives": 1,
+        "false_positives": 21,
+        "false_negatives": 40,
+        "precision": 0.045454545454545456,
+        "recall": 0.024390243902439025,
+        "f1": 0.031746031746031744
+      },
+      "cluster_hit_metrics": {
+        "coverage": 0.5263157894736842,
+        "avg_cluster_hit": 0.5263157894736842
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": 7,
+        "fp_name_in_gold": 2,
+        "name_in_gold_rate": 0.2857142857142857
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 0,
+        "total_clusters": 19,
+        "duplicated_rate": 0.0,
+        "avg_hit_in_duplicated": 0.0
+      }
+    },
+    "metrics_loose_before": {
+      "entity_metrics": {
+        "true_positives": 17,
+        "false_positives": 5,
+        "false_negatives": 4,
+        "precision": 0.7727272727272727,
+        "recall": 0.8095238095238095,
+        "f1": 0.7906976744186046
+      },
+      "relation_metrics": {
+        "true_positives": 4,
+        "false_positives": 0,
+        "false_negatives": 7,
+        "precision": 1.0,
+        "recall": 0.36363636363636365,
+        "f1": 0.5333333333333333
+      },
+      "triple_metrics": {
+        "true_positives": 5,
+        "false_positives": 19,
+        "false_negatives": 36,
+        "precision": 0.20833333333333334,
+        "recall": 0.12195121951219512,
+        "f1": 0.15384615384615383
+      },
+      "cluster_hit_metrics": {
+        "coverage": 0.7894736842105263,
+        "avg_cluster_hit": 0.8947368421052632
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": 5,
+        "fp_name_in_gold": 3,
+        "name_in_gold_rate": 0.6
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 2,
+        "total_clusters": 19,
+        "duplicated_rate": 0.10526315789473684,
+        "avg_hit_in_duplicated": 2.0
+      }
+    },
+    "metrics_loose_after": {
+      "entity_metrics": {
+        "true_positives": 14,
+        "false_positives": 3,
+        "false_negatives": 6,
+        "precision": 0.8235294117647058,
+        "recall": 0.7,
+        "f1": 0.7567567567567567
+      },
+      "relation_metrics": {
+        "true_positives": 4,
+        "false_positives": 0,
+        "false_negatives": 7,
+        "precision": 1.0,
+        "recall": 0.36363636363636365,
+        "f1": 0.5333333333333333
+      },
+      "triple_metrics": {
+        "true_positives": 5,
+        "false_positives": 17,
+        "false_negatives": 36,
+        "precision": 0.22727272727272727,
+        "recall": 0.12195121951219512,
+        "f1": 0.15873015873015872
+      },
+      "cluster_hit_metrics": {
+        "coverage": 0.6842105263157895,
+        "avg_cluster_hit": 0.7368421052631579
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": 3,
+        "fp_name_in_gold": 2,
+        "name_in_gold_rate": 0.6666666666666666
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 1,
+        "total_clusters": 19,
+        "duplicated_rate": 0.05263157894736842,
+        "avg_hit_in_duplicated": 2.0
+      }
+    },
+    "delta_before": {
+      "entity_metrics": {
+        "true_positives": 4,
+        "false_positives": -4,
+        "false_negatives": -3,
+        "precision": 0.18181818181818177,
+        "recall": 0.1595238095238095,
+        "f1": 0.17165005537098554
+      },
+      "relation_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "triple_metrics": {
+        "true_positives": 4,
+        "false_positives": -4,
+        "false_negatives": -4,
+        "precision": 0.16666666666666669,
+        "recall": 0.0975609756097561,
+        "f1": 0.12307692307692306
+      },
+      "cluster_hit_metrics": {
+        "coverage": 0.1578947368421053,
+        "avg_cluster_hit": 0.21052631578947367
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": -4,
+        "fp_name_in_gold": 0,
+        "name_in_gold_rate": 0.26666666666666666
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 1,
+        "total_clusters": 0,
+        "duplicated_rate": 0.05263157894736842,
+        "avg_hit_in_duplicated": 0.0
+      }
+    },
+    "delta_after": {
+      "entity_metrics": {
+        "true_positives": 4,
+        "false_positives": -4,
+        "false_negatives": -3,
+        "precision": 0.23529411764705876,
+        "recall": 0.17368421052631577,
+        "f1": 0.20120120120120122
+      },
+      "relation_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "triple_metrics": {
+        "true_positives": 4,
+        "false_positives": -4,
+        "false_negatives": -4,
+        "precision": 0.18181818181818182,
+        "recall": 0.0975609756097561,
+        "f1": 0.12698412698412698
+      },
+      "cluster_hit_metrics": {
+        "coverage": 0.1578947368421053,
+        "avg_cluster_hit": 0.21052631578947367
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": -4,
+        "fp_name_in_gold": 0,
+        "name_in_gold_rate": 0.38095238095238093
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 1,
+        "total_clusters": 0,
+        "duplicated_rate": 0.05263157894736842,
+        "avg_hit_in_duplicated": 2.0
+      }
+    }
+  },
+  "details": {
+    "strict_before": {
+      "entities": {
+        "matched": [
+          {
+            "name": "united states",
+            "type": "LOC",
+            "id": 2
+          },
+          {
+            "name": "franklin d. roosevelt",
+            "type": "PER",
+            "id": 3
+          },
+          {
+            "name": "roosevelt",
+            "type": "PER",
+            "id": 3
+          },
+          {
+            "name": "world war ii",
+            "type": "MISC",
+            "id": 4
+          },
+          {
+            "name": "1940",
+            "type": "TIME",
+            "id": 1
+          },
+          {
+            "name": "1942",
+            "type": "TIME",
+            "id": 8
+          },
+          {
+            "name": "america",
+            "type": "LOC",
+            "id": 9
+          },
+          {
+            "name": "1948",
+            "type": "TIME",
+            "id": 10
+          },
+          {
+            "name": "1949",
+            "type": "TIME",
+            "id": 11
+          },
+          {
+            "name": "korean war",
+            "type": "MISC",
+            "id": 13
+          },
+          {
+            "name": "1958",
+            "type": "TIME",
+            "id": 14
+          },
+          {
+            "name": "cold war",
+            "type": "MISC",
+            "id": 16
+          },
+          {
+            "name": "1951",
+            "type": "TIME",
+            "id": 18
+          }
+        ],
+        "unmatched": [
+          {
+            "name": "export control act",
+            "type": "MISC",
+            "id": 0
+          },
+          {
+            "name": "imperial japan",
+            "type": "LOC",
+            "id": 5
+          },
+          {
+            "name": "indo",
+            "type": "LOC",
+            "id": 6
+          },
+          {
+            "name": "chinese",
+            "type": "LOC",
+            "id": 7
+          },
+          {
+            "name": "american",
+            "type": "LOC",
+            "id": 12
+          },
+          {
+            "name": "soviet",
+            "type": "LOC",
+            "id": 15
+          },
+          {
+            "name": "mutual defense assistance control act",
+            "type": "MISC",
+            "id": 17
+          }
+        ],
+        "extra": [
+          {
+            "name": "export control act of 1940",
+            "type": "MISC"
+          },
+          {
+            "name": "imperial japan",
+            "type": "ORG"
+          },
+          {
+            "name": "japan",
+            "type": "ORG"
+          },
+          {
+            "name": "indo-chinese coast",
+            "type": "LOC"
+          },
+          {
+            "name": "export control act of 1949",
+            "type": "MISC"
+          },
+          {
+            "name": "soviet bloc",
+            "type": "ORG"
+          },
+          {
+            "name": "soviet",
+            "type": "ORG"
+          },
+          {
+            "name": "president",
+            "type": "PER"
+          },
+          {
+            "name": "mutual defense assistance control act of 1951",
+            "type": "MISC"
+          }
+        ]
+      },
+      "relations": {
+        "matched": [
+          "participant of",
+          "country",
+          "participant",
+          "publication date"
+        ],
+        "unmatched": [
+          "inception",
+          "part of",
+          "has part",
+          "applies to jurisdiction",
+          "country of citizenship",
+          "conflict",
+          "head of government"
+        ],
+        "extra": []
+      },
+      "triples": {
+        "matched": [
+          {
+            "subject": {
+              "name": "korean war",
+              "type": "MISC",
+              "id": 13
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            }
+          }
+        ],
+        "unmatched": [
+          {
+            "head_id": 0,
+            "tail_id": 9,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 0,
+            "tail_id": 2,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 3,
+            "relation_label": "head of government"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 9,
+            "relation_label": "country of citizenship"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 4,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 13,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 2,
+            "relation_label": "country of citizenship"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 9,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 16,
+            "tail_id": 15,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 16,
+            "tail_id": 2,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 17,
+            "tail_id": 2,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 3,
+            "relation_label": "head of government"
+          },
+          {
+            "head_id": 16,
+            "tail_id": 9,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 17,
+            "tail_id": 9,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 12,
+            "relation_label": "country of citizenship"
+          },
+          {
+            "head_id": 17,
+            "tail_id": 18,
+            "relation_label": "publication date"
+          },
+          {
+            "head_id": 16,
+            "tail_id": 12,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 3,
+            "relation_label": "head of government"
+          },
+          {
+            "head_id": 0,
+            "tail_id": 1,
+            "relation_label": "publication date"
+          },
+          {
+            "head_id": 0,
+            "tail_id": 2,
+            "relation_label": "applies to jurisdiction"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 7,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 12,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 0,
+            "tail_id": 1,
+            "relation_label": "inception"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 15,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 9,
+            "relation_label": "applies to jurisdiction"
+          },
+          {
+            "head_id": 4,
+            "tail_id": 3,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 3,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 16,
+            "relation_label": "part of"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 16,
+            "relation_label": "part of"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 2,
+            "relation_label": "applies to jurisdiction"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 16,
+            "relation_label": "part of"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 16,
+            "relation_label": "part of"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 12,
+            "relation_label": "applies to jurisdiction"
+          },
+          {
+            "head_id": 7,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 4,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          }
+        ],
+        "extra": [
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "country",
+            "object": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "franklin d. roosevelt",
+              "type": "PER",
+              "id": 3
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "roosevelt",
+              "type": "PER",
+              "id": 3
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "imperial japan",
+              "type": "ORG",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "imperial japan",
+              "type": "ORG",
+              "id": -1
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "world war ii",
+              "type": "MISC",
+              "id": 4
+            }
+          },
+          {
+            "subject": {
+              "name": "roosevelt",
+              "type": "PER",
+              "id": 3
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1940",
+              "type": "TIME",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1942",
+              "type": "TIME",
+              "id": 8
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1948",
+              "type": "TIME",
+              "id": 10
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1949",
+              "type": "TIME",
+              "id": 11
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1949",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1949",
+              "type": "TIME",
+              "id": 11
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1949",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "country",
+            "object": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1949",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1958",
+              "type": "TIME",
+              "id": 14
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1949",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "korean war",
+              "type": "MISC",
+              "id": 13
+            }
+          },
+          {
+            "subject": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "cold war",
+              "type": "MISC",
+              "id": 16
+            }
+          },
+          {
+            "subject": {
+              "name": "soviet bloc",
+              "type": "ORG",
+              "id": -1
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "cold war",
+              "type": "MISC",
+              "id": 16
+            }
+          },
+          {
+            "subject": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "mutual defense assistance control act of 1951",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1951",
+              "type": "TIME",
+              "id": 18
+            }
+          },
+          {
+            "subject": {
+              "name": "mutual defense assistance control act of 1951",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "country",
+            "object": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "mutual defense assistance control act of 1951",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "soviet bloc",
+              "type": "ORG",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "indo-chinese coast",
+              "type": "LOC",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "america",
+              "type": "LOC",
+              "id": 9
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "world war ii",
+              "type": "MISC",
+              "id": 4
+            }
+          },
+          {
+            "subject": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "world war ii",
+              "type": "MISC",
+              "id": 4
+            }
+          }
+        ]
+      }
+    },
+    "strict_after": {
+      "entities": {
+        "matched": [
+          {
+            "name": "united states",
+            "type": "LOC",
+            "id": 2
+          },
+          {
+            "name": "world war ii",
+            "type": "MISC",
+            "id": 4
+          },
+          {
+            "name": "1940",
+            "type": "TIME",
+            "id": 1
+          },
+          {
+            "name": "1942",
+            "type": "TIME",
+            "id": 8
+          },
+          {
+            "name": "1948",
+            "type": "TIME",
+            "id": 10
+          },
+          {
+            "name": "1949",
+            "type": "TIME",
+            "id": 11
+          },
+          {
+            "name": "korean war",
+            "type": "MISC",
+            "id": 13
+          },
+          {
+            "name": "1958",
+            "type": "TIME",
+            "id": 14
+          },
+          {
+            "name": "cold war",
+            "type": "MISC",
+            "id": 16
+          },
+          {
+            "name": "1951",
+            "type": "TIME",
+            "id": 18
+          }
+        ],
+        "unmatched": [
+          {
+            "name": "export control act",
+            "type": "MISC",
+            "id": 0
+          },
+          {
+            "name": "franklin d. roosevelt",
+            "type": "PER",
+            "id": 3
+          },
+          {
+            "name": "imperial japan",
+            "type": "LOC",
+            "id": 5
+          },
+          {
+            "name": "indo",
+            "type": "LOC",
+            "id": 6
+          },
+          {
+            "name": "chinese",
+            "type": "LOC",
+            "id": 7
+          },
+          {
+            "name": "america",
+            "type": "LOC",
+            "id": 9
+          },
+          {
+            "name": "american",
+            "type": "LOC",
+            "id": 12
+          },
+          {
+            "name": "soviet",
+            "type": "LOC",
+            "id": 15
+          },
+          {
+            "name": "mutual defense assistance control act",
+            "type": "MISC",
+            "id": 17
+          }
+        ],
+        "extra": [
+          {
+            "name": "export control act of 1940",
+            "type": "MISC"
+          },
+          {
+            "name": "president",
+            "type": "PER"
+          },
+          {
+            "name": "japan",
+            "type": "ORG"
+          },
+          {
+            "name": "indo-chinese coast",
+            "type": "LOC"
+          },
+          {
+            "name": "export control act of 1949",
+            "type": "MISC"
+          },
+          {
+            "name": "soviet",
+            "type": "ORG"
+          },
+          {
+            "name": "mutual defense assistance control act of 1951",
+            "type": "MISC"
+          }
+        ]
+      },
+      "relations": {
+        "matched": [
+          "participant of",
+          "country",
+          "participant",
+          "publication date"
+        ],
+        "unmatched": [
+          "inception",
+          "part of",
+          "has part",
+          "applies to jurisdiction",
+          "country of citizenship",
+          "conflict",
+          "head of government"
+        ],
+        "extra": []
+      },
+      "triples": {
+        "matched": [
+          {
+            "subject": {
+              "name": "korean war",
+              "type": "MISC",
+              "id": 13
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            }
+          }
+        ],
+        "unmatched": [
+          {
+            "head_id": 0,
+            "tail_id": 9,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 0,
+            "tail_id": 2,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 3,
+            "relation_label": "head of government"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 9,
+            "relation_label": "country of citizenship"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 4,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 13,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 2,
+            "relation_label": "country of citizenship"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 9,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 16,
+            "tail_id": 15,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 16,
+            "tail_id": 2,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 17,
+            "tail_id": 2,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 3,
+            "relation_label": "head of government"
+          },
+          {
+            "head_id": 16,
+            "tail_id": 9,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 17,
+            "tail_id": 9,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 12,
+            "relation_label": "country of citizenship"
+          },
+          {
+            "head_id": 17,
+            "tail_id": 18,
+            "relation_label": "publication date"
+          },
+          {
+            "head_id": 16,
+            "tail_id": 12,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 3,
+            "relation_label": "head of government"
+          },
+          {
+            "head_id": 0,
+            "tail_id": 1,
+            "relation_label": "publication date"
+          },
+          {
+            "head_id": 0,
+            "tail_id": 2,
+            "relation_label": "applies to jurisdiction"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 7,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 12,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 0,
+            "tail_id": 1,
+            "relation_label": "inception"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 15,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 9,
+            "relation_label": "applies to jurisdiction"
+          },
+          {
+            "head_id": 4,
+            "tail_id": 3,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 3,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 16,
+            "relation_label": "part of"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 16,
+            "relation_label": "part of"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 2,
+            "relation_label": "applies to jurisdiction"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 16,
+            "relation_label": "part of"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 16,
+            "relation_label": "part of"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 12,
+            "relation_label": "applies to jurisdiction"
+          },
+          {
+            "head_id": 7,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 4,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          }
+        ],
+        "extra": [
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "country",
+            "object": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "president",
+              "type": "PER",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "japan",
+              "type": "ORG",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "japan",
+              "type": "ORG",
+              "id": -1
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "world war ii",
+              "type": "MISC",
+              "id": 4
+            }
+          },
+          {
+            "subject": {
+              "name": "president",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1940",
+              "type": "TIME",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1942",
+              "type": "TIME",
+              "id": 8
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1948",
+              "type": "TIME",
+              "id": 10
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1949",
+              "type": "TIME",
+              "id": 11
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1949",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1949",
+              "type": "TIME",
+              "id": 11
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1949",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "country",
+            "object": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1949",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1958",
+              "type": "TIME",
+              "id": 14
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1949",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "korean war",
+              "type": "MISC",
+              "id": 13
+            }
+          },
+          {
+            "subject": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "cold war",
+              "type": "MISC",
+              "id": 16
+            }
+          },
+          {
+            "subject": {
+              "name": "soviet",
+              "type": "ORG",
+              "id": -1
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "cold war",
+              "type": "MISC",
+              "id": 16
+            }
+          },
+          {
+            "subject": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "mutual defense assistance control act of 1951",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1951",
+              "type": "TIME",
+              "id": 18
+            }
+          },
+          {
+            "subject": {
+              "name": "mutual defense assistance control act of 1951",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "country",
+            "object": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "mutual defense assistance control act of 1951",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "soviet",
+              "type": "ORG",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "indo-chinese coast",
+              "type": "LOC",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "world war ii",
+              "type": "MISC",
+              "id": 4
+            }
+          }
+        ]
+      }
+    },
+    "loose_before": {
+      "entities": {
+        "matched": [
+          {
+            "name": "export control act of 1940",
+            "type": "MISC",
+            "id": 0
+          },
+          {
+            "name": "united states",
+            "type": "LOC",
+            "id": 2
+          },
+          {
+            "name": "franklin d. roosevelt",
+            "type": "PER",
+            "id": 3
+          },
+          {
+            "name": "roosevelt",
+            "type": "PER",
+            "id": 3
+          },
+          {
+            "name": "world war ii",
+            "type": "MISC",
+            "id": 4
+          },
+          {
+            "name": "indo-chinese coast",
+            "type": "LOC",
+            "id": 6
+          },
+          {
+            "name": "1940",
+            "type": "TIME",
+            "id": 1
+          },
+          {
+            "name": "1942",
+            "type": "TIME",
+            "id": 8
+          },
+          {
+            "name": "america",
+            "type": "LOC",
+            "id": 9
+          },
+          {
+            "name": "1948",
+            "type": "TIME",
+            "id": 10
+          },
+          {
+            "name": "1949",
+            "type": "TIME",
+            "id": 11
+          },
+          {
+            "name": "korean war",
+            "type": "MISC",
+            "id": 13
+          },
+          {
+            "name": "export control act of 1949",
+            "type": "MISC",
+            "id": 0
+          },
+          {
+            "name": "1958",
+            "type": "TIME",
+            "id": 14
+          },
+          {
+            "name": "cold war",
+            "type": "MISC",
+            "id": 16
+          },
+          {
+            "name": "mutual defense assistance control act of 1951",
+            "type": "MISC",
+            "id": 17
+          },
+          {
+            "name": "1951",
+            "type": "TIME",
+            "id": 18
+          }
+        ],
+        "unmatched": [
+          {
+            "name": "imperial japan",
+            "type": "LOC",
+            "id": 5
+          },
+          {
+            "name": "chinese",
+            "type": "LOC",
+            "id": 7
+          },
+          {
+            "name": "american",
+            "type": "LOC",
+            "id": 12
+          },
+          {
+            "name": "soviet",
+            "type": "LOC",
+            "id": 15
+          }
+        ],
+        "extra": [
+          {
+            "name": "imperial japan",
+            "type": "ORG"
+          },
+          {
+            "name": "japan",
+            "type": "ORG"
+          },
+          {
+            "name": "soviet bloc",
+            "type": "ORG"
+          },
+          {
+            "name": "soviet",
+            "type": "ORG"
+          },
+          {
+            "name": "president",
+            "type": "PER"
+          }
+        ]
+      },
+      "relations": {
+        "matched": [
+          "participant of",
+          "country",
+          "participant",
+          "publication date"
+        ],
+        "unmatched": [
+          "inception",
+          "part of",
+          "has part",
+          "applies to jurisdiction",
+          "country of citizenship",
+          "conflict",
+          "head of government"
+        ],
+        "extra": []
+      },
+      "triples": {
+        "matched": [
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "country",
+            "object": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1940",
+              "type": "TIME",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "korean war",
+              "type": "MISC",
+              "id": 13
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "mutual defense assistance control act of 1951",
+              "type": "MISC",
+              "id": 17
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1951",
+              "type": "TIME",
+              "id": 18
+            }
+          },
+          {
+            "subject": {
+              "name": "mutual defense assistance control act of 1951",
+              "type": "MISC",
+              "id": 17
+            },
+            "predicate": "country",
+            "object": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            }
+          }
+        ],
+        "unmatched": [
+          {
+            "head_id": 0,
+            "tail_id": 9,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 3,
+            "relation_label": "head of government"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 9,
+            "relation_label": "country of citizenship"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 4,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 13,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 2,
+            "relation_label": "country of citizenship"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 9,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 16,
+            "tail_id": 15,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 16,
+            "tail_id": 2,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 3,
+            "relation_label": "head of government"
+          },
+          {
+            "head_id": 16,
+            "tail_id": 9,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 17,
+            "tail_id": 9,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 12,
+            "relation_label": "country of citizenship"
+          },
+          {
+            "head_id": 16,
+            "tail_id": 12,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 3,
+            "relation_label": "head of government"
+          },
+          {
+            "head_id": 0,
+            "tail_id": 2,
+            "relation_label": "applies to jurisdiction"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 7,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 12,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 0,
+            "tail_id": 1,
+            "relation_label": "inception"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 15,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 9,
+            "relation_label": "applies to jurisdiction"
+          },
+          {
+            "head_id": 4,
+            "tail_id": 3,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 3,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 16,
+            "relation_label": "part of"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 16,
+            "relation_label": "part of"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 2,
+            "relation_label": "applies to jurisdiction"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 16,
+            "relation_label": "part of"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 16,
+            "relation_label": "part of"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 12,
+            "relation_label": "applies to jurisdiction"
+          },
+          {
+            "head_id": 7,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 4,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          }
+        ],
+        "extra": [
+          {
+            "subject": {
+              "name": "export control act of 1949",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "country",
+            "object": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "franklin d. roosevelt",
+              "type": "PER",
+              "id": 3
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "roosevelt",
+              "type": "PER",
+              "id": 3
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "imperial japan",
+              "type": "ORG",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "imperial japan",
+              "type": "ORG",
+              "id": -1
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "world war ii",
+              "type": "MISC",
+              "id": 4
+            }
+          },
+          {
+            "subject": {
+              "name": "roosevelt",
+              "type": "PER",
+              "id": 3
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": 0
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1942",
+              "type": "TIME",
+              "id": 8
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1948",
+              "type": "TIME",
+              "id": 10
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1949",
+              "type": "TIME",
+              "id": 11
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1949",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1949",
+              "type": "TIME",
+              "id": 11
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1949",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1958",
+              "type": "TIME",
+              "id": 14
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1949",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "korean war",
+              "type": "MISC",
+              "id": 13
+            }
+          },
+          {
+            "subject": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "cold war",
+              "type": "MISC",
+              "id": 16
+            }
+          },
+          {
+            "subject": {
+              "name": "soviet bloc",
+              "type": "ORG",
+              "id": -1
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "cold war",
+              "type": "MISC",
+              "id": 16
+            }
+          },
+          {
+            "subject": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": 0
+            }
+          },
+          {
+            "subject": {
+              "name": "mutual defense assistance control act of 1951",
+              "type": "MISC",
+              "id": 17
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "soviet bloc",
+              "type": "ORG",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "indo-chinese coast",
+              "type": "LOC",
+              "id": 6
+            }
+          },
+          {
+            "subject": {
+              "name": "america",
+              "type": "LOC",
+              "id": 9
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "world war ii",
+              "type": "MISC",
+              "id": 4
+            }
+          },
+          {
+            "subject": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "world war ii",
+              "type": "MISC",
+              "id": 4
+            }
+          }
+        ]
+      }
+    },
+    "loose_after": {
+      "entities": {
+        "matched": [
+          {
+            "name": "export control act of 1940",
+            "type": "MISC",
+            "id": 0
+          },
+          {
+            "name": "united states",
+            "type": "LOC",
+            "id": 2
+          },
+          {
+            "name": "world war ii",
+            "type": "MISC",
+            "id": 4
+          },
+          {
+            "name": "indo-chinese coast",
+            "type": "LOC",
+            "id": 6
+          },
+          {
+            "name": "1940",
+            "type": "TIME",
+            "id": 1
+          },
+          {
+            "name": "1942",
+            "type": "TIME",
+            "id": 8
+          },
+          {
+            "name": "1948",
+            "type": "TIME",
+            "id": 10
+          },
+          {
+            "name": "1949",
+            "type": "TIME",
+            "id": 11
+          },
+          {
+            "name": "korean war",
+            "type": "MISC",
+            "id": 13
+          },
+          {
+            "name": "export control act of 1949",
+            "type": "MISC",
+            "id": 0
+          },
+          {
+            "name": "1958",
+            "type": "TIME",
+            "id": 14
+          },
+          {
+            "name": "cold war",
+            "type": "MISC",
+            "id": 16
+          },
+          {
+            "name": "mutual defense assistance control act of 1951",
+            "type": "MISC",
+            "id": 17
+          },
+          {
+            "name": "1951",
+            "type": "TIME",
+            "id": 18
+          }
+        ],
+        "unmatched": [
+          {
+            "name": "franklin d. roosevelt",
+            "type": "PER",
+            "id": 3
+          },
+          {
+            "name": "imperial japan",
+            "type": "LOC",
+            "id": 5
+          },
+          {
+            "name": "chinese",
+            "type": "LOC",
+            "id": 7
+          },
+          {
+            "name": "america",
+            "type": "LOC",
+            "id": 9
+          },
+          {
+            "name": "american",
+            "type": "LOC",
+            "id": 12
+          },
+          {
+            "name": "soviet",
+            "type": "LOC",
+            "id": 15
+          }
+        ],
+        "extra": [
+          {
+            "name": "president",
+            "type": "PER"
+          },
+          {
+            "name": "japan",
+            "type": "ORG"
+          },
+          {
+            "name": "soviet",
+            "type": "ORG"
+          }
+        ]
+      },
+      "relations": {
+        "matched": [
+          "participant of",
+          "country",
+          "participant",
+          "publication date"
+        ],
+        "unmatched": [
+          "inception",
+          "part of",
+          "has part",
+          "applies to jurisdiction",
+          "country of citizenship",
+          "conflict",
+          "head of government"
+        ],
+        "extra": []
+      },
+      "triples": {
+        "matched": [
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "country",
+            "object": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1940",
+              "type": "TIME",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "korean war",
+              "type": "MISC",
+              "id": 13
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "mutual defense assistance control act of 1951",
+              "type": "MISC",
+              "id": 17
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1951",
+              "type": "TIME",
+              "id": 18
+            }
+          },
+          {
+            "subject": {
+              "name": "mutual defense assistance control act of 1951",
+              "type": "MISC",
+              "id": 17
+            },
+            "predicate": "country",
+            "object": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            }
+          }
+        ],
+        "unmatched": [
+          {
+            "head_id": 0,
+            "tail_id": 9,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 3,
+            "relation_label": "head of government"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 9,
+            "relation_label": "country of citizenship"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 4,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 13,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 2,
+            "relation_label": "country of citizenship"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 9,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 16,
+            "tail_id": 15,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 16,
+            "tail_id": 2,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 3,
+            "relation_label": "head of government"
+          },
+          {
+            "head_id": 16,
+            "tail_id": 9,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 17,
+            "tail_id": 9,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 12,
+            "relation_label": "country of citizenship"
+          },
+          {
+            "head_id": 16,
+            "tail_id": 12,
+            "relation_label": "has part"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 3,
+            "relation_label": "head of government"
+          },
+          {
+            "head_id": 0,
+            "tail_id": 2,
+            "relation_label": "applies to jurisdiction"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 7,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 12,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 0,
+            "tail_id": 1,
+            "relation_label": "inception"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 15,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 9,
+            "relation_label": "applies to jurisdiction"
+          },
+          {
+            "head_id": 4,
+            "tail_id": 3,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 3,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 16,
+            "relation_label": "part of"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 16,
+            "relation_label": "part of"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 2,
+            "relation_label": "applies to jurisdiction"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 16,
+            "relation_label": "part of"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 16,
+            "relation_label": "part of"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 12,
+            "relation_label": "applies to jurisdiction"
+          },
+          {
+            "head_id": 7,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 4,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 13,
+            "relation_label": "participant of"
+          }
+        ],
+        "extra": [
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "president",
+              "type": "PER",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "japan",
+              "type": "ORG",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "japan",
+              "type": "ORG",
+              "id": -1
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "world war ii",
+              "type": "MISC",
+              "id": 4
+            }
+          },
+          {
+            "subject": {
+              "name": "president",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": 0
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1942",
+              "type": "TIME",
+              "id": 8
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1948",
+              "type": "TIME",
+              "id": 10
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1949",
+              "type": "TIME",
+              "id": 11
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1949",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1949",
+              "type": "TIME",
+              "id": 11
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1949",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "country",
+            "object": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1949",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "publication date",
+            "object": {
+              "name": "1958",
+              "type": "TIME",
+              "id": 14
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1949",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "korean war",
+              "type": "MISC",
+              "id": 13
+            }
+          },
+          {
+            "subject": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "cold war",
+              "type": "MISC",
+              "id": 16
+            }
+          },
+          {
+            "subject": {
+              "name": "soviet",
+              "type": "ORG",
+              "id": -1
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "cold war",
+              "type": "MISC",
+              "id": 16
+            }
+          },
+          {
+            "subject": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": 0
+            }
+          },
+          {
+            "subject": {
+              "name": "mutual defense assistance control act of 1951",
+              "type": "MISC",
+              "id": 17
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "soviet",
+              "type": "ORG",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "export control act of 1940",
+              "type": "MISC",
+              "id": 0
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "indo-chinese coast",
+              "type": "LOC",
+              "id": 6
+            }
+          },
+          {
+            "subject": {
+              "name": "united states",
+              "type": "LOC",
+              "id": 2
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "world war ii",
+              "type": "MISC",
+              "id": 4
+            }
+          }
+        ]
+      }
+    }
+  },
+  "error_sources": {
+    "generation_error": [
+      {
+        "name": "president",
+        "type": "PER"
+      },
+      {
+        "name": "mutual defense assistance control act of 1951",
+        "type": "MISC"
+      },
+      {
+        "name": "export control act of 1949",
+        "type": "MISC"
+      },
+      {
+        "name": "japan",
+        "type": "ORG"
+      },
+      {
+        "name": "soviet",
+        "type": "ORG"
+      },
+      {
+        "name": "indo-chinese coast",
+        "type": "LOC"
+      },
+      {
+        "name": "export control act of 1940",
+        "type": "MISC"
+      }
+    ],
+    "refinement_error": [],
+    "resolved_through_refinement": [
+      {
+        "name": "soviet bloc",
+        "type": "ORG"
+      },
+      {
+        "name": "imperial japan",
+        "type": "ORG"
+      }
+    ],
+    "lost_matches": [
+      {
+        "name": "franklin d. roosevelt",
+        "type": "PER"
+      },
+      {
+        "name": "america",
+        "type": "LOC"
+      },
+      {
+        "name": "roosevelt",
+        "type": "PER"
+      }
+    ]
+  }
+}

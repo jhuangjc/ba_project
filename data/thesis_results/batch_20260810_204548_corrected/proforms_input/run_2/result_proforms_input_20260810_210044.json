@@ -1,0 +1,4463 @@
+{
+  "metadata": {
+    "experiment_id": "proforms_input",
+    "input_type": "pro-forms",
+    "source_group": "uttaraa_mahabharata",
+    "gold_id": "gold_01"
+  },
+  "extraction_results": {
+    "entities": [
+      {
+        "name": "mahabharata",
+        "type": "MISC"
+      },
+      {
+        "name": "uttar\u0101",
+        "type": "PER"
+      },
+      {
+        "name": "king virata",
+        "type": "PER"
+      },
+      {
+        "name": "pandavas",
+        "type": "PER"
+      },
+      {
+        "name": "prince uttar",
+        "type": "PER"
+      },
+      {
+        "name": "arjuna",
+        "type": "PER"
+      },
+      {
+        "name": "matsya kingdom",
+        "type": "LOC"
+      },
+      {
+        "name": "kurukshetra war",
+        "type": "MISC"
+      },
+      {
+        "name": "abhimanyu",
+        "type": "PER"
+      },
+      {
+        "name": "krishna",
+        "type": "PER"
+      },
+      {
+        "name": "ashwathama",
+        "type": "PER"
+      },
+      {
+        "name": "dronacharya",
+        "type": "PER"
+      },
+      {
+        "name": "duryodhana",
+        "type": "PER"
+      },
+      {
+        "name": "kaurava",
+        "type": "PER"
+      },
+      {
+        "name": "brahmastra",
+        "type": "MISC"
+      },
+      {
+        "name": "vyasa",
+        "type": "PER"
+      },
+      {
+        "name": "parikshit",
+        "type": "PER"
+      },
+      {
+        "name": "kuru dynasty",
+        "type": "ORG"
+      },
+      {
+        "name": "hastinapur",
+        "type": "LOC"
+      },
+      {
+        "name": "janamejaya",
+        "type": "PER"
+      },
+      {
+        "name": "heaven",
+        "type": "LOC"
+      },
+      {
+        "name": "forests",
+        "type": "LOC"
+      },
+      {
+        "name": "f\u0153tus",
+        "type": "MISC"
+      }
+    ],
+    "triples": [
+      {
+        "subject": {
+          "name": "uttar\u0101",
+          "type": "PER"
+        },
+        "predicate": "child",
+        "object": {
+          "name": "king virata",
+          "type": "PER"
+        }
+      },
+      {
+        "subject": {
+          "name": "uttar\u0101",
+          "type": "PER"
+        },
+        "predicate": "sibling",
+        "object": {
+          "name": "prince uttar",
+          "type": "PER"
+        }
+      },
+      {
+        "subject": {
+          "name": "pandavas",
+          "type": "PER"
+        },
+        "predicate": "present in work",
+        "object": {
+          "name": "mahabharata",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "uttar\u0101",
+          "type": "PER"
+        },
+        "predicate": "present in work",
+        "object": {
+          "name": "mahabharata",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "arjuna",
+          "type": "PER"
+        },
+        "predicate": "present in work",
+        "object": {
+          "name": "mahabharata",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "king virata",
+          "type": "PER"
+        },
+        "predicate": "present in work",
+        "object": {
+          "name": "mahabharata",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "pandavas",
+          "type": "PER"
+        },
+        "predicate": "participant",
+        "object": {
+          "name": "matsya kingdom",
+          "type": "LOC"
+        }
+      },
+      {
+        "subject": {
+          "name": "arjuna",
+          "type": "PER"
+        },
+        "predicate": "participant",
+        "object": {
+          "name": "matsya kingdom",
+          "type": "LOC"
+        }
+      },
+      {
+        "subject": {
+          "name": "uttar\u0101",
+          "type": "PER"
+        },
+        "predicate": "participant",
+        "object": {
+          "name": "matsya kingdom",
+          "type": "LOC"
+        }
+      },
+      {
+        "subject": {
+          "name": "arjuna",
+          "type": "PER"
+        },
+        "predicate": "participant",
+        "object": {
+          "name": "heaven",
+          "type": "LOC"
+        }
+      },
+      {
+        "subject": {
+          "name": "arjuna",
+          "type": "PER"
+        },
+        "predicate": "father",
+        "object": {
+          "name": "abhimanyu",
+          "type": "PER"
+        }
+      },
+      {
+        "subject": {
+          "name": "uttar\u0101",
+          "type": "PER"
+        },
+        "predicate": "spouse",
+        "object": {
+          "name": "abhimanyu",
+          "type": "PER"
+        }
+      },
+      {
+        "subject": {
+          "name": "abhimanyu",
+          "type": "PER"
+        },
+        "predicate": "participant of",
+        "object": {
+          "name": "kurukshetra war",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "arjuna",
+          "type": "PER"
+        },
+        "predicate": "participant of",
+        "object": {
+          "name": "kurukshetra war",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "ashwathama",
+          "type": "PER"
+        },
+        "predicate": "participant of",
+        "object": {
+          "name": "kurukshetra war",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "krishna",
+          "type": "PER"
+        },
+        "predicate": "participant of",
+        "object": {
+          "name": "kurukshetra war",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "ashwathama",
+          "type": "PER"
+        },
+        "predicate": "child",
+        "object": {
+          "name": "dronacharya",
+          "type": "PER"
+        }
+      },
+      {
+        "subject": {
+          "name": "ashwathama",
+          "type": "PER"
+        },
+        "predicate": "conflict",
+        "object": {
+          "name": "arjuna",
+          "type": "PER"
+        }
+      },
+      {
+        "subject": {
+          "name": "duryodhana",
+          "type": "PER"
+        },
+        "predicate": "present in work",
+        "object": {
+          "name": "mahabharata",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "kaurava",
+          "type": "PER"
+        },
+        "predicate": "present in work",
+        "object": {
+          "name": "mahabharata",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "ashwathama",
+          "type": "PER"
+        },
+        "predicate": "participant",
+        "object": {
+          "name": "kaurava",
+          "type": "PER"
+        }
+      },
+      {
+        "subject": {
+          "name": "krishna",
+          "type": "PER"
+        },
+        "predicate": "spouse",
+        "object": {
+          "name": "uttar\u0101",
+          "type": "PER"
+        }
+      },
+      {
+        "subject": {
+          "name": "vyasa",
+          "type": "PER"
+        },
+        "predicate": "participant of",
+        "object": {
+          "name": "kurukshetra war",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "parikshit",
+          "type": "PER"
+        },
+        "predicate": "child",
+        "object": {
+          "name": "uttar\u0101",
+          "type": "PER"
+        }
+      },
+      {
+        "subject": {
+          "name": "parikshit",
+          "type": "PER"
+        },
+        "predicate": "child",
+        "object": {
+          "name": "abhimanyu",
+          "type": "PER"
+        }
+      },
+      {
+        "subject": {
+          "name": "f\u0153tus",
+          "type": "MISC"
+        },
+        "predicate": "child",
+        "object": {
+          "name": "uttar\u0101",
+          "type": "PER"
+        }
+      },
+      {
+        "subject": {
+          "name": "parikshit",
+          "type": "PER"
+        },
+        "predicate": "present in work",
+        "object": {
+          "name": "mahabharata",
+          "type": "MISC"
+        }
+      },
+      {
+        "subject": {
+          "name": "parikshit",
+          "type": "PER"
+        },
+        "predicate": "participant",
+        "object": {
+          "name": "kuru dynasty",
+          "type": "ORG"
+        }
+      },
+      {
+        "subject": {
+          "name": "parikshit",
+          "type": "PER"
+        },
+        "predicate": "participant",
+        "object": {
+          "name": "hastinapur",
+          "type": "LOC"
+        }
+      },
+      {
+        "subject": {
+          "name": "uttar\u0101",
+          "type": "PER"
+        },
+        "predicate": "child",
+        "object": {
+          "name": "janamejaya",
+          "type": "PER"
+        }
+      },
+      {
+        "subject": {
+          "name": "parikshit",
+          "type": "PER"
+        },
+        "predicate": "father",
+        "object": {
+          "name": "janamejaya",
+          "type": "PER"
+        }
+      },
+      {
+        "subject": {
+          "name": "ashwathama",
+          "type": "PER"
+        },
+        "predicate": "participant",
+        "object": {
+          "name": "forests",
+          "type": "LOC"
+        }
+      }
+    ],
+    "relations": [
+      "child",
+      "participant",
+      "spouse",
+      "present in work",
+      "participant of",
+      "conflict",
+      "father",
+      "sibling"
+    ]
+  },
+  "evaluation_results": {
+    "metrics_before_refinement": {
+      "entity_metrics": {
+        "true_positives": 20,
+        "false_positives": 8,
+        "false_negatives": 5,
+        "precision": 0.7142857142857143,
+        "recall": 0.8,
+        "f1": 0.7547169811320756
+      },
+      "relation_metrics": {
+        "true_positives": 8,
+        "false_positives": 0,
+        "false_negatives": 2,
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.888888888888889
+      },
+      "triple_metrics": {
+        "true_positives": 6,
+        "false_positives": 33,
+        "false_negatives": 56,
+        "precision": 0.15384615384615385,
+        "recall": 0.0967741935483871,
+        "f1": 0.11881188118811879
+      },
+      "cluster_hit_metrics": {
+        "coverage": 0.7727272727272727,
+        "avg_cluster_hit": 0.9090909090909091
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": 8,
+        "fp_name_in_gold": 2,
+        "name_in_gold_rate": 0.25
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 2,
+        "total_clusters": 22,
+        "duplicated_rate": 0.09090909090909091,
+        "avg_hit_in_duplicated": 2.5
+      }
+    },
+    "metrics_after_refinement": {
+      "entity_metrics": {
+        "true_positives": 15,
+        "false_positives": 8,
+        "false_negatives": 7,
+        "precision": 0.6521739130434783,
+        "recall": 0.6818181818181818,
+        "f1": 0.6666666666666666
+      },
+      "relation_metrics": {
+        "true_positives": 8,
+        "false_positives": 0,
+        "false_negatives": 2,
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.888888888888889
+      },
+      "triple_metrics": {
+        "true_positives": 5,
+        "false_positives": 27,
+        "false_negatives": 57,
+        "precision": 0.15625,
+        "recall": 0.08064516129032258,
+        "f1": 0.10638297872340426
+      },
+      "cluster_hit_metrics": {
+        "coverage": 0.6818181818181818,
+        "avg_cluster_hit": 0.6818181818181818
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": 8,
+        "fp_name_in_gold": 2,
+        "name_in_gold_rate": 0.25
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 0,
+        "total_clusters": 22,
+        "duplicated_rate": 0.0,
+        "avg_hit_in_duplicated": 0.0
+      }
+    },
+    "metrics_loose_before": {
+      "entity_metrics": {
+        "true_positives": 23,
+        "false_positives": 5,
+        "false_negatives": 4,
+        "precision": 0.8214285714285714,
+        "recall": 0.8518518518518519,
+        "f1": 0.8363636363636364
+      },
+      "relation_metrics": {
+        "true_positives": 8,
+        "false_positives": 0,
+        "false_negatives": 2,
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.888888888888889
+      },
+      "triple_metrics": {
+        "true_positives": 7,
+        "false_positives": 32,
+        "false_negatives": 55,
+        "precision": 0.1794871794871795,
+        "recall": 0.11290322580645161,
+        "f1": 0.13861386138613863
+      },
+      "cluster_hit_metrics": {
+        "coverage": 0.8181818181818182,
+        "avg_cluster_hit": 1.0454545454545454
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": 5,
+        "fp_name_in_gold": 2,
+        "name_in_gold_rate": 0.4
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 4,
+        "total_clusters": 22,
+        "duplicated_rate": 0.18181818181818182,
+        "avg_hit_in_duplicated": 2.25
+      }
+    },
+    "metrics_loose_after": {
+      "entity_metrics": {
+        "true_positives": 18,
+        "false_positives": 5,
+        "false_negatives": 4,
+        "precision": 0.782608695652174,
+        "recall": 0.8181818181818182,
+        "f1": 0.8
+      },
+      "relation_metrics": {
+        "true_positives": 8,
+        "false_positives": 0,
+        "false_negatives": 2,
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.888888888888889
+      },
+      "triple_metrics": {
+        "true_positives": 7,
+        "false_positives": 25,
+        "false_negatives": 55,
+        "precision": 0.21875,
+        "recall": 0.11290322580645161,
+        "f1": 0.14893617021276595
+      },
+      "cluster_hit_metrics": {
+        "coverage": 0.8181818181818182,
+        "avg_cluster_hit": 0.8181818181818182
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": 5,
+        "fp_name_in_gold": 2,
+        "name_in_gold_rate": 0.4
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 0,
+        "total_clusters": 22,
+        "duplicated_rate": 0.0,
+        "avg_hit_in_duplicated": 0.0
+      }
+    },
+    "delta_before": {
+      "entity_metrics": {
+        "true_positives": 3,
+        "false_positives": -3,
+        "false_negatives": -1,
+        "precision": 0.1071428571428571,
+        "recall": 0.051851851851851816,
+        "f1": 0.08164665523156078
+      },
+      "relation_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "triple_metrics": {
+        "true_positives": 1,
+        "false_positives": -1,
+        "false_negatives": -1,
+        "precision": 0.025641025641025633,
+        "recall": 0.016129032258064516,
+        "f1": 0.019801980198019833
+      },
+      "cluster_hit_metrics": {
+        "coverage": 0.045454545454545525,
+        "avg_cluster_hit": 0.13636363636363635
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": -3,
+        "fp_name_in_gold": 0,
+        "name_in_gold_rate": 0.15000000000000002
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 2,
+        "total_clusters": 0,
+        "duplicated_rate": 0.09090909090909091,
+        "avg_hit_in_duplicated": -0.25
+      }
+    },
+    "delta_after": {
+      "entity_metrics": {
+        "true_positives": 3,
+        "false_positives": -3,
+        "false_negatives": -3,
+        "precision": 0.13043478260869568,
+        "recall": 0.13636363636363646,
+        "f1": 0.13333333333333341
+      },
+      "relation_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "triple_metrics": {
+        "true_positives": 2,
+        "false_positives": -2,
+        "false_negatives": -2,
+        "precision": 0.0625,
+        "recall": 0.03225806451612903,
+        "f1": 0.042553191489361694
+      },
+      "cluster_hit_metrics": {
+        "coverage": 0.13636363636363646,
+        "avg_cluster_hit": 0.13636363636363646
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": -3,
+        "fp_name_in_gold": 0,
+        "name_in_gold_rate": 0.15000000000000002
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 0,
+        "total_clusters": 0,
+        "duplicated_rate": 0.0,
+        "avg_hit_in_duplicated": 0.0
+      }
+    }
+  },
+  "details": {
+    "strict_before": {
+      "entities": {
+        "matched": [
+          {
+            "name": "mahabharata",
+            "type": "MISC",
+            "id": 1
+          },
+          {
+            "name": "uttar\u0101",
+            "type": "PER",
+            "id": 2
+          },
+          {
+            "name": "uttaraa",
+            "type": "PER",
+            "id": 2
+          },
+          {
+            "name": "virata",
+            "type": "PER",
+            "id": 3
+          },
+          {
+            "name": "uttar",
+            "type": "PER",
+            "id": 5
+          },
+          {
+            "name": "arjuna",
+            "type": "PER",
+            "id": 6
+          },
+          {
+            "name": "matsya kingdom",
+            "type": "LOC",
+            "id": 7
+          },
+          {
+            "name": "kurukshetra war",
+            "type": "MISC",
+            "id": 9
+          },
+          {
+            "name": "abhimanyu",
+            "type": "PER",
+            "id": 8
+          },
+          {
+            "name": "krishna",
+            "type": "PER",
+            "id": 10
+          },
+          {
+            "name": "ashwathama",
+            "type": "PER",
+            "id": 12
+          },
+          {
+            "name": "ashathama",
+            "type": "PER",
+            "id": 12
+          },
+          {
+            "name": "ashwatthama",
+            "type": "PER",
+            "id": 12
+          },
+          {
+            "name": "dronacharya",
+            "type": "PER",
+            "id": 13
+          },
+          {
+            "name": "duryodhana",
+            "type": "PER",
+            "id": 14
+          },
+          {
+            "name": "brahmastra",
+            "type": "MISC",
+            "id": 16
+          },
+          {
+            "name": "vyasa",
+            "type": "PER",
+            "id": 17
+          },
+          {
+            "name": "parikshit",
+            "type": "PER",
+            "id": 18
+          },
+          {
+            "name": "hastinapur",
+            "type": "LOC",
+            "id": 20
+          },
+          {
+            "name": "janamejaya",
+            "type": "PER",
+            "id": 21
+          }
+        ],
+        "unmatched": [
+          {
+            "name": "hindu",
+            "type": "LOC",
+            "id": 0
+          },
+          {
+            "name": "pandavas",
+            "type": "ORG",
+            "id": 4
+          },
+          {
+            "name": "mahabharata war",
+            "type": "MISC",
+            "id": 11
+          },
+          {
+            "name": "kaurava",
+            "type": "ORG",
+            "id": 15
+          },
+          {
+            "name": "kuru",
+            "type": "ORG",
+            "id": 19
+          }
+        ],
+        "extra": [
+          {
+            "name": "king virata",
+            "type": "PER"
+          },
+          {
+            "name": "pandavas",
+            "type": "PER"
+          },
+          {
+            "name": "prince uttar",
+            "type": "PER"
+          },
+          {
+            "name": "kaurava",
+            "type": "PER"
+          },
+          {
+            "name": "kuru dynasty",
+            "type": "ORG"
+          },
+          {
+            "name": "heaven",
+            "type": "LOC"
+          },
+          {
+            "name": "forests",
+            "type": "LOC"
+          },
+          {
+            "name": "f\u0153tus",
+            "type": "MISC"
+          }
+        ]
+      },
+      "relations": {
+        "matched": [
+          "spouse",
+          "present in work",
+          "participant of",
+          "father",
+          "sibling",
+          "child",
+          "conflict",
+          "participant"
+        ],
+        "unmatched": [
+          "mother",
+          "characters"
+        ],
+        "extra": []
+      },
+      "triples": {
+        "matched": [
+          {
+            "subject": {
+              "name": "uttaraa",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "sibling",
+            "object": {
+              "name": "uttar",
+              "type": "PER",
+              "id": 5
+            }
+          },
+          {
+            "subject": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "uttaraa",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "spouse",
+            "object": {
+              "name": "abhimanyu",
+              "type": "PER",
+              "id": 8
+            }
+          },
+          {
+            "subject": {
+              "name": "duryodhana",
+              "type": "PER",
+              "id": 14
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          }
+        ],
+        "unmatched": [
+          {
+            "head_id": 21,
+            "tail_id": 18,
+            "relation_label": "father"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 2,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 18,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 12,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 3,
+            "relation_label": "father"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 18,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 13,
+            "relation_label": "father"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 8,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 18,
+            "tail_id": 21,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 18,
+            "tail_id": 8,
+            "relation_label": "father"
+          },
+          {
+            "head_id": 18,
+            "tail_id": 2,
+            "relation_label": "mother"
+          },
+          {
+            "head_id": 21,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 3,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 8,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 10,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 6,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 2,
+            "relation_label": "spouse"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 17,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 16,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 19,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 4,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 20,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 17,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 6,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 11,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 17,
+            "tail_id": 11,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 5,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 11,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 12,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 18,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 13,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 11,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 2,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 2,
+            "relation_label": "sibling"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 14,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 11,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 5,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 14,
+            "tail_id": 11,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 11,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 3,
+            "relation_label": "father"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 11,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 12,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 17,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 10,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 14,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 11,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 17,
+            "tail_id": 11,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 11,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 14,
+            "tail_id": 11,
+            "relation_label": "participant of"
+          }
+        ],
+        "extra": [
+          {
+            "subject": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "child",
+            "object": {
+              "name": "king virata",
+              "type": "PER",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "uttaraa",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "child",
+            "object": {
+              "name": "virata",
+              "type": "PER",
+              "id": 3
+            }
+          },
+          {
+            "subject": {
+              "name": "uttaraa",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "sibling",
+            "object": {
+              "name": "prince uttar",
+              "type": "PER",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "pandavas",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "king virata",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "pandavas",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "matsya kingdom",
+              "type": "LOC",
+              "id": 7
+            }
+          },
+          {
+            "subject": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "matsya kingdom",
+              "type": "LOC",
+              "id": 7
+            }
+          },
+          {
+            "subject": {
+              "name": "uttaraa",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "matsya kingdom",
+              "type": "LOC",
+              "id": 7
+            }
+          },
+          {
+            "subject": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "heaven",
+              "type": "LOC",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            },
+            "predicate": "father",
+            "object": {
+              "name": "abhimanyu",
+              "type": "PER",
+              "id": 8
+            }
+          },
+          {
+            "subject": {
+              "name": "abhimanyu",
+              "type": "PER",
+              "id": 8
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "ashathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwatthama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "krishna",
+              "type": "PER",
+              "id": 10
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "child",
+            "object": {
+              "name": "dronacharya",
+              "type": "PER",
+              "id": 13
+            }
+          },
+          {
+            "subject": {
+              "name": "ashathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "child",
+            "object": {
+              "name": "dronacharya",
+              "type": "PER",
+              "id": 13
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwatthama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "child",
+            "object": {
+              "name": "dronacharya",
+              "type": "PER",
+              "id": 13
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "conflict",
+            "object": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            }
+          },
+          {
+            "subject": {
+              "name": "ashathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "conflict",
+            "object": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            }
+          },
+          {
+            "subject": {
+              "name": "kaurava",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "kaurava",
+              "type": "PER",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "krishna",
+              "type": "PER",
+              "id": 10
+            },
+            "predicate": "spouse",
+            "object": {
+              "name": "uttaraa",
+              "type": "PER",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "vyasa",
+              "type": "PER",
+              "id": 17
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "child",
+            "object": {
+              "name": "uttaraa",
+              "type": "PER",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "child",
+            "object": {
+              "name": "abhimanyu",
+              "type": "PER",
+              "id": 8
+            }
+          },
+          {
+            "subject": {
+              "name": "f\u0153tus",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "child",
+            "object": {
+              "name": "uttaraa",
+              "type": "PER",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "kuru dynasty",
+              "type": "ORG",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "hastinapur",
+              "type": "LOC",
+              "id": 20
+            }
+          },
+          {
+            "subject": {
+              "name": "uttaraa",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "child",
+            "object": {
+              "name": "janamejaya",
+              "type": "PER",
+              "id": 21
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "father",
+            "object": {
+              "name": "janamejaya",
+              "type": "PER",
+              "id": 21
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwatthama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "forests",
+              "type": "LOC",
+              "id": -1
+            }
+          }
+        ]
+      }
+    },
+    "strict_after": {
+      "entities": {
+        "matched": [
+          {
+            "name": "mahabharata",
+            "type": "MISC",
+            "id": 1
+          },
+          {
+            "name": "uttar\u0101",
+            "type": "PER",
+            "id": 2
+          },
+          {
+            "name": "arjuna",
+            "type": "PER",
+            "id": 6
+          },
+          {
+            "name": "matsya kingdom",
+            "type": "LOC",
+            "id": 7
+          },
+          {
+            "name": "kurukshetra war",
+            "type": "MISC",
+            "id": 9
+          },
+          {
+            "name": "abhimanyu",
+            "type": "PER",
+            "id": 8
+          },
+          {
+            "name": "krishna",
+            "type": "PER",
+            "id": 10
+          },
+          {
+            "name": "ashwathama",
+            "type": "PER",
+            "id": 12
+          },
+          {
+            "name": "dronacharya",
+            "type": "PER",
+            "id": 13
+          },
+          {
+            "name": "duryodhana",
+            "type": "PER",
+            "id": 14
+          },
+          {
+            "name": "brahmastra",
+            "type": "MISC",
+            "id": 16
+          },
+          {
+            "name": "vyasa",
+            "type": "PER",
+            "id": 17
+          },
+          {
+            "name": "parikshit",
+            "type": "PER",
+            "id": 18
+          },
+          {
+            "name": "hastinapur",
+            "type": "LOC",
+            "id": 20
+          },
+          {
+            "name": "janamejaya",
+            "type": "PER",
+            "id": 21
+          }
+        ],
+        "unmatched": [
+          {
+            "name": "hindu",
+            "type": "LOC",
+            "id": 0
+          },
+          {
+            "name": "virata",
+            "type": "PER",
+            "id": 3
+          },
+          {
+            "name": "pandavas",
+            "type": "ORG",
+            "id": 4
+          },
+          {
+            "name": "uttar",
+            "type": "PER",
+            "id": 5
+          },
+          {
+            "name": "mahabharata war",
+            "type": "MISC",
+            "id": 11
+          },
+          {
+            "name": "kaurava",
+            "type": "ORG",
+            "id": 15
+          },
+          {
+            "name": "kuru",
+            "type": "ORG",
+            "id": 19
+          }
+        ],
+        "extra": [
+          {
+            "name": "king virata",
+            "type": "PER"
+          },
+          {
+            "name": "pandavas",
+            "type": "PER"
+          },
+          {
+            "name": "prince uttar",
+            "type": "PER"
+          },
+          {
+            "name": "kaurava",
+            "type": "PER"
+          },
+          {
+            "name": "kuru dynasty",
+            "type": "ORG"
+          },
+          {
+            "name": "heaven",
+            "type": "LOC"
+          },
+          {
+            "name": "forests",
+            "type": "LOC"
+          },
+          {
+            "name": "f\u0153tus",
+            "type": "MISC"
+          }
+        ]
+      },
+      "relations": {
+        "matched": [
+          "spouse",
+          "present in work",
+          "participant of",
+          "father",
+          "sibling",
+          "child",
+          "conflict",
+          "participant"
+        ],
+        "unmatched": [
+          "mother",
+          "characters"
+        ],
+        "extra": []
+      },
+      "triples": {
+        "matched": [
+          {
+            "subject": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "spouse",
+            "object": {
+              "name": "abhimanyu",
+              "type": "PER",
+              "id": 8
+            }
+          },
+          {
+            "subject": {
+              "name": "duryodhana",
+              "type": "PER",
+              "id": 14
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          }
+        ],
+        "unmatched": [
+          {
+            "head_id": 21,
+            "tail_id": 18,
+            "relation_label": "father"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 2,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 18,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 12,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 3,
+            "relation_label": "father"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 18,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 13,
+            "relation_label": "father"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 8,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 18,
+            "tail_id": 21,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 18,
+            "tail_id": 8,
+            "relation_label": "father"
+          },
+          {
+            "head_id": 18,
+            "tail_id": 2,
+            "relation_label": "mother"
+          },
+          {
+            "head_id": 21,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 3,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 8,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 10,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 6,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 2,
+            "relation_label": "spouse"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 17,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 16,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 19,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 4,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 20,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 17,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 5,
+            "relation_label": "sibling"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 6,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 11,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 17,
+            "tail_id": 11,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 5,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 11,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 12,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 18,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 13,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 11,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 2,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 2,
+            "relation_label": "sibling"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 14,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 11,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 5,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 14,
+            "tail_id": 11,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 11,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 3,
+            "relation_label": "father"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 11,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 12,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 17,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 10,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 14,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 11,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 17,
+            "tail_id": 11,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 11,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 14,
+            "tail_id": 11,
+            "relation_label": "participant of"
+          }
+        ],
+        "extra": [
+          {
+            "subject": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "child",
+            "object": {
+              "name": "king virata",
+              "type": "PER",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "sibling",
+            "object": {
+              "name": "prince uttar",
+              "type": "PER",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "pandavas",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "king virata",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "pandavas",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "matsya kingdom",
+              "type": "LOC",
+              "id": 7
+            }
+          },
+          {
+            "subject": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "matsya kingdom",
+              "type": "LOC",
+              "id": 7
+            }
+          },
+          {
+            "subject": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "matsya kingdom",
+              "type": "LOC",
+              "id": 7
+            }
+          },
+          {
+            "subject": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "heaven",
+              "type": "LOC",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            },
+            "predicate": "father",
+            "object": {
+              "name": "abhimanyu",
+              "type": "PER",
+              "id": 8
+            }
+          },
+          {
+            "subject": {
+              "name": "abhimanyu",
+              "type": "PER",
+              "id": 8
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "krishna",
+              "type": "PER",
+              "id": 10
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "child",
+            "object": {
+              "name": "dronacharya",
+              "type": "PER",
+              "id": 13
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "conflict",
+            "object": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            }
+          },
+          {
+            "subject": {
+              "name": "kaurava",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "kaurava",
+              "type": "PER",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "krishna",
+              "type": "PER",
+              "id": 10
+            },
+            "predicate": "spouse",
+            "object": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "vyasa",
+              "type": "PER",
+              "id": 17
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "child",
+            "object": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "child",
+            "object": {
+              "name": "abhimanyu",
+              "type": "PER",
+              "id": 8
+            }
+          },
+          {
+            "subject": {
+              "name": "f\u0153tus",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "child",
+            "object": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "kuru dynasty",
+              "type": "ORG",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "hastinapur",
+              "type": "LOC",
+              "id": 20
+            }
+          },
+          {
+            "subject": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "child",
+            "object": {
+              "name": "janamejaya",
+              "type": "PER",
+              "id": 21
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "father",
+            "object": {
+              "name": "janamejaya",
+              "type": "PER",
+              "id": 21
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "forests",
+              "type": "LOC",
+              "id": -1
+            }
+          }
+        ]
+      }
+    },
+    "loose_before": {
+      "entities": {
+        "matched": [
+          {
+            "name": "mahabharata",
+            "type": "MISC",
+            "id": 1
+          },
+          {
+            "name": "uttar\u0101",
+            "type": "PER",
+            "id": 2
+          },
+          {
+            "name": "uttaraa",
+            "type": "PER",
+            "id": 2
+          },
+          {
+            "name": "king virata",
+            "type": "PER",
+            "id": 3
+          },
+          {
+            "name": "virata",
+            "type": "PER",
+            "id": 3
+          },
+          {
+            "name": "prince uttar",
+            "type": "PER",
+            "id": 5
+          },
+          {
+            "name": "uttar",
+            "type": "PER",
+            "id": 5
+          },
+          {
+            "name": "arjuna",
+            "type": "PER",
+            "id": 6
+          },
+          {
+            "name": "matsya kingdom",
+            "type": "LOC",
+            "id": 7
+          },
+          {
+            "name": "kurukshetra war",
+            "type": "MISC",
+            "id": 9
+          },
+          {
+            "name": "abhimanyu",
+            "type": "PER",
+            "id": 8
+          },
+          {
+            "name": "krishna",
+            "type": "PER",
+            "id": 10
+          },
+          {
+            "name": "ashwathama",
+            "type": "PER",
+            "id": 12
+          },
+          {
+            "name": "ashathama",
+            "type": "PER",
+            "id": 12
+          },
+          {
+            "name": "ashwatthama",
+            "type": "PER",
+            "id": 12
+          },
+          {
+            "name": "dronacharya",
+            "type": "PER",
+            "id": 13
+          },
+          {
+            "name": "duryodhana",
+            "type": "PER",
+            "id": 14
+          },
+          {
+            "name": "brahmastra",
+            "type": "MISC",
+            "id": 16
+          },
+          {
+            "name": "vyasa",
+            "type": "PER",
+            "id": 17
+          },
+          {
+            "name": "parikshit",
+            "type": "PER",
+            "id": 18
+          },
+          {
+            "name": "kuru dynasty",
+            "type": "ORG",
+            "id": 19
+          },
+          {
+            "name": "hastinapur",
+            "type": "LOC",
+            "id": 20
+          },
+          {
+            "name": "janamejaya",
+            "type": "PER",
+            "id": 21
+          }
+        ],
+        "unmatched": [
+          {
+            "name": "hindu",
+            "type": "LOC",
+            "id": 0
+          },
+          {
+            "name": "pandavas",
+            "type": "ORG",
+            "id": 4
+          },
+          {
+            "name": "mahabharata war",
+            "type": "MISC",
+            "id": 11
+          },
+          {
+            "name": "kaurava",
+            "type": "ORG",
+            "id": 15
+          }
+        ],
+        "extra": [
+          {
+            "name": "pandavas",
+            "type": "PER"
+          },
+          {
+            "name": "kaurava",
+            "type": "PER"
+          },
+          {
+            "name": "heaven",
+            "type": "LOC"
+          },
+          {
+            "name": "forests",
+            "type": "LOC"
+          },
+          {
+            "name": "f\u0153tus",
+            "type": "MISC"
+          }
+        ]
+      },
+      "relations": {
+        "matched": [
+          "spouse",
+          "present in work",
+          "participant of",
+          "father",
+          "sibling",
+          "child",
+          "conflict",
+          "participant"
+        ],
+        "unmatched": [
+          "mother",
+          "characters"
+        ],
+        "extra": []
+      },
+      "triples": {
+        "matched": [
+          {
+            "subject": {
+              "name": "uttaraa",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "sibling",
+            "object": {
+              "name": "prince uttar",
+              "type": "PER",
+              "id": 5
+            }
+          },
+          {
+            "subject": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "king virata",
+              "type": "PER",
+              "id": 3
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "uttaraa",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "spouse",
+            "object": {
+              "name": "abhimanyu",
+              "type": "PER",
+              "id": 8
+            }
+          },
+          {
+            "subject": {
+              "name": "duryodhana",
+              "type": "PER",
+              "id": 14
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          }
+        ],
+        "unmatched": [
+          {
+            "head_id": 21,
+            "tail_id": 18,
+            "relation_label": "father"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 2,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 18,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 12,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 3,
+            "relation_label": "father"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 18,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 13,
+            "relation_label": "father"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 8,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 18,
+            "tail_id": 21,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 18,
+            "tail_id": 8,
+            "relation_label": "father"
+          },
+          {
+            "head_id": 18,
+            "tail_id": 2,
+            "relation_label": "mother"
+          },
+          {
+            "head_id": 21,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 3,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 8,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 10,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 6,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 2,
+            "relation_label": "spouse"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 17,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 16,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 19,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 4,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 20,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 17,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 6,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 11,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 17,
+            "tail_id": 11,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 5,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 11,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 12,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 18,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 13,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 11,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 2,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 2,
+            "relation_label": "sibling"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 14,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 11,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 5,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 14,
+            "tail_id": 11,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 11,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 3,
+            "relation_label": "father"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 11,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 12,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 17,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 10,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 14,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 11,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 17,
+            "tail_id": 11,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 11,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 14,
+            "tail_id": 11,
+            "relation_label": "participant of"
+          }
+        ],
+        "extra": [
+          {
+            "subject": {
+              "name": "uttaraa",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "sibling",
+            "object": {
+              "name": "uttar",
+              "type": "PER",
+              "id": 5
+            }
+          },
+          {
+            "subject": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "child",
+            "object": {
+              "name": "king virata",
+              "type": "PER",
+              "id": 3
+            }
+          },
+          {
+            "subject": {
+              "name": "uttaraa",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "child",
+            "object": {
+              "name": "virata",
+              "type": "PER",
+              "id": 3
+            }
+          },
+          {
+            "subject": {
+              "name": "pandavas",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "pandavas",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "matsya kingdom",
+              "type": "LOC",
+              "id": 7
+            }
+          },
+          {
+            "subject": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "matsya kingdom",
+              "type": "LOC",
+              "id": 7
+            }
+          },
+          {
+            "subject": {
+              "name": "uttaraa",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "matsya kingdom",
+              "type": "LOC",
+              "id": 7
+            }
+          },
+          {
+            "subject": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "heaven",
+              "type": "LOC",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            },
+            "predicate": "father",
+            "object": {
+              "name": "abhimanyu",
+              "type": "PER",
+              "id": 8
+            }
+          },
+          {
+            "subject": {
+              "name": "abhimanyu",
+              "type": "PER",
+              "id": 8
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "ashathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwatthama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "krishna",
+              "type": "PER",
+              "id": 10
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "child",
+            "object": {
+              "name": "dronacharya",
+              "type": "PER",
+              "id": 13
+            }
+          },
+          {
+            "subject": {
+              "name": "ashathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "child",
+            "object": {
+              "name": "dronacharya",
+              "type": "PER",
+              "id": 13
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwatthama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "child",
+            "object": {
+              "name": "dronacharya",
+              "type": "PER",
+              "id": 13
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "conflict",
+            "object": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            }
+          },
+          {
+            "subject": {
+              "name": "ashathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "conflict",
+            "object": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            }
+          },
+          {
+            "subject": {
+              "name": "kaurava",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "kaurava",
+              "type": "PER",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "krishna",
+              "type": "PER",
+              "id": 10
+            },
+            "predicate": "spouse",
+            "object": {
+              "name": "uttaraa",
+              "type": "PER",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "vyasa",
+              "type": "PER",
+              "id": 17
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "child",
+            "object": {
+              "name": "uttaraa",
+              "type": "PER",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "child",
+            "object": {
+              "name": "abhimanyu",
+              "type": "PER",
+              "id": 8
+            }
+          },
+          {
+            "subject": {
+              "name": "f\u0153tus",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "child",
+            "object": {
+              "name": "uttaraa",
+              "type": "PER",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "kuru dynasty",
+              "type": "ORG",
+              "id": 19
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "hastinapur",
+              "type": "LOC",
+              "id": 20
+            }
+          },
+          {
+            "subject": {
+              "name": "uttaraa",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "child",
+            "object": {
+              "name": "janamejaya",
+              "type": "PER",
+              "id": 21
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "father",
+            "object": {
+              "name": "janamejaya",
+              "type": "PER",
+              "id": 21
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwatthama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "forests",
+              "type": "LOC",
+              "id": -1
+            }
+          }
+        ]
+      }
+    },
+    "loose_after": {
+      "entities": {
+        "matched": [
+          {
+            "name": "mahabharata",
+            "type": "MISC",
+            "id": 1
+          },
+          {
+            "name": "uttar\u0101",
+            "type": "PER",
+            "id": 2
+          },
+          {
+            "name": "king virata",
+            "type": "PER",
+            "id": 3
+          },
+          {
+            "name": "prince uttar",
+            "type": "PER",
+            "id": 5
+          },
+          {
+            "name": "arjuna",
+            "type": "PER",
+            "id": 6
+          },
+          {
+            "name": "matsya kingdom",
+            "type": "LOC",
+            "id": 7
+          },
+          {
+            "name": "kurukshetra war",
+            "type": "MISC",
+            "id": 9
+          },
+          {
+            "name": "abhimanyu",
+            "type": "PER",
+            "id": 8
+          },
+          {
+            "name": "krishna",
+            "type": "PER",
+            "id": 10
+          },
+          {
+            "name": "ashwathama",
+            "type": "PER",
+            "id": 12
+          },
+          {
+            "name": "dronacharya",
+            "type": "PER",
+            "id": 13
+          },
+          {
+            "name": "duryodhana",
+            "type": "PER",
+            "id": 14
+          },
+          {
+            "name": "brahmastra",
+            "type": "MISC",
+            "id": 16
+          },
+          {
+            "name": "vyasa",
+            "type": "PER",
+            "id": 17
+          },
+          {
+            "name": "parikshit",
+            "type": "PER",
+            "id": 18
+          },
+          {
+            "name": "kuru dynasty",
+            "type": "ORG",
+            "id": 19
+          },
+          {
+            "name": "hastinapur",
+            "type": "LOC",
+            "id": 20
+          },
+          {
+            "name": "janamejaya",
+            "type": "PER",
+            "id": 21
+          }
+        ],
+        "unmatched": [
+          {
+            "name": "hindu",
+            "type": "LOC",
+            "id": 0
+          },
+          {
+            "name": "pandavas",
+            "type": "ORG",
+            "id": 4
+          },
+          {
+            "name": "mahabharata war",
+            "type": "MISC",
+            "id": 11
+          },
+          {
+            "name": "kaurava",
+            "type": "ORG",
+            "id": 15
+          }
+        ],
+        "extra": [
+          {
+            "name": "pandavas",
+            "type": "PER"
+          },
+          {
+            "name": "kaurava",
+            "type": "PER"
+          },
+          {
+            "name": "heaven",
+            "type": "LOC"
+          },
+          {
+            "name": "forests",
+            "type": "LOC"
+          },
+          {
+            "name": "f\u0153tus",
+            "type": "MISC"
+          }
+        ]
+      },
+      "relations": {
+        "matched": [
+          "spouse",
+          "present in work",
+          "participant of",
+          "father",
+          "sibling",
+          "child",
+          "conflict",
+          "participant"
+        ],
+        "unmatched": [
+          "mother",
+          "characters"
+        ],
+        "extra": []
+      },
+      "triples": {
+        "matched": [
+          {
+            "subject": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "sibling",
+            "object": {
+              "name": "prince uttar",
+              "type": "PER",
+              "id": 5
+            }
+          },
+          {
+            "subject": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "king virata",
+              "type": "PER",
+              "id": 3
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "spouse",
+            "object": {
+              "name": "abhimanyu",
+              "type": "PER",
+              "id": 8
+            }
+          },
+          {
+            "subject": {
+              "name": "duryodhana",
+              "type": "PER",
+              "id": 14
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          }
+        ],
+        "unmatched": [
+          {
+            "head_id": 21,
+            "tail_id": 18,
+            "relation_label": "father"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 2,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 18,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 12,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 3,
+            "relation_label": "father"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 18,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 13,
+            "relation_label": "father"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 8,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 18,
+            "tail_id": 21,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 18,
+            "tail_id": 8,
+            "relation_label": "father"
+          },
+          {
+            "head_id": 18,
+            "tail_id": 2,
+            "relation_label": "mother"
+          },
+          {
+            "head_id": 21,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 3,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 8,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 10,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 6,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 2,
+            "relation_label": "spouse"
+          },
+          {
+            "head_id": 13,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 17,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 16,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 19,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 4,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 20,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 17,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 6,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 11,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 17,
+            "tail_id": 11,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 5,
+            "relation_label": "child"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 11,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 12,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 18,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 1,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 13,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 11,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 2,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 2,
+            "relation_label": "sibling"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 14,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 8,
+            "tail_id": 11,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 5,
+            "relation_label": "characters"
+          },
+          {
+            "head_id": 14,
+            "tail_id": 11,
+            "relation_label": "conflict"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 11,
+            "relation_label": "present in work"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 3,
+            "relation_label": "father"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 11,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 12,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 17,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 10,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 14,
+            "relation_label": "participant"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 11,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 17,
+            "tail_id": 11,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 11,
+            "relation_label": "participant of"
+          },
+          {
+            "head_id": 14,
+            "tail_id": 11,
+            "relation_label": "participant of"
+          }
+        ],
+        "extra": [
+          {
+            "subject": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "child",
+            "object": {
+              "name": "king virata",
+              "type": "PER",
+              "id": 3
+            }
+          },
+          {
+            "subject": {
+              "name": "pandavas",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "pandavas",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "matsya kingdom",
+              "type": "LOC",
+              "id": 7
+            }
+          },
+          {
+            "subject": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "matsya kingdom",
+              "type": "LOC",
+              "id": 7
+            }
+          },
+          {
+            "subject": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "matsya kingdom",
+              "type": "LOC",
+              "id": 7
+            }
+          },
+          {
+            "subject": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "heaven",
+              "type": "LOC",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            },
+            "predicate": "father",
+            "object": {
+              "name": "abhimanyu",
+              "type": "PER",
+              "id": 8
+            }
+          },
+          {
+            "subject": {
+              "name": "abhimanyu",
+              "type": "PER",
+              "id": 8
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "krishna",
+              "type": "PER",
+              "id": 10
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "child",
+            "object": {
+              "name": "dronacharya",
+              "type": "PER",
+              "id": 13
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "conflict",
+            "object": {
+              "name": "arjuna",
+              "type": "PER",
+              "id": 6
+            }
+          },
+          {
+            "subject": {
+              "name": "kaurava",
+              "type": "PER",
+              "id": -1
+            },
+            "predicate": "present in work",
+            "object": {
+              "name": "mahabharata",
+              "type": "MISC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "kaurava",
+              "type": "PER",
+              "id": -1
+            }
+          },
+          {
+            "subject": {
+              "name": "krishna",
+              "type": "PER",
+              "id": 10
+            },
+            "predicate": "spouse",
+            "object": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "vyasa",
+              "type": "PER",
+              "id": 17
+            },
+            "predicate": "participant of",
+            "object": {
+              "name": "kurukshetra war",
+              "type": "MISC",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "child",
+            "object": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "child",
+            "object": {
+              "name": "abhimanyu",
+              "type": "PER",
+              "id": 8
+            }
+          },
+          {
+            "subject": {
+              "name": "f\u0153tus",
+              "type": "MISC",
+              "id": -1
+            },
+            "predicate": "child",
+            "object": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "kuru dynasty",
+              "type": "ORG",
+              "id": 19
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "hastinapur",
+              "type": "LOC",
+              "id": 20
+            }
+          },
+          {
+            "subject": {
+              "name": "uttar\u0101",
+              "type": "PER",
+              "id": 2
+            },
+            "predicate": "child",
+            "object": {
+              "name": "janamejaya",
+              "type": "PER",
+              "id": 21
+            }
+          },
+          {
+            "subject": {
+              "name": "parikshit",
+              "type": "PER",
+              "id": 18
+            },
+            "predicate": "father",
+            "object": {
+              "name": "janamejaya",
+              "type": "PER",
+              "id": 21
+            }
+          },
+          {
+            "subject": {
+              "name": "ashwathama",
+              "type": "PER",
+              "id": 12
+            },
+            "predicate": "participant",
+            "object": {
+              "name": "forests",
+              "type": "LOC",
+              "id": -1
+            }
+          }
+        ]
+      }
+    }
+  },
+  "error_sources": {
+    "generation_error": [
+      {
+        "name": "pandavas",
+        "type": "PER"
+      },
+      {
+        "name": "prince uttar",
+        "type": "PER"
+      },
+      {
+        "name": "king virata",
+        "type": "PER"
+      },
+      {
+        "name": "f\u0153tus",
+        "type": "MISC"
+      },
+      {
+        "name": "forests",
+        "type": "LOC"
+      },
+      {
+        "name": "kaurava",
+        "type": "PER"
+      },
+      {
+        "name": "kuru dynasty",
+        "type": "ORG"
+      },
+      {
+        "name": "heaven",
+        "type": "LOC"
+      }
+    ],
+    "refinement_error": [],
+    "resolved_through_refinement": [],
+    "lost_matches": [
+      {
+        "name": "ashathama",
+        "type": "PER"
+      },
+      {
+        "name": "uttar",
+        "type": "PER"
+      },
+      {
+        "name": "virata",
+        "type": "PER"
+      },
+      {
+        "name": "uttaraa",
+        "type": "PER"
+      },
+      {
+        "name": "ashwatthama",
+        "type": "PER"
+      }
+    ]
+  }
+}

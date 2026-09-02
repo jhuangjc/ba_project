@@ -1,0 +1,2369 @@
+{
+  "metadata": {
+    "experiment_id": "repetition_doc",
+    "input_type": "repetition",
+    "source_group": "airasia_zest",
+    "gold_id": "gold_02"
+  },
+  "extraction_results": {
+    "entities": [
+      {
+        "name": "zest airways, inc.",
+        "type": "ORG"
+      },
+      {
+        "name": "airasia",
+        "type": "ORG"
+      },
+      {
+        "name": "asian spirit",
+        "type": "ORG"
+      },
+      {
+        "name": "ninoy aquino international airport",
+        "type": "LOC"
+      },
+      {
+        "name": "pasay city",
+        "type": "LOC"
+      },
+      {
+        "name": "metro manila",
+        "type": "LOC"
+      },
+      {
+        "name": "philippines",
+        "type": "LOC"
+      },
+      {
+        "name": "cebu",
+        "type": "LOC"
+      },
+      {
+        "name": "civil aviation authority of the philippines (caap)",
+        "type": "ORG"
+      },
+      {
+        "name": "government of the republic of the philippines",
+        "type": "ORG"
+      },
+      {
+        "name": "2013",
+        "type": "TIME"
+      },
+      {
+        "name": "january 2016",
+        "type": "TIME"
+      },
+      {
+        "name": "24",
+        "type": "NUM"
+      }
+    ],
+    "triples": [
+      {
+        "subject": {
+          "name": "zest airways, inc.",
+          "type": "ORG"
+        },
+        "predicate": "headquarters location",
+        "object": {
+          "name": "ninoy aquino international airport",
+          "type": "LOC"
+        }
+      },
+      {
+        "subject": {
+          "name": "ninoy aquino international airport",
+          "type": "LOC"
+        },
+        "predicate": "located in the administrative territorial entity",
+        "object": {
+          "name": "pasay city",
+          "type": "LOC"
+        }
+      },
+      {
+        "subject": {
+          "name": "pasay city",
+          "type": "LOC"
+        },
+        "predicate": "located in the administrative territorial entity",
+        "object": {
+          "name": "metro manila",
+          "type": "LOC"
+        }
+      },
+      {
+        "subject": {
+          "name": "metro manila",
+          "type": "LOC"
+        },
+        "predicate": "located in the administrative territorial entity",
+        "object": {
+          "name": "philippines",
+          "type": "LOC"
+        }
+      },
+      {
+        "subject": {
+          "name": "airasia",
+          "type": "ORG"
+        },
+        "predicate": "parent organization",
+        "object": {
+          "name": "airasia",
+          "type": "ORG"
+        }
+      },
+      {
+        "subject": {
+          "name": "zest airways, inc.",
+          "type": "ORG"
+        },
+        "predicate": "country",
+        "object": {
+          "name": "philippines",
+          "type": "LOC"
+        }
+      },
+      {
+        "subject": {
+          "name": "asian spirit",
+          "type": "ORG"
+        },
+        "predicate": "country",
+        "object": {
+          "name": "philippines",
+          "type": "LOC"
+        }
+      },
+      {
+        "subject": {
+          "name": "zest airways, inc.",
+          "type": "ORG"
+        },
+        "predicate": "contains administrative territorial entity",
+        "object": {
+          "name": "metro manila",
+          "type": "LOC"
+        }
+      },
+      {
+        "subject": {
+          "name": "zest airways, inc.",
+          "type": "ORG"
+        },
+        "predicate": "contains administrative territorial entity",
+        "object": {
+          "name": "cebu",
+          "type": "LOC"
+        }
+      },
+      {
+        "subject": {
+          "name": "airasia",
+          "type": "ORG"
+        },
+        "predicate": "subsidiary",
+        "object": {
+          "name": "airasia",
+          "type": "ORG"
+        }
+      },
+      {
+        "subject": {
+          "name": "airasia",
+          "type": "ORG"
+        },
+        "predicate": "dissolved, abolished or demolished",
+        "object": {
+          "name": "january 2016",
+          "type": "TIME"
+        }
+      },
+      {
+        "subject": {
+          "name": "zest airways, inc.",
+          "type": "ORG"
+        },
+        "predicate": "subsidiary",
+        "object": {
+          "name": "airasia",
+          "type": "ORG"
+        }
+      }
+    ],
+    "relations": [
+      "parent organization",
+      "contains administrative territorial entity",
+      "dissolved, abolished or demolished",
+      "headquarters location",
+      "located in the administrative territorial entity",
+      "country",
+      "subsidiary"
+    ]
+  },
+  "evaluation_results": {
+    "metrics_before_refinement": {
+      "entity_metrics": {
+        "true_positives": 17,
+        "false_positives": 2,
+        "false_negatives": 2,
+        "precision": 0.8947368421052632,
+        "recall": 0.8947368421052632,
+        "f1": 0.8947368421052632
+      },
+      "relation_metrics": {
+        "true_positives": 7,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "triple_metrics": {
+        "true_positives": 5,
+        "false_positives": 9,
+        "false_negatives": 31,
+        "precision": 0.35714285714285715,
+        "recall": 0.1388888888888889,
+        "f1": 0.2
+      },
+      "cluster_hit_metrics": {
+        "covered_gold": 15,
+        "coverage": 0.8823529411764706,
+        "avg_cluster_hit": 1.0
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": 2,
+        "fp_name_in_gold": 0,
+        "name_in_gold_rate": 0.0
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 2,
+        "total_clusters": 17,
+        "duplicated_rate": 0.11764705882352941,
+        "avg_hit_in_duplicated": 2.0
+      }
+    },
+    "metrics_after_refinement": {
+      "entity_metrics": {
+        "true_positives": 11,
+        "false_positives": 2,
+        "false_negatives": 6,
+        "precision": 0.8461538461538461,
+        "recall": 0.6470588235294118,
+        "f1": 0.7333333333333334
+      },
+      "relation_metrics": {
+        "true_positives": 7,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "triple_metrics": {
+        "true_positives": 5,
+        "false_positives": 7,
+        "false_negatives": 31,
+        "precision": 0.4166666666666667,
+        "recall": 0.1388888888888889,
+        "f1": 0.20833333333333334
+      },
+      "cluster_hit_metrics": {
+        "covered_gold": 11,
+        "coverage": 0.6470588235294118,
+        "avg_cluster_hit": 0.6470588235294118
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": 2,
+        "fp_name_in_gold": 0,
+        "name_in_gold_rate": 0.0
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 0,
+        "total_clusters": 17,
+        "duplicated_rate": 0.0,
+        "avg_hit_in_duplicated": 0.0
+      }
+    },
+    "metrics_loose_before": {
+      "entity_metrics": {
+        "true_positives": 18,
+        "false_positives": 1,
+        "false_negatives": 1,
+        "precision": 0.9473684210526315,
+        "recall": 0.9473684210526315,
+        "f1": 0.9473684210526315
+      },
+      "relation_metrics": {
+        "true_positives": 7,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "triple_metrics": {
+        "true_positives": 5,
+        "false_positives": 9,
+        "false_negatives": 31,
+        "precision": 0.35714285714285715,
+        "recall": 0.1388888888888889,
+        "f1": 0.2
+      },
+      "cluster_hit_metrics": {
+        "covered_gold": 16,
+        "coverage": 0.9411764705882353,
+        "avg_cluster_hit": 1.0588235294117647
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": 1,
+        "fp_name_in_gold": 0,
+        "name_in_gold_rate": 0.0
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 2,
+        "total_clusters": 17,
+        "duplicated_rate": 0.11764705882352941,
+        "avg_hit_in_duplicated": 2.0
+      }
+    },
+    "metrics_loose_after": {
+      "entity_metrics": {
+        "true_positives": 12,
+        "false_positives": 1,
+        "false_negatives": 5,
+        "precision": 0.9230769230769231,
+        "recall": 0.7058823529411765,
+        "f1": 0.8000000000000002
+      },
+      "relation_metrics": {
+        "true_positives": 7,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "triple_metrics": {
+        "true_positives": 5,
+        "false_positives": 7,
+        "false_negatives": 31,
+        "precision": 0.4166666666666667,
+        "recall": 0.1388888888888889,
+        "f1": 0.20833333333333334
+      },
+      "cluster_hit_metrics": {
+        "covered_gold": 12,
+        "coverage": 0.7058823529411765,
+        "avg_cluster_hit": 0.7058823529411765
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": 1,
+        "fp_name_in_gold": 0,
+        "name_in_gold_rate": 0.0
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 0,
+        "total_clusters": 17,
+        "duplicated_rate": 0.0,
+        "avg_hit_in_duplicated": 0.0
+      }
+    },
+    "delta_before": {
+      "entity_metrics": {
+        "true_positives": 1,
+        "false_positives": -1,
+        "false_negatives": -1,
+        "precision": 0.05263157894736836,
+        "recall": 0.05263157894736836,
+        "f1": 0.05263157894736836
+      },
+      "relation_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "triple_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "cluster_hit_metrics": {
+        "covered_gold": 1,
+        "coverage": 0.05882352941176472,
+        "avg_cluster_hit": 0.05882352941176472
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": -1,
+        "fp_name_in_gold": 0,
+        "name_in_gold_rate": 0.0
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 0,
+        "total_clusters": 0,
+        "duplicated_rate": 0.0,
+        "avg_hit_in_duplicated": 0.0
+      }
+    },
+    "delta_after": {
+      "entity_metrics": {
+        "true_positives": 1,
+        "false_positives": -1,
+        "false_negatives": -1,
+        "precision": 0.07692307692307698,
+        "recall": 0.05882352941176472,
+        "f1": 0.06666666666666676
+      },
+      "relation_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "triple_metrics": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "cluster_hit_metrics": {
+        "covered_gold": 1,
+        "coverage": 0.05882352941176472,
+        "avg_cluster_hit": 0.05882352941176472
+      },
+      "fp_name_in_gold_metrics": {
+        "fp_total": -1,
+        "fp_name_in_gold": 0,
+        "name_in_gold_rate": 0.0
+      },
+      "duplicated_cluster_metrics": {
+        "duplicated_clusters": 0,
+        "total_clusters": 0,
+        "duplicated_rate": 0.0,
+        "avg_hit_in_duplicated": 0.0
+      }
+    }
+  },
+  "details": {
+    "strict_before": {
+      "entities": {
+        "matched": [
+          {
+            "name": "zest airways, inc.",
+            "type": "ORG",
+            "id": 0
+          },
+          {
+            "name": "airasia zest",
+            "type": "ORG",
+            "id": 0
+          },
+          {
+            "name": "asian spirit",
+            "type": "ORG",
+            "id": 10
+          },
+          {
+            "name": "zest air",
+            "type": "ORG",
+            "id": 12
+          },
+          {
+            "name": "ninoy aquino international airport",
+            "type": "LOC",
+            "id": 1
+          },
+          {
+            "name": "pasay city",
+            "type": "LOC",
+            "id": 2
+          },
+          {
+            "name": "metro manila",
+            "type": "LOC",
+            "id": 3
+          },
+          {
+            "name": "philippines",
+            "type": "LOC",
+            "id": 4
+          },
+          {
+            "name": "manila",
+            "type": "LOC",
+            "id": 5
+          },
+          {
+            "name": "cebu",
+            "type": "LOC",
+            "id": 6
+          },
+          {
+            "name": "philippines airasia",
+            "type": "ORG",
+            "id": 9
+          },
+          {
+            "name": "airasia",
+            "type": "ORG",
+            "id": 14
+          },
+          {
+            "name": "airasia philippines",
+            "type": "ORG",
+            "id": 15
+          },
+          {
+            "name": "august 16, 2013",
+            "type": "TIME",
+            "id": 8
+          },
+          {
+            "name": "2013",
+            "type": "TIME",
+            "id": 8
+          },
+          {
+            "name": "january 2016",
+            "type": "TIME",
+            "id": 16
+          },
+          {
+            "name": "24",
+            "type": "NUM",
+            "id": 7
+          }
+        ],
+        "unmatched": [
+          {
+            "name": "civil aviation authority of the philippines",
+            "type": "ORG",
+            "id": 11
+          },
+          {
+            "name": "a year",
+            "type": "NUM",
+            "id": 13
+          }
+        ],
+        "extra": [
+          {
+            "name": "civil aviation authority of the philippines (caap)",
+            "type": "ORG"
+          },
+          {
+            "name": "government of the republic of the philippines",
+            "type": "ORG"
+          }
+        ]
+      },
+      "relations": {
+        "matched": [
+          "parent organization",
+          "contains administrative territorial entity",
+          "dissolved, abolished or demolished",
+          "headquarters location",
+          "located in the administrative territorial entity",
+          "country",
+          "subsidiary"
+        ],
+        "unmatched": [],
+        "extra": []
+      },
+      "triples": {
+        "matched": [
+          {
+            "subject": {
+              "name": "ninoy aquino international airport",
+              "type": "LOC",
+              "id": 1
+            },
+            "predicate": "located in the administrative territorial entity",
+            "object": {
+              "name": "pasay city",
+              "type": "LOC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "pasay city",
+              "type": "LOC",
+              "id": 2
+            },
+            "predicate": "located in the administrative territorial entity",
+            "object": {
+              "name": "metro manila",
+              "type": "LOC",
+              "id": 3
+            }
+          },
+          {
+            "subject": {
+              "name": "metro manila",
+              "type": "LOC",
+              "id": 3
+            },
+            "predicate": "located in the administrative territorial entity",
+            "object": {
+              "name": "philippines",
+              "type": "LOC",
+              "id": 4
+            }
+          },
+          {
+            "subject": {
+              "name": "zest airways, inc.",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "country",
+            "object": {
+              "name": "philippines",
+              "type": "LOC",
+              "id": 4
+            }
+          },
+          {
+            "subject": {
+              "name": "asian spirit",
+              "type": "ORG",
+              "id": 10
+            },
+            "predicate": "country",
+            "object": {
+              "name": "philippines",
+              "type": "LOC",
+              "id": 4
+            }
+          }
+        ],
+        "unmatched": [
+          {
+            "head_id": 0,
+            "tail_id": 2,
+            "relation_label": "headquarters location"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 4,
+            "tail_id": 3,
+            "relation_label": "contains administrative territorial entity"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 2,
+            "relation_label": "contains administrative territorial entity"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 16,
+            "relation_label": "dissolved, abolished or demolished"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 4,
+            "tail_id": 5,
+            "relation_label": "contains administrative territorial entity"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 5,
+            "relation_label": "contains administrative territorial entity"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 2,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 3,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 14,
+            "tail_id": 15,
+            "relation_label": "subsidiary"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 14,
+            "relation_label": "parent organization"
+          },
+          {
+            "head_id": 0,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 3,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 3,
+            "relation_label": "located in the administrative territorial entity"
+          }
+        ],
+        "extra": [
+          {
+            "subject": {
+              "name": "zest airways, inc.",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "headquarters location",
+            "object": {
+              "name": "ninoy aquino international airport",
+              "type": "LOC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "airasia zest",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "parent organization",
+            "object": {
+              "name": "philippines airasia",
+              "type": "ORG",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "zest airways, inc.",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "contains administrative territorial entity",
+            "object": {
+              "name": "manila",
+              "type": "LOC",
+              "id": 5
+            }
+          },
+          {
+            "subject": {
+              "name": "zest airways, inc.",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "contains administrative territorial entity",
+            "object": {
+              "name": "cebu",
+              "type": "LOC",
+              "id": 6
+            }
+          },
+          {
+            "subject": {
+              "name": "airasia zest",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "subsidiary",
+            "object": {
+              "name": "philippines airasia",
+              "type": "ORG",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "airasia",
+              "type": "ORG",
+              "id": 14
+            },
+            "predicate": "parent organization",
+            "object": {
+              "name": "airasia zest",
+              "type": "ORG",
+              "id": 0
+            }
+          },
+          {
+            "subject": {
+              "name": "airasia zest",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "dissolved, abolished or demolished",
+            "object": {
+              "name": "january 2016",
+              "type": "TIME",
+              "id": 16
+            }
+          },
+          {
+            "subject": {
+              "name": "zest airways, inc.",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "subsidiary",
+            "object": {
+              "name": "airasia philippines",
+              "type": "ORG",
+              "id": 15
+            }
+          },
+          {
+            "subject": {
+              "name": "airasia zest",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "subsidiary",
+            "object": {
+              "name": "airasia philippines",
+              "type": "ORG",
+              "id": 15
+            }
+          }
+        ]
+      }
+    },
+    "strict_after": {
+      "entities": {
+        "matched": [
+          {
+            "name": "zest airways, inc.",
+            "type": "ORG",
+            "id": 0
+          },
+          {
+            "name": "airasia",
+            "type": "ORG",
+            "id": 14
+          },
+          {
+            "name": "asian spirit",
+            "type": "ORG",
+            "id": 10
+          },
+          {
+            "name": "ninoy aquino international airport",
+            "type": "LOC",
+            "id": 1
+          },
+          {
+            "name": "pasay city",
+            "type": "LOC",
+            "id": 2
+          },
+          {
+            "name": "metro manila",
+            "type": "LOC",
+            "id": 3
+          },
+          {
+            "name": "philippines",
+            "type": "LOC",
+            "id": 4
+          },
+          {
+            "name": "cebu",
+            "type": "LOC",
+            "id": 6
+          },
+          {
+            "name": "2013",
+            "type": "TIME",
+            "id": 8
+          },
+          {
+            "name": "january 2016",
+            "type": "TIME",
+            "id": 16
+          },
+          {
+            "name": "24",
+            "type": "NUM",
+            "id": 7
+          }
+        ],
+        "unmatched": [
+          {
+            "name": "manila",
+            "type": "LOC",
+            "id": 5
+          },
+          {
+            "name": "philippines airasia",
+            "type": "ORG",
+            "id": 9
+          },
+          {
+            "name": "civil aviation authority of the philippines",
+            "type": "ORG",
+            "id": 11
+          },
+          {
+            "name": "zest air",
+            "type": "ORG",
+            "id": 12
+          },
+          {
+            "name": "a year",
+            "type": "NUM",
+            "id": 13
+          },
+          {
+            "name": "airasia philippines",
+            "type": "ORG",
+            "id": 15
+          }
+        ],
+        "extra": [
+          {
+            "name": "civil aviation authority of the philippines (caap)",
+            "type": "ORG"
+          },
+          {
+            "name": "government of the republic of the philippines",
+            "type": "ORG"
+          }
+        ]
+      },
+      "relations": {
+        "matched": [
+          "parent organization",
+          "contains administrative territorial entity",
+          "dissolved, abolished or demolished",
+          "headquarters location",
+          "located in the administrative territorial entity",
+          "country",
+          "subsidiary"
+        ],
+        "unmatched": [],
+        "extra": []
+      },
+      "triples": {
+        "matched": [
+          {
+            "subject": {
+              "name": "ninoy aquino international airport",
+              "type": "LOC",
+              "id": 1
+            },
+            "predicate": "located in the administrative territorial entity",
+            "object": {
+              "name": "pasay city",
+              "type": "LOC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "pasay city",
+              "type": "LOC",
+              "id": 2
+            },
+            "predicate": "located in the administrative territorial entity",
+            "object": {
+              "name": "metro manila",
+              "type": "LOC",
+              "id": 3
+            }
+          },
+          {
+            "subject": {
+              "name": "metro manila",
+              "type": "LOC",
+              "id": 3
+            },
+            "predicate": "located in the administrative territorial entity",
+            "object": {
+              "name": "philippines",
+              "type": "LOC",
+              "id": 4
+            }
+          },
+          {
+            "subject": {
+              "name": "zest airways, inc.",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "country",
+            "object": {
+              "name": "philippines",
+              "type": "LOC",
+              "id": 4
+            }
+          },
+          {
+            "subject": {
+              "name": "asian spirit",
+              "type": "ORG",
+              "id": 10
+            },
+            "predicate": "country",
+            "object": {
+              "name": "philippines",
+              "type": "LOC",
+              "id": 4
+            }
+          }
+        ],
+        "unmatched": [
+          {
+            "head_id": 0,
+            "tail_id": 2,
+            "relation_label": "headquarters location"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 4,
+            "tail_id": 3,
+            "relation_label": "contains administrative territorial entity"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 2,
+            "relation_label": "contains administrative territorial entity"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 16,
+            "relation_label": "dissolved, abolished or demolished"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 4,
+            "tail_id": 5,
+            "relation_label": "contains administrative territorial entity"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 5,
+            "relation_label": "contains administrative territorial entity"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 2,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 3,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 14,
+            "tail_id": 15,
+            "relation_label": "subsidiary"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 14,
+            "relation_label": "parent organization"
+          },
+          {
+            "head_id": 0,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 3,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 3,
+            "relation_label": "located in the administrative territorial entity"
+          }
+        ],
+        "extra": [
+          {
+            "subject": {
+              "name": "zest airways, inc.",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "headquarters location",
+            "object": {
+              "name": "ninoy aquino international airport",
+              "type": "LOC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "airasia",
+              "type": "ORG",
+              "id": 14
+            },
+            "predicate": "parent organization",
+            "object": {
+              "name": "airasia",
+              "type": "ORG",
+              "id": 14
+            }
+          },
+          {
+            "subject": {
+              "name": "zest airways, inc.",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "contains administrative territorial entity",
+            "object": {
+              "name": "metro manila",
+              "type": "LOC",
+              "id": 3
+            }
+          },
+          {
+            "subject": {
+              "name": "zest airways, inc.",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "contains administrative territorial entity",
+            "object": {
+              "name": "cebu",
+              "type": "LOC",
+              "id": 6
+            }
+          },
+          {
+            "subject": {
+              "name": "airasia",
+              "type": "ORG",
+              "id": 14
+            },
+            "predicate": "subsidiary",
+            "object": {
+              "name": "airasia",
+              "type": "ORG",
+              "id": 14
+            }
+          },
+          {
+            "subject": {
+              "name": "airasia",
+              "type": "ORG",
+              "id": 14
+            },
+            "predicate": "dissolved, abolished or demolished",
+            "object": {
+              "name": "january 2016",
+              "type": "TIME",
+              "id": 16
+            }
+          },
+          {
+            "subject": {
+              "name": "zest airways, inc.",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "subsidiary",
+            "object": {
+              "name": "airasia",
+              "type": "ORG",
+              "id": 14
+            }
+          }
+        ]
+      }
+    },
+    "loose_before": {
+      "entities": {
+        "matched": [
+          {
+            "name": "zest airways, inc.",
+            "type": "ORG",
+            "id": 0
+          },
+          {
+            "name": "airasia zest",
+            "type": "ORG",
+            "id": 0
+          },
+          {
+            "name": "asian spirit",
+            "type": "ORG",
+            "id": 10
+          },
+          {
+            "name": "zest air",
+            "type": "ORG",
+            "id": 12
+          },
+          {
+            "name": "ninoy aquino international airport",
+            "type": "LOC",
+            "id": 1
+          },
+          {
+            "name": "pasay city",
+            "type": "LOC",
+            "id": 2
+          },
+          {
+            "name": "metro manila",
+            "type": "LOC",
+            "id": 3
+          },
+          {
+            "name": "philippines",
+            "type": "LOC",
+            "id": 4
+          },
+          {
+            "name": "manila",
+            "type": "LOC",
+            "id": 5
+          },
+          {
+            "name": "cebu",
+            "type": "LOC",
+            "id": 6
+          },
+          {
+            "name": "philippines airasia",
+            "type": "ORG",
+            "id": 9
+          },
+          {
+            "name": "civil aviation authority of the philippines (caap)",
+            "type": "ORG",
+            "id": 11
+          },
+          {
+            "name": "airasia",
+            "type": "ORG",
+            "id": 14
+          },
+          {
+            "name": "airasia philippines",
+            "type": "ORG",
+            "id": 15
+          },
+          {
+            "name": "august 16, 2013",
+            "type": "TIME",
+            "id": 8
+          },
+          {
+            "name": "2013",
+            "type": "TIME",
+            "id": 8
+          },
+          {
+            "name": "january 2016",
+            "type": "TIME",
+            "id": 16
+          },
+          {
+            "name": "24",
+            "type": "NUM",
+            "id": 7
+          }
+        ],
+        "unmatched": [
+          {
+            "name": "a year",
+            "type": "NUM",
+            "id": 13
+          }
+        ],
+        "extra": [
+          {
+            "name": "government of the republic of the philippines",
+            "type": "ORG"
+          }
+        ]
+      },
+      "relations": {
+        "matched": [
+          "parent organization",
+          "contains administrative territorial entity",
+          "dissolved, abolished or demolished",
+          "headquarters location",
+          "located in the administrative territorial entity",
+          "country",
+          "subsidiary"
+        ],
+        "unmatched": [],
+        "extra": []
+      },
+      "triples": {
+        "matched": [
+          {
+            "subject": {
+              "name": "ninoy aquino international airport",
+              "type": "LOC",
+              "id": 1
+            },
+            "predicate": "located in the administrative territorial entity",
+            "object": {
+              "name": "pasay city",
+              "type": "LOC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "pasay city",
+              "type": "LOC",
+              "id": 2
+            },
+            "predicate": "located in the administrative territorial entity",
+            "object": {
+              "name": "metro manila",
+              "type": "LOC",
+              "id": 3
+            }
+          },
+          {
+            "subject": {
+              "name": "metro manila",
+              "type": "LOC",
+              "id": 3
+            },
+            "predicate": "located in the administrative territorial entity",
+            "object": {
+              "name": "philippines",
+              "type": "LOC",
+              "id": 4
+            }
+          },
+          {
+            "subject": {
+              "name": "zest airways, inc.",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "country",
+            "object": {
+              "name": "philippines",
+              "type": "LOC",
+              "id": 4
+            }
+          },
+          {
+            "subject": {
+              "name": "asian spirit",
+              "type": "ORG",
+              "id": 10
+            },
+            "predicate": "country",
+            "object": {
+              "name": "philippines",
+              "type": "LOC",
+              "id": 4
+            }
+          }
+        ],
+        "unmatched": [
+          {
+            "head_id": 0,
+            "tail_id": 2,
+            "relation_label": "headquarters location"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 4,
+            "tail_id": 3,
+            "relation_label": "contains administrative territorial entity"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 2,
+            "relation_label": "contains administrative territorial entity"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 16,
+            "relation_label": "dissolved, abolished or demolished"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 4,
+            "tail_id": 5,
+            "relation_label": "contains administrative territorial entity"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 5,
+            "relation_label": "contains administrative territorial entity"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 2,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 3,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 14,
+            "tail_id": 15,
+            "relation_label": "subsidiary"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 14,
+            "relation_label": "parent organization"
+          },
+          {
+            "head_id": 0,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 3,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 3,
+            "relation_label": "located in the administrative territorial entity"
+          }
+        ],
+        "extra": [
+          {
+            "subject": {
+              "name": "zest airways, inc.",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "headquarters location",
+            "object": {
+              "name": "ninoy aquino international airport",
+              "type": "LOC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "airasia zest",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "parent organization",
+            "object": {
+              "name": "philippines airasia",
+              "type": "ORG",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "zest airways, inc.",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "contains administrative territorial entity",
+            "object": {
+              "name": "manila",
+              "type": "LOC",
+              "id": 5
+            }
+          },
+          {
+            "subject": {
+              "name": "zest airways, inc.",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "contains administrative territorial entity",
+            "object": {
+              "name": "cebu",
+              "type": "LOC",
+              "id": 6
+            }
+          },
+          {
+            "subject": {
+              "name": "airasia zest",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "subsidiary",
+            "object": {
+              "name": "philippines airasia",
+              "type": "ORG",
+              "id": 9
+            }
+          },
+          {
+            "subject": {
+              "name": "airasia",
+              "type": "ORG",
+              "id": 14
+            },
+            "predicate": "parent organization",
+            "object": {
+              "name": "airasia zest",
+              "type": "ORG",
+              "id": 0
+            }
+          },
+          {
+            "subject": {
+              "name": "airasia zest",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "dissolved, abolished or demolished",
+            "object": {
+              "name": "january 2016",
+              "type": "TIME",
+              "id": 16
+            }
+          },
+          {
+            "subject": {
+              "name": "zest airways, inc.",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "subsidiary",
+            "object": {
+              "name": "airasia philippines",
+              "type": "ORG",
+              "id": 15
+            }
+          },
+          {
+            "subject": {
+              "name": "airasia zest",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "subsidiary",
+            "object": {
+              "name": "airasia philippines",
+              "type": "ORG",
+              "id": 15
+            }
+          }
+        ]
+      }
+    },
+    "loose_after": {
+      "entities": {
+        "matched": [
+          {
+            "name": "zest airways, inc.",
+            "type": "ORG",
+            "id": 0
+          },
+          {
+            "name": "airasia",
+            "type": "ORG",
+            "id": 14
+          },
+          {
+            "name": "asian spirit",
+            "type": "ORG",
+            "id": 10
+          },
+          {
+            "name": "ninoy aquino international airport",
+            "type": "LOC",
+            "id": 1
+          },
+          {
+            "name": "pasay city",
+            "type": "LOC",
+            "id": 2
+          },
+          {
+            "name": "metro manila",
+            "type": "LOC",
+            "id": 3
+          },
+          {
+            "name": "philippines",
+            "type": "LOC",
+            "id": 4
+          },
+          {
+            "name": "cebu",
+            "type": "LOC",
+            "id": 6
+          },
+          {
+            "name": "civil aviation authority of the philippines (caap)",
+            "type": "ORG",
+            "id": 11
+          },
+          {
+            "name": "2013",
+            "type": "TIME",
+            "id": 8
+          },
+          {
+            "name": "january 2016",
+            "type": "TIME",
+            "id": 16
+          },
+          {
+            "name": "24",
+            "type": "NUM",
+            "id": 7
+          }
+        ],
+        "unmatched": [
+          {
+            "name": "manila",
+            "type": "LOC",
+            "id": 5
+          },
+          {
+            "name": "philippines airasia",
+            "type": "ORG",
+            "id": 9
+          },
+          {
+            "name": "zest air",
+            "type": "ORG",
+            "id": 12
+          },
+          {
+            "name": "a year",
+            "type": "NUM",
+            "id": 13
+          },
+          {
+            "name": "airasia philippines",
+            "type": "ORG",
+            "id": 15
+          }
+        ],
+        "extra": [
+          {
+            "name": "government of the republic of the philippines",
+            "type": "ORG"
+          }
+        ]
+      },
+      "relations": {
+        "matched": [
+          "parent organization",
+          "contains administrative territorial entity",
+          "dissolved, abolished or demolished",
+          "headquarters location",
+          "located in the administrative territorial entity",
+          "country",
+          "subsidiary"
+        ],
+        "unmatched": [],
+        "extra": []
+      },
+      "triples": {
+        "matched": [
+          {
+            "subject": {
+              "name": "ninoy aquino international airport",
+              "type": "LOC",
+              "id": 1
+            },
+            "predicate": "located in the administrative territorial entity",
+            "object": {
+              "name": "pasay city",
+              "type": "LOC",
+              "id": 2
+            }
+          },
+          {
+            "subject": {
+              "name": "pasay city",
+              "type": "LOC",
+              "id": 2
+            },
+            "predicate": "located in the administrative territorial entity",
+            "object": {
+              "name": "metro manila",
+              "type": "LOC",
+              "id": 3
+            }
+          },
+          {
+            "subject": {
+              "name": "metro manila",
+              "type": "LOC",
+              "id": 3
+            },
+            "predicate": "located in the administrative territorial entity",
+            "object": {
+              "name": "philippines",
+              "type": "LOC",
+              "id": 4
+            }
+          },
+          {
+            "subject": {
+              "name": "zest airways, inc.",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "country",
+            "object": {
+              "name": "philippines",
+              "type": "LOC",
+              "id": 4
+            }
+          },
+          {
+            "subject": {
+              "name": "asian spirit",
+              "type": "ORG",
+              "id": 10
+            },
+            "predicate": "country",
+            "object": {
+              "name": "philippines",
+              "type": "LOC",
+              "id": 4
+            }
+          }
+        ],
+        "unmatched": [
+          {
+            "head_id": 0,
+            "tail_id": 2,
+            "relation_label": "headquarters location"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 4,
+            "tail_id": 3,
+            "relation_label": "contains administrative territorial entity"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 2,
+            "relation_label": "contains administrative territorial entity"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 16,
+            "relation_label": "dissolved, abolished or demolished"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 4,
+            "tail_id": 5,
+            "relation_label": "contains administrative territorial entity"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 3,
+            "tail_id": 5,
+            "relation_label": "contains administrative territorial entity"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 4,
+            "relation_label": "country"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 2,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 3,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 14,
+            "tail_id": 15,
+            "relation_label": "subsidiary"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 14,
+            "relation_label": "parent organization"
+          },
+          {
+            "head_id": 0,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 2,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 5,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 10,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 9,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 6,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 15,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 11,
+            "tail_id": 4,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 1,
+            "tail_id": 3,
+            "relation_label": "located in the administrative territorial entity"
+          },
+          {
+            "head_id": 12,
+            "tail_id": 3,
+            "relation_label": "located in the administrative territorial entity"
+          }
+        ],
+        "extra": [
+          {
+            "subject": {
+              "name": "zest airways, inc.",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "headquarters location",
+            "object": {
+              "name": "ninoy aquino international airport",
+              "type": "LOC",
+              "id": 1
+            }
+          },
+          {
+            "subject": {
+              "name": "airasia",
+              "type": "ORG",
+              "id": 14
+            },
+            "predicate": "parent organization",
+            "object": {
+              "name": "airasia",
+              "type": "ORG",
+              "id": 14
+            }
+          },
+          {
+            "subject": {
+              "name": "zest airways, inc.",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "contains administrative territorial entity",
+            "object": {
+              "name": "metro manila",
+              "type": "LOC",
+              "id": 3
+            }
+          },
+          {
+            "subject": {
+              "name": "zest airways, inc.",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "contains administrative territorial entity",
+            "object": {
+              "name": "cebu",
+              "type": "LOC",
+              "id": 6
+            }
+          },
+          {
+            "subject": {
+              "name": "airasia",
+              "type": "ORG",
+              "id": 14
+            },
+            "predicate": "subsidiary",
+            "object": {
+              "name": "airasia",
+              "type": "ORG",
+              "id": 14
+            }
+          },
+          {
+            "subject": {
+              "name": "airasia",
+              "type": "ORG",
+              "id": 14
+            },
+            "predicate": "dissolved, abolished or demolished",
+            "object": {
+              "name": "january 2016",
+              "type": "TIME",
+              "id": 16
+            }
+          },
+          {
+            "subject": {
+              "name": "zest airways, inc.",
+              "type": "ORG",
+              "id": 0
+            },
+            "predicate": "subsidiary",
+            "object": {
+              "name": "airasia",
+              "type": "ORG",
+              "id": 14
+            }
+          }
+        ]
+      }
+    },
+    "error_sources": {
+      "generation_error": [
+        {
+          "name": "civil aviation authority of the philippines (caap)",
+          "type": "ORG"
+        },
+        {
+          "name": "government of the republic of the philippines",
+          "type": "ORG"
+        }
+      ],
+      "refinement_error": [],
+      "resolved_through_refinement": [],
+      "lost_matches": [
+        {
+          "name": "airasia zest",
+          "type": "ORG"
+        },
+        {
+          "name": "zest air",
+          "type": "ORG"
+        },
+        {
+          "name": "august 16, 2013",
+          "type": "TIME"
+        },
+        {
+          "name": "philippines airasia",
+          "type": "ORG"
+        },
+        {
+          "name": "airasia philippines",
+          "type": "ORG"
+        },
+        {
+          "name": "manila",
+          "type": "LOC"
+        }
+      ]
+    }
+  },
+  "debug": {
+    "resolved_entities_strict": {
+      "zest airways, inc._ORG": 0,
+      "airasia_ORG": 14,
+      "asian spirit_ORG": 10,
+      "ninoy aquino international airport_LOC": 1,
+      "pasay city_LOC": 2,
+      "metro manila_LOC": 3,
+      "philippines_LOC": 4,
+      "cebu_LOC": 6,
+      "civil aviation authority of the philippines (caap)_ORG": -1,
+      "government of the republic of the philippines_ORG": -1,
+      "2013_TIME": 8,
+      "january 2016_TIME": 16,
+      "24_NUM": 7
+    },
+    "resolved_entities_loose": {
+      "zest airways, inc._ORG": 0,
+      "airasia_ORG": 14,
+      "asian spirit_ORG": 10,
+      "ninoy aquino international airport_LOC": 1,
+      "pasay city_LOC": 2,
+      "metro manila_LOC": 3,
+      "philippines_LOC": 4,
+      "cebu_LOC": 6,
+      "civil aviation authority of the philippines (caap)_ORG": 11,
+      "government of the republic of the philippines_ORG": -1,
+      "2013_TIME": 8,
+      "january 2016_TIME": 16,
+      "24_NUM": 7
+    },
+    "entity_mapping": {
+      "zest airways, inc._ORG": [
+        "zest air_ORG",
+        "airasia zest_ORG"
+      ],
+      "asian spirit_ORG": [],
+      "ninoy aquino international airport_LOC": [],
+      "pasay city_LOC": [],
+      "metro manila_LOC": [
+        "manila_LOC"
+      ],
+      "philippines_LOC": [],
+      "cebu_LOC": [],
+      "philippines airasia_ORG": [
+        "airasia philippines_ORG"
+      ],
+      "civil aviation authority of the philippines (caap)_ORG": [],
+      "government of the republic of the philippines_ORG": [],
+      "airasia_ORG": [
+        "airasia zest_ORG",
+        "airasia philippines_ORG",
+        "philippines airasia_ORG"
+      ],
+      "august 16, 2013_TIME": [],
+      "2013_TIME": [
+        "august 16, 2013_TIME"
+      ],
+      "january 2016_TIME": [],
+      "24_NUM": []
+    }
+  }
+}
